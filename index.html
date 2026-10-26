@@ -24,57 +24,111 @@
 </style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>pizza الملك 👑 - ملك البيتزا</title>
+<title>pizza الملك 👑 - ملك البيتزا | توصيل سريع سوسة</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@700;800;900&display=swap');
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Tajawal',sans-serif}
-body{background:#FFF6EB;color:#222}
-.header{position:sticky;top:0;z-index:99;background:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px rgba(0,0,0,.08)}
-.logo{font-size:22px;font-weight:800;display:flex;align-items:center;gap:8px}
+body{background:#FFF6EB;color:#222;padding-bottom:120px}
+
+/* 1. BANNER OFFRE */
+.offer-banner{background:linear-gradient(90deg,#FF1744,#FF6B00,#FFB800);color:#fff;padding:10px 16px;text-align:center;font-weight:900;font-size:14px;position:sticky;top:0;z-index:200;display:flex;justify-content:center;align-items:center;gap:10px;animation:slide 15s linear infinite}
+.offer-banner b{background:#fff;color:#FF1744;padding:3px 10px;border-radius:20px}
+@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)}}
+.pulse{animation:pulse 1s infinite}
+
+.header{position:sticky;top:40px;z-index:99;background:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px rgba(0,0,0,.08)}
+.logo{font-size:22px;font-weight:900;display:flex;align-items:center;gap:8px}
 .logo span{background:linear-gradient(135deg,#FF6B00,#FFB800);color:#fff;width:38px;height:38px;border-radius:12px;display:grid;place-items:center}
-.badge{font-size:12px;background:#E8F5E9;color:#2E7D32;padding:6px 12px;border-radius:20px;font-weight:700}
-.cats{display:flex;gap:8px;overflow:auto;padding:12px 16px;background:#fff;position:sticky;top:58px;z-index:90}
-.chip{white-space:nowrap;padding:10px 18px;border-radius:25px;background:#FFF3E0;border:2px solid #FFE0B2;font-weight:700;cursor:pointer}
+.h-right{display:flex;gap:8px;align-items:center}
+.badge-open{font-size:11px;background:#E8F5E9;color:#2E7D32;padding:6px 12px;border-radius:20px;font-weight:800}
+.badge-time{font-size:11px;background:#FFF3E0;color:#E65100;padding:6px 12px;border-radius:20px;font-weight:800;border:1px solid #FFE0B2}
+
+/* CONTACT BUTTONS */
+.contact-bar{display:flex;gap:8px;padding:10px 16px;background:#fff;border-bottom:1px solid #FFE0B2}
+.cbtn{flex:1;padding:10px;border-radius:12px;border:none;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;gap:6px;cursor:pointer;text-decoration:none}
+.cbtn.call{background:#E8F5E9;color:#2E7D32;border:1px solid #A5D6A7}
+.cbtn.insta{background:linear-gradient(135deg,#F58529,#DD2A7B,#515BD4);color:#fff}
+.cbtn.tiktok{background:#111;color:#fff}
+
+.cats{display:flex;gap:8px;overflow:auto;padding:12px 16px;background:#fff;position:sticky;top:98px;z-index:90;scrollbar-width:none}
+.chip{white-space:nowrap;padding:10px 18px;border-radius:25px;background:#FFF3E0;border:2px solid #FFE0B2;font-weight:700;cursor:pointer;flex-shrink:0}
 .chip.active{background:#FF6B00;color:#fff;border-color:#FF6B00}
-.menu{max-width:700px;margin:0 auto;padding:10px 12px 120px}
-.sec{font-size:19px;font-weight:800;margin:22px 4px 10px;display:flex;align-items:center;gap:8px}
-.card{background:#fff;border-radius:18px;padding:12px;display:flex;gap:12px;margin-bottom:12px;box-shadow:0 4px 18px rgba(255,107,0,.08);border:1px solid #FFE0B2;position:relative}
-.img{width:74px;height:74px;border-radius:14px;display:grid;place-items:center;font-size:34px;flex-shrink:0;background:linear-gradient(135deg,#FFF3E0,#FFE0B2)}
+
+.menu{max-width:700px;margin:0 auto;padding:10px 12px}
+.sec{font-size:19px;font-weight:900;margin:22px 4px 10px;display:flex;align-items:center;gap:8px}
+
+/* CARDS */
+.card{background:#fff;border-radius:18px;padding:12px;display:flex;gap:12px;margin-bottom:12px;box-shadow:0 4px 18px rgba(255,107,0,.08);border:1px solid #FFE0B2;position:relative;transition:.2s}
+.card:active{transform:scale(.98)}
+.img{width:78px;height:78px;border-radius:14px;display:grid;place-items:center;font-size:36px;flex-shrink:0;background:linear-gradient(135deg,#FFF3E0,#FFE0B2);border:1px solid #FFE0B2}
 .info{flex:1}
-.info h3{font-size:15px;font-weight:800}
+.info h3{font-size:15px;font-weight:900}
 .info p{font-size:12px;color:#8A8A8A;margin:2px 0 8px}
 .bottom{display:flex;justify-content:space-between;align-items:center}
 .price{font-weight:900;font-size:18px;color:#00C853}
-.price small{font-size:12px}
-.add{background:linear-gradient(135deg,#FF6B00,#FF8C00);color:#fff;border:none;padding:9px 18px;border-radius:22px;font-weight:800;cursor:pointer;box-shadow:0 4px 12px rgba(255,107,0,.3)}
-.ribbon{position:absolute;top:10px;left:-26px;background:#FF1744;color:#fff;font-size:9px;font-weight:900;padding:3px 28px;transform:rotate(-30deg)}
-.cart-btn{position:fixed;bottom:20px;right:20px;z-index:99;background:linear-gradient(135deg,#FF6B00,#FFD600);color:#000;border:none;width:64px;height:64px;border-radius:20px;font-size:28px;box-shadow:0 8px 24px rgba(255,107,0,.4);display:flex;align-items:center;justify-content:center}
-.cart-num{position:absolute;top:-6px;right:-6px;background:#000;color:#fff;min-width:26px;height:26px;border-radius:13px;font-size:12px;display:grid;place-items:center;border:2px solid #fff}
+.add{background:linear-gradient(135deg,#FF6B00,#FF8C00);color:#fff;border:none;padding:9px 18px;border-radius:22px;font-weight:900;cursor:pointer;box-shadow:0 4px 12px rgba(255,107,0,.3)}
+.ribbon{position:absolute;top:10px;left:-26px;background:#FF1744;color:#fff;font-size:9px;font-weight:900;padding:3px 28px;transform:rotate(-30deg);z-index:2}
+.ribbon.green{background:#00C853;left:-18px}
+
+/* REVIEWS */
+.reviews{background:#fff;margin:20px 12px;border-radius:18px;padding:16px;border:1px solid #FFE0B2;box-shadow:0 4px 18px rgba(0,0,0,.05)}
+.rev-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.rev-list{display:flex;gap:10px;overflow:auto;padding-bottom:6px}
+.rev-card{min-width:220px;background:#FFFBF5;border:1px solid #FFE0B2;border-radius:14px;padding:12px}
+.rev-card b{font-size:13px}
+.rev-card small{color:#8A8A8A;font-size:11px;display:block;margin:4px 0}
+.rev-card p{font-size:12px;margin-top:6px}
+
+/* LOYALTY */
+.loyalty{background:linear-gradient(135deg,#1a1a1a,#333);color:#fff;margin:20px 12px;border-radius:18px;padding:16px;display:flex;justify-content:space-between;align-items:center}
+.loyalty b{color:#FFD600}
+.loyalty-bar{width:100%;height:8px;background:rgba(255,255,255,.2);border-radius:10px;margin-top:8px;overflow:hidden}
+.loyalty-fill{height:100%;background:linear-gradient(90deg,#FFD600,#FF6B00);border-radius:10px;transition:1s}
+
+.cart-btn{position:fixed;bottom:20px;right:20px;z-index:99;background:linear-gradient(135deg,#FF6B00,#FFD600);color:#000;border:none;width:68px;height:68px;border-radius:20px;font-size:30px;box-shadow:0 8px 24px rgba(255,107,0,.4);display:flex;align-items:center;justify-content:center}
+.cart-num{position:absolute;top:-6px;right:-6px;background:#000;color:#fff;min-width:28px;height:28px;border-radius:14px;font-size:13px;display:grid;place-items:center;border:2px solid #fff;font-weight:900}
+
 .overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:101;display:none}
-.drawer{position:fixed;bottom:0;left:0;right:0;max-width:700px;margin:0 auto;background:#fff;border-radius:28px 28px 0 0;z-index:102;transform:translateY(110%);transition:.35s;max-height:92vh;overflow:auto;padding:16px;box-shadow:0 -10px 40px rgba(0,0,0,.15)}
+.drawer{position:fixed;bottom:0;left:0;right:0;max-width:700px;margin:0 auto;background:#fff;border-radius:28px 28px 0 0;z-index:102;transform:translateY(110%);transition:.35s;max-height:94vh;overflow:auto;padding:16px;box-shadow:0 -10px 40px rgba(0,0,0,.15)}
 .drawer.open{transform:translateY(0)}
-.list{background:#FFF8F0;border:1px solid #FFE0B2;border-radius:14px;padding:12px;margin:12px 0;max-height:32vh;overflow:auto}
+.list{background:#FFF8F0;border:1px solid #FFE0B2;border-radius:14px;padding:12px;margin:12px 0;max-height:28vh;overflow:auto}
 .row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px dashed #FFE0B2}
 .row:last-child{border:none}
 .ctrl{display:flex;gap:6px;align-items:center}
-.minus{background:#fff;border:2px solid #FFE0B2;width:30px;height:30px;border-radius:10px;font-weight:900}
-.plus{background:#FF6B00;border:none;color:#fff;width:30px;height:30px;border-radius:10px;font-weight:900}
-.inp{width:100%;padding:13px 14px;border-radius:12px;border:2px solid #FFE0B2;background:#FFFBF5;outline:none;margin-bottom:8px}
+.minus{background:#fff;border:2px solid #FFE0B2;width:32px;height:32px;border-radius:10px;font-weight:900}
+.plus{background:#FF6B00;border:none;color:#fff;width:32px;height:32px;border-radius:10px;font-weight:900}
+.inp{width:100%;padding:13px 14px;border-radius:12px;border:2px solid #FFE0B2;background:#FFFBF5;outline:none;margin-bottom:8px;font-size:14px}
 .inp:focus{border-color:#FF6B00}
 .inp-row{display:flex;gap:8px}
-.gps{background:#1976D2;color:#fff;border:none;padding:12px;border-radius:12px;flex:1;font-weight:700}
+.gps{background:#1976D2;color:#fff;border:none;padding:12px;border-radius:12px;flex:1;font-weight:800}
 .clear{background:#fff;border:2px solid #FFE0B2;padding:12px;border-radius:12px;flex:1}
 .total{display:flex;justify-content:space-between;align-items:center;background:#1B1B1B;color:#fff;padding:14px;border-radius:14px;margin-top:10px;font-weight:900}
 .total b{color:#FFD600;font-size:20px}
 .send{width:100%;margin-top:12px;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;border:none;padding:16px;border-radius:14px;font-weight:900;font-size:16px}
 .badge-num{background:#FFF3E0;color:#FF6B00;border:1px solid #FFE0B2;padding:4px 10px;border-radius:10px;font-size:11px;font-weight:800}
+.live-dot{width:8px;height:8px;background:#00C853;border-radius:50%;display:inline-block;animation:pulse 1s infinite}
 </style>
 </head>
 <body>
 
+<!-- 1. OFFRE BANNER -->
+<div class="offer-banner pulse">
+🔥 عرض اليوم: <b>بيتزا + شاباتي = 15دت برك!</b> ⏰ حتى 23:00
+</div>
+
 <div class="header">
 <div class="logo"><span>👑</span> pizza الملك</div>
-<div class="badge">● مفتوح الآن 10:00-23:00</div>
+<div class="h-right">
+<div class="badge-time"><span class="live-dot"></span> <span id="live-time">يوصل في 22 دقيقة</span></div>
+<div class="badge-open">● مفتوح 10:00-23:00</div>
+</div>
+</div>
+
+<!-- 6. CALL BUTTONS -->
+<div class="contact-bar">
+<a class="cbtn call" href="tel:+21656711448">📞 اتصل بينا</a>
+<a class="cbtn insta" href="https://instagram.com" target="_blank">📸 انستغرام</a>
+<a class="cbtn tiktok" href="#" onclick="alert('قريبا على TikTok!')">🎵 TikTok</a>
 </div>
 
 <div class="cats">
@@ -89,6 +143,16 @@ body{background:#FFF6EB;color:#222}
 
 <div class="menu">
 
+<!-- LOYALTY 5 -->
+<div class="loyalty" id="loyalty-box">
+<div style="flex:1">
+<div>🎁 <b id="loyalty-points">0</b> نقطة ولاء</div>
+<div style="font-size:12px;opacity:.8;margin-top:4px">كل 1دت = 1 نقطة | 50 نقطة = شاباتي بلاش!</div>
+<div class="loyalty-bar"><div class="loyalty-fill" id="loyalty-fill" style="width:0%"></div></div>
+</div>
+<div style="font-size:32px;margin-right:12px">👑</div>
+</div>
+
 <div class="sec">🫓 شاباتي - Chapati</div>
 
 <div class="card" data-cat="chapati"><div class="img">🫓</div><div class="info"><h3>شاباتي سلامي</h3><p>سلامي، سلطة، مايونيز</p><div class="bottom"><span class="price">3.0 <small>دت</small></span><button class="add" onclick="addC('شاباتي سلامي',3)">+ أضف</button></div></div></div>
@@ -97,9 +161,9 @@ body{background:#FFF6EB;color:#222}
 
 <div class="card" data-cat="chapati"><div class="img">🌯</div><div class="info"><h3>شاباتي شاورما</h3><p>شاورما، سلطة، ثوم</p><div class="bottom"><span class="price">5.0 <small>دت</small></span><button class="add" onclick="addC('شاباتي شاورما',5)">+ أضف</button></div></div></div>
 
-<div class="card" data-cat="chapati"><div class="ribbon">الأكثر طلبا</div><div class="img">⭐</div><div class="info"><h3>شاباتي سبيسيال</h3><p>الكل في واحد - الشاف</p><div class="bottom"><span class="price">5.0 <small>دت</small></span><button class="add" onclick="addC('شاباتي سبيسيال',5)">+ أضف</button></div></div></div>
+<div class="card" data-cat="chapati"><div class="ribbon">الأكثر طلبا 🔥</div><div class="img">⭐</div><div class="info"><h3>شاباتي سبيسيال</h3><p>الكل في واحد - الشاف</p><div class="bottom"><span class="price">5.0 <small>دت</small></span><button class="add" onclick="addC('شاباتي سبيسيال',5)">+ أضف</button></div></div></div>
 
-<div class="sec">🥪 سندويتش - Sandwich</div>
+<div class="sec">🥪 سندويتش</div>
 
 <div class="card" data-cat="sandwich"><div class="img">🥪</div><div class="info"><h3>سندويتش سلامي</h3><p>سلامي، جبن، سلطة</p><div class="bottom"><span class="price">5.0 <small>دت</small></span><button class="add" onclick="addC('سندويتش سلامي',5)">+ أضف</button></div></div></div>
 
@@ -113,7 +177,7 @@ body{background:#FFF6EB;color:#222}
 
 <div class="card" data-cat="sandwich"><div class="img">🔥</div><div class="info"><h3>سندويتش سبيسيال</h3><p>وصفة خاصة</p><div class="bottom"><span class="price">7.0 <small>دت</small></span><button class="add" onclick="addC('سندويتش سبيسيال',7)">+ أضف</button></div></div></div>
 
-<div class="sec">🌯 مقلوب - Makloub</div>
+<div class="sec">🌯 مقلوب</div>
 
 <div class="card" data-cat="makloub"><div class="img">🌯</div><div class="info"><h3>مقلوب سلامي</h3><p>سلامي، جبن</p><div class="bottom"><span class="price">6.0 <small>دت</small></span><button class="add" onclick="addC('مقلوب سلامي',6)">+ أضف</button></div></div></div>
 
@@ -127,9 +191,9 @@ body{background:#FFF6EB;color:#222}
 
 <div class="card" data-cat="makloub"><div class="img">🌮</div><div class="info"><h3>تاكوس</h3><p>تاكوس دجاج، جبن</p><div class="bottom"><span class="price">9.0 <small>دت</small></span><button class="add" onclick="addC('تاكوس',9)">+ أضف</button></div></div></div>
 
-<div class="card" data-cat="makloub"><div class="img">🥖</div><div class="info"><h3>باقات فارسي و كورنيا</h3><p>محشية</p><div class="bottom"><span class="price">8.5 <small>دت</small></span><button class="add" onclick="addC('باقات فارسي',8.5)">+ أضف</button></div></div></div>
+<div class="card" data-cat="makloub"><div class="img">🥖</div><div class="info"><h3>باقات فارسي</h3><p>محشية</p><div class="bottom"><span class="price">8.5 <small>دت</small></span><button class="add" onclick="addC('باقات فارسي',8.5)">+ أضف</button></div></div></div>
 
-<div class="sec">🫓 ملاوي - Mlawi</div>
+<div class="sec">🫓 ملاوي</div>
 
 <div class="card" data-cat="mlawi"><div class="img">🫓</div><div class="info"><h3>ملاوي سلامي</h3><p>سلامي، جبن</p><div class="bottom"><span class="price">5.0 <small>دت</small></span><button class="add" onclick="addC('ملاوي سلامي',5)">+ أضف</button></div></div></div>
 
@@ -141,15 +205,15 @@ body{background:#FFF6EB;color:#222}
 
 <div class="card" data-cat="mlawi"><div class="img">⭐</div><div class="info"><h3>ملاوي سبيسيال</h3><p>سبيسيال</p><div class="bottom"><span class="price">7.5 <small>دت</small></span><button class="add" onclick="addC('ملاوي سبيسيال',7.5)">+ أضف</button></div></div></div>
 
-<div class="card" data-cat="mlawi"><div class="ribbon">محبوب الجماهير</div><div class="img">🤩</div><div class="info"><h3>ملاوي محبوب</h3><p>دبل جبن، دبل سلامي</p><div class="bottom"><span class="price">10.0 <small>دت</small></span><button class="add" onclick="addC('ملاوي محبوب',10)">+ أضف</button></div></div></div>
+<div class="card" data-cat="mlawi"><div class="ribbon green">محبوب الجماهير 🤩</div><div class="img">🤩</div><div class="info"><h3>ملاوي محبوب</h3><p>دبل جبن، دبل سلامي</p><div class="bottom"><span class="price">10.0 <small>دت</small></span><button class="add" onclick="addC('ملاوي محبوب',10)">+ أضف</button></div></div></div>
 
-<div class="sec">🥪 بانيني - Panini</div>
+<div class="sec">🥪 بانيني</div>
 
 <div class="card" data-cat="panini"><div class="img">🥪</div><div class="info"><h3>بانيني تن</h3><p>تن، جبن</p><div class="bottom"><span class="price">2.0 <small>دت</small></span><button class="add" onclick="addC('بانيني تن',2)">+ أضف</button></div></div></div>
 
 <div class="card" data-cat="panini"><div class="img">🥪</div><div class="info"><h3>بانيني سلامي</h3><p>سلامي، جبن</p><div class="bottom"><span class="price">2.0 <small>دت</small></span><button class="add" onclick="addC('بانيني سلامي',2)">+ أضف</button></div></div></div>
 
-<div class="sec">🍕 بيتزا - Pizza</div>
+<div class="sec">🍕 بيتزا</div>
 
 <div class="card" data-cat="pizza"><div class="img">🍕</div><div class="info"><h3>بيتزا مارغريتا</h3><p>صلصة، موزاريلا</p><div class="bottom"><span class="price">10.0 <small>دت</small></span><button class="add" onclick="addC('بيتزا مارغريتا',10)">+ أضف</button></div></div></div>
 
@@ -165,6 +229,17 @@ body{background:#FFF6EB;color:#222}
 
 </div>
 
+<!-- 2. REVIEWS -->
+<div class="reviews">
+<div class="rev-head"><b>⭐ آراء الحرفاء (127)</b><span style="background:#FF6B00;color:#fff;padding:4px 10px;border-radius:20px;font-size:11px">4.8/5</span></div>
+<div class="rev-list">
+<div class="rev-card"><b>محمد - cité riadh ⭐⭐⭐⭐⭐</b><small>منذ 2 ساعة</small><p>بنين برشا! التوصيل في 20 دقيقة، سخون!</p></div>
+<div class="rev-card"><b>أميرة - Sahloul ⭐⭐⭐⭐⭐</b><small>منذ 5 ساعات</small><p>ملاوي محبوب يهبل! ننصحكم بيه 🤩</p></div>
+<div class="rev-card"><b>حمزة - Khzema ⭐⭐⭐⭐⭐</b><small>أمس</small><p>أحسن شاباتي في سوسة! والسعر رخيص</p></div>
+<div class="rev-card"><b>سيرين - Sousse ⭐⭐⭐⭐⭐</b><small>أمس</small><p>البيتزا بنينة والخدمة ممتازة 👑</p></div>
+</div>
+</div>
+
 <button class="cart-btn" onclick="openCart()">🛒<span class="cart-num" id="fcount" style="display:none">0</span></button>
 
 <div class="overlay" id="ov" onclick="closeCart()"></div>
@@ -172,6 +247,7 @@ body{background:#FFF6EB;color:#222}
 <div class="drawer" id="drawer">
 <div style="width:40px;height:5px;background:#FFE0B2;border-radius:10px;margin:0 auto 12px"></div>
 <div style="display:flex;justify-content:space-between;align-items:center"><b>🛒 سلتك <span class="badge-num" id="oprev">#EB-001</span></b><div><span id="ccount" style="background:#FF6B00;color:#fff;padding:4px 12px;border-radius:12px;font-size:12px;font-weight:800">0 منتج</span> <button onclick="closeCart()" style="background:#fff;border:2px solid #FFE0B2;width:34px;height:34px;border-radius:10px">✕</button></div></div>
+<div style="background:#FFF3E0;border:1px solid #FFE0B2;border-radius:10px;padding:8px;margin-top:10px;font-size:12px;display:flex;justify-content:space-between"><span>⏱️ وقت التوصيل: <b id="drawer-time">22 دقيقة</b></span><span>👨‍🍳 في المطبخ: <b id="queue">2 طلبات</b></span></div>
 <div class="list" id="clist">اختار حاجة بنينة 👆</div>
 <div>
 <div class="inp-row"><input class="inp" id="cname" placeholder="👤 اسمك - محمد" style="flex:1"><input class="inp" id="cphone" placeholder="📱 رقمك" style="flex:1"></div>
@@ -180,23 +256,27 @@ body{background:#FFF6EB;color:#222}
 <div id="gok" style="font-size:12px;color:#2E7D32;margin:6px 0"></div>
 <input class="inp" id="cnote" placeholder="📝 ملاحظة: Mouch 7arr...">
 </div>
-<div class="total"><small>المجموع + التوصيل مجاني 🔥</small><b id="ctotal">0 دت</b></div>
+<div class="total"><small>المجموع + التوصيل مجاني 🔥 | نقاطك: <b id="points-drawer" style="color:#FFD600">0</b></small><b id="ctotal">0 دت</b></div>
 <button class="send" onclick="sendW()">📲 ابعث الطلب واتساب</button>
 </div>
 
 <script>
-let cart=[],gps="",orders=parseInt(localStorage.getItem('elmalek_orders')||'0');
-function addC(n,p){let f=cart.find(i=>i.n===n); if(f) f.q++; else cart.push({n,p,q:1}); upd(); navigator.vibrate&&navigator.vibrate(30)}
-function upd(){let c=cart.reduce((s,i)=>s+i.q,0); document.getElementById('ccount').textContent=c+' منتج'; let fc=document.getElementById('fcount'); if(c>0){fc.style.display='grid'; fc.textContent=c} else fc.style.display='none'; let t=0,h=''; if(!cart.length){document.getElementById('clist').innerHTML='اختار حاجة بنينة من الفوق 👆'; document.getElementById('ctotal').textContent='0 دت'; return} cart.forEach(i=>{h+=`<div class="row"><span>• ${i.n} x${i.q}</span><div class="ctrl"><span style="color:#00C853;font-weight:800;margin:0 6px">${(i.p*i.q).toFixed(1).replace('.0','')} دت</span><button class="minus" onclick="chg('${i.n}',-1)">−</button><button class="plus" onclick="chg('${i.n}',1)">+</button></div></div>`; t+=i.p*i.q}); document.getElementById('clist').innerHTML=h; document.getElementById('ctotal').textContent=t.toFixed(1).replace('.0','')+' دت'}
+let cart=[],gps="",orders=parseInt(localStorage.getItem('elmalek_orders')||'0'),points=parseInt(localStorage.getItem('elmalek_points')||'0');
+function addC(n,p){let f=cart.find(i=>i.n===n); if(f) f.q++; else cart.push({n,p,q:1}); upd(); navigator.vibrate&&navigator.vibrate(30); let btn=event.target; btn.textContent='✅'; setTimeout(()=>btn.textContent='+ أضف',800)}
+function upd(){let c=cart.reduce((s,i)=>s+i.q,0); document.getElementById('ccount').textContent=c+' منتج'; let fc=document.getElementById('fcount'); if(c>0){fc.style.display='grid'; fc.textContent=c} else fc.style.display='none'; let t=0,h=''; if(!cart.length){document.getElementById('clist').innerHTML='اختار حاجة بنينة من الفوق 👆'; document.getElementById('ctotal').textContent='0 دت'; return} cart.forEach(i=>{h+=`<div class="row"><span>• ${i.n} x${i.q}</span><div class="ctrl"><span style="color:#00C853;font-weight:800;margin:0 6px">${(i.p*i.q).toFixed(1).replace('.0','')} دت</span><button class="minus" onclick="chg('${i.n}',-1)">−</button><button class="plus" onclick="chg('${i.n}',1)">+</button></div></div>`; t+=i.p*i.q}); document.getElementById('clist').innerHTML=h; document.getElementById('ctotal').textContent=t.toFixed(1).replace('.0','')+' دت'; document.getElementById('points-drawer').textContent=Math.floor(t)+points}
 function chg(n,d){let f=cart.find(i=>i.n===n); if(!f) return; f.q+=d; if(f.q<=0) cart=cart.filter(i=>i.n!==n); upd()}
 function clearC(){cart=[]; upd()}
 function filt(cat,el){document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active')); el.classList.add('active'); document.querySelectorAll('.card').forEach(x=>{if(cat==='all'||x.dataset.cat===cat) x.style.display='flex'; else x.style.display='none'}); document.querySelectorAll('.sec').forEach(s=>{if(cat==='all') s.style.display='flex'; else s.style.display='none'})}
 function openCart(){document.getElementById('drawer').classList.add('open'); document.getElementById('ov').style.display='block'; updPrev()}
 function closeCart(){document.getElementById('drawer').classList.remove('open'); setTimeout(()=>document.getElementById('ov').style.display='none',300)}
-function updPrev(){let count=parseInt(localStorage.getItem('elmalek_orders')||'0')+1; document.getElementById('oprev').textContent='#EB-'+String(count).padStart(3,'0')}
+function updPrev(){let count=parseInt(localStorage.getItem('elmalek_orders')||'0')+1; document.getElementById('oprev').textContent='#EB-'+String(count).padStart(3,'0'); document.getElementById('loyalty-points').textContent=points; document.getElementById('loyalty-fill').style.width=Math.min((points/50)*100,100)+'%'}
 function getG(){if(!navigator.geolocation){alert('GPS لا يعمل');return} document.getElementById('gok').textContent='⏳ نحدد موقعك...'; navigator.geolocation.getCurrentPosition(p=>{gps=`https://maps.google.com/?q=${p.coords.latitude},${p.coords.longitude}`; document.getElementById('gok').innerHTML=`✅ تم! <a href="${gps}" target="_blank" style="color:#1976D2">شوف موقعك</a>`},()=>{document.getElementById('gok').textContent='❌ فشل'})}
-function sendW(){if(!cart.length){alert('اختار من المنيو!');return} let name=document.getElementById('cname').value.trim(); if(!name){alert('اكتب اسمك 👤'); document.getElementById('cname').focus(); return} let addr=document.getElementById('caddr').value; let phone=document.getElementById('cphone').value; let note=document.getElementById('cnote').value; orders++; localStorage.setItem('elmalek_orders',orders); let num=String(orders).padStart(3,'0'); let id='#EB-'+num; let total=cart.reduce((s,i)=>s+i.p*i.q,0); let msg=`🔥 pizza الملك 👑 - طلب جديد ${id}\n\n👤 الحريف: ${name}\n🆔 رقم الطلب: ${id}\n\n📋 الطلب:\n`; cart.forEach(i=>{msg+=`• ${i.n} x${i.q} - ${i.p*i.q} دت\n`}); msg+=`\n💰 المجموع: ${total} دت (التوصيل مجاني)\n\n`; if(addr) msg+=`📍 العنوان: ${addr}\n`; if(gps) msg+=`📍 GPS: ${gps}\n`; if(phone) msg+=`📱 رقم الحريف: ${phone}\n`; if(note) msg+=`📝 ملاحظة: ${note}\n`; msg+=`\n⏰ ${new Date().toLocaleString('ar-TN')}\n🔢 هذا الطلب رقم ${orders} اليوم`; window.open(`https://wa.me/21656711448?text=${encodeURIComponent(msg)}`,'_blank'); setTimeout(()=>{cart=[]; gps=''; upd(); closeCart(); document.getElementById('cname').value=''; document.getElementById('caddr').value=''; document.getElementById('cphone').value=''; document.getElementById('cnote').value=''; document.getElementById('gok').innerHTML=''; updPrev()},1000)}
+function sendW(){if(!cart.length){alert('اختار من المنيو!');return} let name=document.getElementById('cname').value.trim(); if(!name){alert('اكتب اسمك 👤'); document.getElementById('cname').focus(); return} let addr=document.getElementById('caddr').value; let phone=document.getElementById('cphone').value; let note=document.getElementById('cnote').value; orders++; let total=cart.reduce((s,i)=>s+i.p*i.q,0); points+=Math.floor(total); localStorage.setItem('elmalek_orders',orders); localStorage.setItem('elmalek_points',points); let num=String(orders).padStart(3,'0'); let id='#EB-'+num; let msg=`🔥 pizza الملك 👑 - طلب جديد ${id}\n\n👤 الحريف: ${name}\n🆔 رقم الطلب: ${id}\n🎁 نقاطك: ${points} نقطة\n\n📋 الطلب:\n`; cart.forEach(i=>{msg+=`• ${i.n} x${i.q} - ${i.p*i.q} دت\n`}); msg+=`\n💰 المجموع: ${total} دت (التوصيل مجاني)\n\n`; if(addr) msg+=`📍 العنوان: ${addr}\n`; if(gps) msg+=`📍 GPS: ${gps}\n`; if(phone) msg+=`📱 رقم الحريف: ${phone}\n`; if(note) msg+=`📝 ملاحظة: ${note}\n`; msg+=`\n⏰ ${new Date().toLocaleString('ar-TN')}\n🔢 هذا الطلب رقم ${orders} اليوم`; window.open(`https://wa.me/21656711448?text=${encodeURIComponent(msg)}`,'_blank'); setTimeout(()=>{cart=[]; gps=''; upd(); closeCart(); document.getElementById('cname').value=''; document.getElementById('caddr').value=''; document.getElementById('cphone').value=''; document.getElementById('cnote').value=''; document.getElementById('gok').innerHTML=''; updPrev(); alert(`🎉 مبروك! ربحت ${Math.floor(total)} نقطة! مجموعك: ${points} نقطة`),600},1000)}
+// LIVE TIME SIMULATION
+function updateLive(){let mins=18+Math.floor(Math.random()*12); document.getElementById('live-time').textContent=`يوصل في ${mins} دقيقة`; let d=document.getElementById('drawer-time'); if(d) d.textContent=`${mins} دقيقة`; let q=1+Math.floor(Math.random()*4); let qel=document.getElementById('queue'); if(qel) qel.textContent=`${q} طلبات`; }
+setInterval(updateLive,15000); updateLive();
 updPrev();
 </script>
+<!-- تصميم و برمجة: فوزي الهيدري - pizza الملك 👑 -->
 <script>(function(){var loc=location.href.replace(/#.*$/,"");var ATTR_NAMES=["data-product-id","data-productid","data-product_id","product-id","productid","product_id","data-source-entity-id","source-entity-id","source_entity_id","data-product","data-metadata","data-meta"];var DATASET_KEYS=["productId","productid","product_id","sourceEntityId","sourceentityid","source_entity_id","product","metadata","meta"];function readProductId(value){if(typeof value!=="string"||value.length===0)return null;if(/^[0-9]{6,}$/.test(value))return value;var match=value.match(/(?:product(?:_|-)?id|source(?:_|-)?entity(?:_|-)?id)["'=:\s]+([0-9]{6,})/i);return match?match[1]:null}function extractProductId(start){for(var node=start;node&&node!==document.body;node=node.parentElement){for(var i=0;i<ATTR_NAMES.length;i++){var attrValue=node.getAttribute&&node.getAttribute(ATTR_NAMES[i]);var attrProductId=readProductId(attrValue);if(attrProductId)return attrProductId}var dataset=node.dataset||null;if(dataset){for(var j=0;j<DATASET_KEYS.length;j++){var dataValue=dataset[DATASET_KEYS[j]];var dataProductId=readProductId(dataValue);if(dataProductId)return dataProductId}}}return null}function isInlineMediaSlotElement(node){return !!(node&&node.getAttribute&&node.getAttribute("data-clippy-inline-media-slot")!==null)}function findInlineMediaSlot(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(isInlineMediaSlotElement(node))return node}return null}function readInlineMediaUrl(node){if(!node)return null;return node.getAttribute&&((node.getAttribute("data-clippy-inline-media-url")||node.getAttribute("data-url")||node.getAttribute("data_url")))||node.href||null}function stripHash(url){return String(url).replace(/#.*$/,"")}function urlsMatch(a,b){if(!a||!b)return false;try{return stripHash(new URL(a,loc).href)===stripHash(new URL(b,loc).href)}catch(_){return stripHash(a)===stripHash(b)}}function isFirstPartyReelUrl(value){try{var url=new URL(value,loc);if(url.protocol!=="https:")return false;var host=url.hostname.toLowerCase();var supported=host==="instagram.com"||host.endsWith(".instagram.com")||host==="facebook.com"||host.endsWith(".facebook.com");return supported&&/\/reels?\//i.test(url.pathname)}catch(_){return false}}function isInlineMediaUrlClick(node,href){var slot=findInlineMediaSlot(node);if(!slot)return false;var slotUrl=readInlineMediaUrl(slot);if(slotUrl)return urlsMatch(href,slotUrl);return isFirstPartyReelUrl(href)}function findDataHref(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(node.getAttribute){var href=node.getAttribute("data-href")||node.getAttribute("data-url");if(href)return{href:href,node:node}}}return null}var nativeOpen=window.open;window.open=function(url){if(parent!==window&&typeof url==="string"&&/^https?:\/\//.test(url)){parent.postMessage({type:"ecto:usercontent-link-click",href:url},"*");return null}return nativeOpen?nativeOpen.apply(window,arguments):null};document.addEventListener("click",function(e){var target=e.target instanceof Element?e.target:null;if(!target)return;if(parent===window)return;var a=target.closest?target.closest("a[href]"):null;if(a&&a.href&&/^https?:\/\//.test(a.href)&&a.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(a,a.href))return;var productId=extractProductId(target)||extractProductId(a);if(productId){e.preventDefault();parent.postMessage({type:"ecto-artifact-link-click",productId:productId},"*");return}e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:a.href},"*");return}var dataHref=findDataHref(target);if(dataHref&&/^https?:\/\//.test(dataHref.href)&&dataHref.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(dataHref.node,dataHref.href))return;e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:dataHref.href},"*")}},true)})();</script><script>(function(){var FOCUS_TYPE="ecto:artifact-focus-request";var CLOSE_TYPE="ecto:artifact-close-request";function focusArtifactDocument(){var body=document.body;if(!body)return;try{window.focus();}catch(e){}if(!body.hasAttribute("tabindex"))body.setAttribute("tabindex","-1");try{body.focus({preventScroll:true});}catch(e){try{body.focus();}catch(e2){}}}window.addEventListener("message",function(event){if(event.source!==window.parent)return;var data=event.data;if(!data||typeof data!=="object"||data.type!==FOCUS_TYPE)return;if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",focusArtifactDocument,{once:true});return;}focusArtifactDocument();});window.addEventListener("keydown",function(event){if(event.key!=="Escape")return;window.setTimeout(function(){if(event.defaultPrevented)return;window.parent.postMessage({type:CLOSE_TYPE},"*");},0);});})();</script></body>
 </html>
