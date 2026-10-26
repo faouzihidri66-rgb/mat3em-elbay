@@ -24,134 +24,190 @@
 </style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>مطعم الباي - سوسة</title>
+<title>مطعم الباي 🔥 - سوسة</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui}
-body{background:#0f0f0f;color:white}
-.header{background:linear-gradient(135deg,#ff7a00,#ff9a00);padding:20px;text-align:center}
-.header h1{font-size:24px;margin-bottom:5px}
-.header p{font-size:14px;opacity:0.9}
-.btn-wa{background:#25D366;color:white;padding:10px 20px;border-radius:25px;text-decoration:none;display:inline-block;margin-top:10px;font-weight:bold}
-.menu{padding:15px}
-.cat{color:#ff7a00;font-size:20px;font-weight:bold;margin:20px 0 10px;border-right:4px solid #ff7a00;padding-right:10px}
-.item{background:#1e1e1e;border-radius:15px;padding:15px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;border:1px solid #2a2a2a}
-.item-info h3{font-size:16px;margin-bottom:4px}
-.item-info span{font-size:12px;color:#aaa}
-.item-price{color:#00ff88;font-weight:bold;font-size:16px;margin-top:4px}
-.btn-add{background:#333;color:white;border:none;padding:8px 18px;border-radius:20px;font-weight:bold;cursor:pointer}
-.btn-add.added{background:#00ff88;color:#000}
-.cart-box{background:#1a1a1a;border:2px solid #25D366;border-radius:20px;padding:15px;margin:15px;position:sticky;bottom:10px}
-.cart-title{color:#25D366;font-weight:bold;font-size:18px;margin-bottom:10px}
-.input-field{width:100%;background:#2a2a2a;border:1px solid #444;color:white;padding:12px;border-radius:10px;margin:8px 0;font-size:14px}
-.input-field::placeholder{color:#888}
-.btn-location{background:#3b82f6;color:white;border:none;padding:10px;border-radius:10px;width:100%;margin:5px 0;cursor:pointer;font-weight:bold}
-.order-btn{background:#25D366;color:white;border:none;width:100%;padding:15px;border-radius:15px;font-size:16px;font-weight:bold;margin-top:10px;cursor:pointer}
-.small{font-size:12px;color:#888;margin-top:5px}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Tajawal',system-ui}
+body{background:#0a0a0a;color:#fff;overflow-x:hidden}
+.hero{background:radial-gradient(120% 120% at 50% 0%, #ff7a00 0%, #ff4500 25%, #1a0a00 70%, #000 100%);padding:30px 20px 40px;text-align:center;position:relative}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:40px;background:linear-gradient(transparent,#0a0a0a)}
+.logo{font-size:42px;font-weight:900;letter-spacing:1px;text-shadow:0 0 30px rgba(255,122,0,0.8)}
+.logo span{color:#ffd700}
+.badge{display:inline-block;background:rgba(255,255,255,0.15);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.2);padding:6px 14px;border-radius:20px;font-size:12px;margin:8px 4px}
+.stats{display:flex;justify-content:center;gap:15px;margin-top:15px}
+.stat{background:rgba(0,0,0,0.4);border-radius:15px;padding:10px 18px;min-width:90px;border:1px solid rgba(255,215,0,0.2)}
+.stat b{color:#ffd700;font-size:18px;display:block}
+.stat small{font-size:11px;color:#ccc}
+.menu{padding:15px 15px 180px;max-width:600px;margin:0 auto}
+.cat{display:flex;align-items:center;gap:10px;color:#ffd700;font-size:22px;font-weight:900;margin:30px 0 15px}
+.cat::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,#ffd700,transparent)}
+.item{background:linear-gradient(135deg,#1c1c1e 0%,#121212 100%);border-radius:22px;padding:16px;display:flex;gap:14px;align-items:center;margin-bottom:14px;border:1px solid #2a2a2a;position:relative;overflow:hidden;transition:0.3s}
+.item:hover{border-color:#ff7a00;transform:translateY(-2px);box-shadow:0 10px 30px rgba(255,122,0,0.15)}
+.item::before{content:'';position:absolute;top:0;right:0;width:4px;height:100%;background:linear-gradient(#ff7a00,#ffd700);opacity:0}
+.item:hover::before{opacity:1}
+.img{width:70px;height:70px;border-radius:18px;background:linear-gradient(135deg,#2a2a2a,#1a1a1a);display:flex;align-items:center;justify-content:center;font-size:34px;flex-shrink:0}
+.info{flex:1}
+.info h3{font-size:16px;font-weight:800;margin-bottom:3px}
+.info p{font-size:12px;color:#999;line-height:1.4}
+.price-row{display:flex;align-items:center;gap:8px;margin-top:6px}
+.price{color:#00ff88;font-weight:900;font-size:18px}
+.old{color:#555;text-decoration:line-through;font-size:12px}
+.btn-add{background:linear-gradient(135deg,#fff,#eee);color:#000;border:none;padding:10px 20px;border-radius:14px;font-weight:900;font-size:13px;cursor:pointer;transition:0.2s;box-shadow:0 4px 15px rgba(255,255,255,0.15)}
+.btn-add:active{transform:scale(0.92)}
+.btn-add.added{background:linear-gradient(135deg,#00ff88,#00cc6a);color:#000;box-shadow:0 0 20px rgba(0,255,136,0.5)}
+.cart{background:rgba(18,18,18,0.95);backdrop-filter:blur(20px);border:1px solid rgba(255,122,0,0.3);border-radius:28px 28px 0 0;padding:20px;position:fixed;bottom:0;left:0;right:0;max-width:600px;margin:0 auto;box-shadow:0 -10px 40px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,215,0,0.1) inset}
+.cart-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.cart-head b{font-size:18px}
+.cart-head span{background:#ff7a00;color:#fff;padding:4px 10px;border-radius:12px;font-size:12px;font-weight:800}
+.cart-items{max-height:90px;overflow:auto;font-size:13px;color:#bbb;line-height:1.8;margin-bottom:10px}
+.input{width:100%;background:#222;border:1px solid #333;color:#fff;padding:13px 15px;border-radius:14px;margin:6px 0;font-size:13px;transition:0.2s}
+.input:focus{border-color:#ff7a00;outline:none;background:#2a2a2a}
+.row2{display:flex;gap:8px}
+.btn-gps{flex:1;background:linear-gradient(135deg,#3b82f6,#2563eb);color:white;border:none;padding:12px;border-radius:14px;font-weight:800;font-size:12px;cursor:pointer}
+.btn-clear{flex:1;background:#222;color:#999;border:1px solid #333;padding:12px;border-radius:14px;font-weight:700;font-size:12px}
+.send{width:100%;background:linear-gradient(135deg,#25D366,#128C7E);color:white;border:none;padding:16px;border-radius:16px;font-size:16px;font-weight:900;margin-top:10px;cursor:pointer;box-shadow:0 8px 25px rgba(37,211,102,0.35);transition:0.2s;display:flex;align-items:center;justify-content:center;gap:8px}
+.send:active{transform:scale(0.98)}
+.total-row{display:flex;justify-content:space-between;margin:10px 0;font-weight:900;font-size:16px}
+.total-row .val{color:#ffd700}
+.gps-ok{font-size:11px;color:#00ff88;margin:4px 0}
+.pulse{animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,122,0,0.6)}70%{box-shadow:0 0 0 12px transparent}100%{box-shadow:0 0 0 0 transparent}}
 </style>
 </head>
 <body>
-<div class="header">
-<h1>🍕 مطعم الباي - سوسة</h1>
-<p>📍 سوسة - توصيل سريع | 🕐 10:00 - 23:00 | 📱 56 711 448</p>
-<a class="btn-wa" href="https://wa.me/21656711448">💬 واتساب مباشر</a>
+<div class="hero">
+<div class="logo">مطعم <span>الباي</span> 🔥</div>
+<div style="margin-top:8px">
+<span class="badge">⭐ 4.9 (342 تقييم)</span>
+<span class="badge">🕐 10:00 - 23:00</span>
+<span class="badge">🚚 توصيل 20 دق</span>
+</div>
+<div class="stats">
+<div class="stat"><b>سوسة</b><small>خزامة - سهلول</small></div>
+<div class="stat"><b style="color:#25D366">واتساب</b><small>56 711 448</small></div>
+<div class="stat"><b>🔥</b><small>سخون و بنين</small></div>
+</div>
 </div>
 
 <div class="menu">
-<div class="cat">🍕 بيتزا</div>
+<div class="cat">🍕 البيتزا الفاخرة</div>
 
 <div class="item">
-<div class="item-info"><h3>بيتزا مارغريتا</h3><span>صلصة طماطم، موزاريلا طازجة</span><div class="item-price">12 دت</div></div>
+<div class="img">🍕</div>
+<div class="info"><h3>بيتزا مارغريتا الأصلية</h3><p>صلصة طماطم إيطالية، موزاريلا فاخرة، ريحان طازج</p><div class="price-row"><span class="price">12 دت</span><span class="old">15 دت</span></div></div>
 <button class="btn-add" onclick="addItem('بيتزا مارغريتا',12,this)">+ أضف</button>
 </div>
 
 <div class="item">
-<div class="item-info"><h3>بيتزا ببروني</h3><span>ببروني حار، موزاريلا</span><div class="item-price">18 دت</div></div>
+<div class="img">🌶️</div>
+<div class="info"><h3>بيتزا ببروني حارة 🔥</h3><p>ببروني مدخن، موزاريلا دبل، صوص حار</p><div class="price-row"><span class="price">18 دت</span></div></div>
 <button class="btn-add" onclick="addItem('بيتزا ببروني',18,this)">+ أضف</button>
 </div>
 
-<div class="cat">🌯 مقلوب و شاورما</div>
+<div class="item">
+<div class="img">🍗</div>
+<div class="info"><h3>بيتزا دجاج باربكيو</h3><p>دجاج مشوي، صوص باربكيو، بصل مكرمل</p><div class="price-row"><span class="price">20 دت</span></div></div>
+<button class="btn-add" onclick="addItem('بيتزا دجاج باربكيو',20,this)">+ أضف</button>
+</div>
+
+<div class="cat">🌯 مقلوب الباي الأسطوري</div>
 
 <div class="item">
-<div class="item-info"><h3>مقلوب اسكالوب</h3><span>اسكالوب، سلاطة، مايونيز</span><div class="item-price">9 دت</div></div>
+<div class="img">🥙</div>
+<div class="info"><h3>مقلوب اسكالوب كريمي</h3><p>اسكالوب طري، بطاطا، سلاطة، صوص الباي الخاص</p><div class="price-row"><span class="price">9 دت</span><span class="old">11 دت</span></div></div>
 <button class="btn-add" onclick="addItem('مقلوب اسكالوب',9,this)">+ أضف</button>
 </div>
 
 <div class="item">
-<div class="item-info"><h3>شاورما لحم</h3><span>لحم، سلاطة، صوص خاص</span><div class="item-price">10 دت</div></div>
+<div class="img">🥩</div>
+<div class="info"><h3>شاورما لحم بقر</h3><p>لحم بقري متبل 24س، خضرة، طحينة</p><div class="price-row"><span class="price">10 دت</span></div></div>
 <button class="btn-add" onclick="addItem('شاورما لحم',10,this)">+ أضف</button>
 </div>
 
 <div class="item">
-<div class="item-info"><h3>شاورما دجاج</h3><span>دجاج، ثوم، بطاطا</span><div class="item-price">9 دت</div></div>
+<div class="img">🍔</div>
+<div class="info"><h3>شاورما دجاج ثومية</h3><p>دجاج، ثومية لبنانية، بطاطا مقلية</p><div class="price-row"><span class="price">9 دت</span></div></div>
 <button class="btn-add" onclick="addItem('شاورما دجاج',9,this)">+ أضف</button>
 </div>
 
+<div class="cat">🍟 إضافات</div>
+
+<div class="item">
+<div class="img">🍟</div>
+<div class="info"><h3>بطاطا مقلية XL</h3><p>مقرمشة، ذهبية</p><div class="price-row"><span class="price">4 دت</span></div></div>
+<button class="btn-add" onclick="addItem('بطاطا XL',4,this)">+ أضف</button>
 </div>
 
-<div class="cart-box">
-<div class="cart-title">🛒 طلبك</div>
-<div id="cart-items" style="font-size:14px;color:#ccc">ما اخترت شي توا - اختار من المنيو فوق</div>
-<div style="font-weight:bold;margin-top:10px" id="total">المجموع: 0 دت</div>
+<div class="item">
+<div class="img">🥤</div>
+<div class="info"><h3>مشروب غازي</h3><p>كوكا، فانتا، سبرايت</p><div class="price-row"><span class="price">2.5 دت</span></div></div>
+<button class="btn-add" onclick="addItem('مشروب غازي',2.5,this)">+ أضف</button>
+</div>
 
-<input class="input-field" id="client-address" placeholder="📍 عنوانك - مثال: خزامة، شارع ...">
-<button class="btn-location" onclick="getLocation()">📍 ابعث موقعي الحالي GPS</button>
-<div id="gps-link" class="small"></div>
+</div>
 
-<input class="input-field" id="client-note" placeholder="📝 ملاحظتك - مثال: من غير بصل، حار شوية، ...">
+<div class="cart">
+<div class="cart-head"><b>🛒 سلتك</b><span id="count">0 منتج</span></div>
+<div class="cart-items" id="cart-items">اختار حاجة بنينة من الفوق 👆</div>
+<div class="total-row"><span>المجموع</span><span class="val" id="total">0 دت</span></div>
 
-<input class="input-field" id="client-phone" placeholder="📱 رقمك باش نكلموك">
+<input class="input" id="addr" placeholder="📍 عنوانك - خزامة، سهلول...">
+<div class="row2">
+<button class="btn-gps" onclick="getLocation()">📍 موقعي GPS</button>
+<button class="btn-clear" onclick="clearCart()">🗑️ إفراغ</button>
+</div>
+<div id="gps" class="gps-ok"></div>
+<input class="input" id="phone" placeholder="📱 رقمك 22xxxxxx">
+<input class="input" id="note" placeholder="📝 ملاحظة: من غير بصل، من غير هريسة، حار...">
 
-<button class="order-btn" onclick="sendOrder()">📲 ابعث الطلب على واتساب 56 711 448</button>
-<div class="small" style="text-align:center">الموقع يبعث كل شي واتساب: الطلب + العنوان + الملاحظة + الموقع</div>
+<button class="send pulse" onclick="sendOrder()">
+<span>📲</span> ابعث الطلب واتساب - 56 711 448
+</button>
+<div style="text-align:center;font-size:10px;color:#666;margin-top:8px">يوصلك الموقع + الملاحظة + الرقم واتساب أوتوماتيك</div>
 </div>
 
 <script>
-let cart=[];
-let gpsUrl="";
-function addItem(name,price,btn){
-  let existing = cart.find(i=>i.name===name);
-  if(existing){existing.qty++}else{cart.push({name,price,qty:1})}
-  btn.textContent="✓ تم";btn.classList.add("added");
-  setTimeout(()=>{btn.textContent="+ أضف";btn.classList.remove("added")},1000);
+let cart=[], gpsUrl="";
+function addItem(n,p,b){
+  let f=cart.find(i=>i.n===n); if(f) f.q++; else cart.push({n,p,q:1});
+  b.textContent="✓ تم"; b.classList.add("added");
+  setTimeout(()=>{b.textContent="+ أضف";b.classList.remove("added")},900);
   render();
+  if(navigator.vibrate) navigator.vibrate(40);
 }
 function render(){
-  let div=document.getElementById("cart-items");
-  let total=0;
-  if(cart.length===0){div.innerHTML="ما اخترت شي توا - اختار من المنيو فوق";document.getElementById("total").textContent="المجموع: 0 دت";return}
-  let html="";
-  cart.forEach(i=>{html+=`• ${i.name} x${i.qty} - ${i.price*i.qty} دت<br>`;total+=i.price*i.qty})
-  div.innerHTML=html;
-  document.getElementById("total").textContent=`المجموع: ${total} دت`;
+  let c=cart.reduce((s,i)=>s+i.q,0); document.getElementById("count").textContent=c+" منتج";
+  let t=0, h="";
+  if(cart.length===0){document.getElementById("cart-items").innerHTML="اختار حاجة بنينة من الفوق 👆"; document.getElementById("total").textContent="0 دت"; return}
+  cart.forEach(i=>{h+=`• ${i.n} x${i.q} - ${i.p*i.q} دت<br>`; t+=i.p*i.q});
+  document.getElementById("cart-items").innerHTML=h;
+  document.getElementById("total").textContent=t+" دت";
 }
+function clearCart(){cart=[]; render();}
 function getLocation(){
-  if(!navigator.geolocation){alert("GPS لا يعمل في هذا المتصفح");return}
-  document.getElementById("gps-link").textContent="⏳ جاري تحديد موقعك...";
+  if(!navigator.geolocation){alert("GPS لا يعمل");return}
+  document.getElementById("gps").textContent="⏳ نحدد في موقعك...";
   navigator.geolocation.getCurrentPosition(pos=>{
-    let lat=pos.coords.latitude;let lon=pos.coords.longitude;
-    gpsUrl=`https://maps.google.com/?q=${lat},${lon}`;
-    document.getElementById("gps-link").innerHTML=`✅ موقعك: <a href="${gpsUrl}" target="_blank" style="color:#3b82f6">اضغط هنا تشوفو على الخريطة</a>`;
-  },err=>{
-    document.getElementById("gps-link").textContent="❌ فشل تحديد الموقع، اكتب عنوانك يدويا";
-  })
+    gpsUrl=`https://maps.google.com/?q=${pos.coords.latitude},${pos.coords.longitude}`;
+    document.getElementById("gps").innerHTML=`✅ تم! <a href="${gpsUrl}" target="_blank" style="color:#3b82f6">شوف موقعك على الخريطة</a>`;
+  },()=>{document.getElementById("gps").textContent="❌ فشل، اكتب عنوانك يدوي";})
 }
 function sendOrder(){
-  if(cart.length===0){alert("اختار حاجة من المنيو أولا!");return}
-  let address=document.getElementById("client-address").value;
-  let note=document.getElementById("client-note").value;
-  let phone=document.getElementById("client-phone").value;
-  let total=cart.reduce((s,i)=>s+i.price*i.qty,0);
-  let msg=`🔥 السلام مطعم الباي
-نحب نعدي كومند:
+  if(cart.length===0){alert("اختار من المنيو أولا!");return}
+  let addr=document.getElementById("addr").value;
+  let phone=document.getElementById("phone").value;
+  let note=document.getElementById("note").value;
+  let total=cart.reduce((s,i)=>s+i.p*i.q,0);
+  let msg=`🔥 السلام مطعم الباي - طلب جديد
 
 `;
-  cart.forEach(i=>{msg+=`• ${i.name} x${i.qty} - ${i.price*i.qty}دت
+  cart.forEach(i=>{msg+=`• ${i.n} x${i.q} - ${i.p*i.q} دت
 `});
   msg+=`
-المجموع: ${total}دت
+💰 المجموع: ${total} دت
 
 `;
-  if(address) msg+=`📍 العنوان: ${address}
+  if(addr) msg+=`📍 العنوان: ${addr}
 `;
   if(gpsUrl) msg+=`📍 موقعي GPS: ${gpsUrl}
 `;
@@ -159,12 +215,9 @@ function sendOrder(){
 `;
   if(note) msg+=`📝 ملاحظة: ${note}
 `;
-  else msg+=`📝 ملاحظة: 
-`;
   msg+=`
-العنوان: `;
-  let url=`https://wa.me/21656711448?text=${encodeURIComponent(msg)}`;
-  window.open(url,"_blank");
+⏰ ${new Date().toLocaleString('ar-TN')}`;
+  window.open(`https://wa.me/21656711448?text=${encodeURIComponent(msg)}`,"_blank");
 }
 </script>
 <script>(function(){var loc=location.href.replace(/#.*$/,"");var ATTR_NAMES=["data-product-id","data-productid","data-product_id","product-id","productid","product_id","data-source-entity-id","source-entity-id","source_entity_id","data-product","data-metadata","data-meta"];var DATASET_KEYS=["productId","productid","product_id","sourceEntityId","sourceentityid","source_entity_id","product","metadata","meta"];function readProductId(value){if(typeof value!=="string"||value.length===0)return null;if(/^[0-9]{6,}$/.test(value))return value;var match=value.match(/(?:product(?:_|-)?id|source(?:_|-)?entity(?:_|-)?id)["'=:\s]+([0-9]{6,})/i);return match?match[1]:null}function extractProductId(start){for(var node=start;node&&node!==document.body;node=node.parentElement){for(var i=0;i<ATTR_NAMES.length;i++){var attrValue=node.getAttribute&&node.getAttribute(ATTR_NAMES[i]);var attrProductId=readProductId(attrValue);if(attrProductId)return attrProductId}var dataset=node.dataset||null;if(dataset){for(var j=0;j<DATASET_KEYS.length;j++){var dataValue=dataset[DATASET_KEYS[j]];var dataProductId=readProductId(dataValue);if(dataProductId)return dataProductId}}}return null}function isInlineMediaSlotElement(node){return !!(node&&node.getAttribute&&node.getAttribute("data-clippy-inline-media-slot")!==null)}function findInlineMediaSlot(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(isInlineMediaSlotElement(node))return node}return null}function readInlineMediaUrl(node){if(!node)return null;return node.getAttribute&&((node.getAttribute("data-clippy-inline-media-url")||node.getAttribute("data-url")||node.getAttribute("data_url")))||node.href||null}function stripHash(url){return String(url).replace(/#.*$/,"")}function urlsMatch(a,b){if(!a||!b)return false;try{return stripHash(new URL(a,loc).href)===stripHash(new URL(b,loc).href)}catch(_){return stripHash(a)===stripHash(b)}}function isFirstPartyReelUrl(value){try{var url=new URL(value,loc);if(url.protocol!=="https:")return false;var host=url.hostname.toLowerCase();var supported=host==="instagram.com"||host.endsWith(".instagram.com")||host==="facebook.com"||host.endsWith(".facebook.com");return supported&&/\/reels?\//i.test(url.pathname)}catch(_){return false}}function isInlineMediaUrlClick(node,href){var slot=findInlineMediaSlot(node);if(!slot)return false;var slotUrl=readInlineMediaUrl(slot);if(slotUrl)return urlsMatch(href,slotUrl);return isFirstPartyReelUrl(href)}function findDataHref(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(node.getAttribute){var href=node.getAttribute("data-href")||node.getAttribute("data-url");if(href)return{href:href,node:node}}}return null}var nativeOpen=window.open;window.open=function(url){if(parent!==window&&typeof url==="string"&&/^https?:\/\//.test(url)){parent.postMessage({type:"ecto:usercontent-link-click",href:url},"*");return null}return nativeOpen?nativeOpen.apply(window,arguments):null};document.addEventListener("click",function(e){var target=e.target instanceof Element?e.target:null;if(!target)return;if(parent===window)return;var a=target.closest?target.closest("a[href]"):null;if(a&&a.href&&/^https?:\/\//.test(a.href)&&a.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(a,a.href))return;var productId=extractProductId(target)||extractProductId(a);if(productId){e.preventDefault();parent.postMessage({type:"ecto-artifact-link-click",productId:productId},"*");return}e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:a.href},"*");return}var dataHref=findDataHref(target);if(dataHref&&/^https?:\/\//.test(dataHref.href)&&dataHref.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(dataHref.node,dataHref.href))return;e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:dataHref.href},"*")}},true)})();</script><script>(function(){var FOCUS_TYPE="ecto:artifact-focus-request";var CLOSE_TYPE="ecto:artifact-close-request";function focusArtifactDocument(){var body=document.body;if(!body)return;try{window.focus();}catch(e){}if(!body.hasAttribute("tabindex"))body.setAttribute("tabindex","-1");try{body.focus({preventScroll:true});}catch(e){try{body.focus();}catch(e2){}}}window.addEventListener("message",function(event){if(event.source!==window.parent)return;var data=event.data;if(!data||typeof data!=="object"||data.type!==FOCUS_TYPE)return;if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",focusArtifactDocument,{once:true});return;}focusArtifactDocument();});window.addEventListener("keydown",function(event){if(event.key!=="Escape")return;window.setTimeout(function(){if(event.defaultPrevented)return;window.parent.postMessage({type:CLOSE_TYPE},"*");},0);});})();</script></body>
