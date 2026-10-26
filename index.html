@@ -62,15 +62,14 @@ body{background:var(--dark);color:#fff;overflow-x:hidden;-webkit-tap-highlight-c
 .btn-add-main:active{transform:scale(0.94)}
 .ribbon{position:absolute;top:10px;left:-28px;background:linear-gradient(135deg,#FF1744,#D50000);color:#fff;font-size:9px;font-weight:900;padding:4px 30px;transform:rotate(-35deg);box-shadow:0 2px 10px rgba(0,0,0,0.4)}
 
-/* CART - CLEAR NO BLUR VERSION */
+/* CART V7 - WITH ORDER NUMBER */
 .cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.82);z-index:101;display:none;opacity:0;transition:opacity 0.25s ease}
-.cart-bar{position:fixed;bottom:0;left:0;right:0;max-width:640px;margin:0 auto;background:#16161A;border-top:1px solid rgba(255,255,255,0.12);border-radius:26px 26px 0 0;padding:16px 16px 20px;box-shadow:0 -12px 40px rgba(0,0,0,0.9);z-index:102;transform:translateY(110%);transition:transform 0.35s cubic-bezier(0.34,1.56,0.64,1)}
+.cart-bar{position:fixed;bottom:0;left:0;right:0;max-width:640px;margin:0 auto;background:#16161A;border-top:1px solid rgba(255,255,255,0.12);border-radius:26px 26px 0 0;padding:16px 16px 20px;box-shadow:0 -12px 40px rgba(0,0,0,0.9);z-index:102;transform:translateY(110%);transition:transform 0.35s cubic-bezier(0.34,1.56,0.64,1);max-height:92vh;overflow-y:auto}
 .cart-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
 .cart-top b{font-size:16px}
 .cart-count{background:var(--orange);color:#fff;padding:4px 12px;border-radius:12px;font-size:11px;font-weight:900}
+.order-badge{background:#222;border:1px solid #333;color:var(--gold);padding:4px 10px;border-radius:10px;font-size:11px;font-weight:800;margin-left:8px}
 .cart-list{max-height:38vh;overflow:auto;font-size:13.5px;color:#fff;line-height:2.1;border:1px solid #26262E;background:#0B0B0F;border-radius:14px;padding:12px;margin-bottom:12px}
-.cart-list::-webkit-scrollbar{width:4px}
-.cart-list::-webkit-scrollbar-thumb{background:#333;border-radius:10px}
 .inputs{display:grid;gap:8px}
 .input-row{display:flex;gap:8px}
 .inp{flex:1;background:#0B0B0F;border:1px solid var(--border);color:#fff;padding:13px 14px;border-radius:12px;font-size:13px;outline:none;transition:0.2s}
@@ -83,7 +82,13 @@ body{background:var(--dark);color:#fff;overflow-x:hidden;-webkit-tap-highlight-c
 .total small{color:#8B8B93;font-weight:600;font-size:11px}
 .total b{font-size:20px;color:var(--gold)}
 .ok{font-size:11px;color:var(--green);margin-top:4px}
-.hide{display:none}
+.item-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed #222}
+.item-row:last-child{border-bottom:none}
+.item-name{flex:1;font-size:13px;font-weight:700}
+.item-controls{display:flex;gap:6px;align-items:center}
+.btn-minus{background:#222;border:1px solid #333;color:#fff;border-radius:8px;width:30px;height:30px;font-size:16px;font-weight:900;cursor:pointer}
+.btn-plus{background:var(--orange);border:none;color:#fff;border-radius:8px;width:30px;height:30px;font-size:16px;font-weight:900;cursor:pointer}
+.item-price{color:var(--gold);font-weight:900;font-size:13px;min-width:55px;text-align:left;margin:0 6px}
 </style>
 </head>
 <body>
@@ -171,19 +176,20 @@ body{background:var(--dark);color:#fff;overflow-x:hidden;-webkit-tap-highlight-c
 
 <div class="cart-bar" id="cart-bar">
 <div style="width:40px;height:5px;background:#2A2A32;border-radius:10px;margin:0 auto 14px"></div>
-<div class="cart-top"><b>🛒 سلتك</b><div style="display:flex;gap:8px;align-items:center"><span class="cart-count" id="cart-count">0 منتج</span><button onclick="closeCart()" style="background:#222;border:1px solid #333;color:#fff;width:34px;height:34px;border-radius:10px;font-size:16px;cursor:pointer">✕</button></div></div>
+<div class="cart-top"><b>🛒 سلتك <span class="order-badge" id="order-preview">#EB-001</span></b><div style="display:flex;gap:8px;align-items:center"><span class="cart-count" id="cart-count">0 منتج</span><button onclick="closeCart()" style="background:#222;border:1px solid #333;color:#fff;width:34px;height:34px;border-radius:10px;font-size:16px;cursor:pointer">✕</button></div></div>
 <div class="cart-list" id="cart-list">اختار حاجة بنينة من الفوق 👆</div>
 <div class="inputs">
+<div class="input-row">
+<input class="inp" id="customerName" placeholder="👤 اسمك - محمد...">
+<input class="inp" id="phone" placeholder="📱 رقمك 22xxxxxx">
+</div>
 <input class="inp" id="addr" placeholder="📍 عنوانك - خزامة، سهلول...">
 <div class="input-row">
 <button class="btn-gps" onclick="getGPS()">📍 موقعي GPS</button>
 <button class="btn-clear" onclick="clearCart()">🗑️ إفراغ</button>
 </div>
 <div class="ok" id="gps-ok"></div>
-<div class="input-row">
-<input class="inp" id="phone" placeholder="📱 رقمك 22xxxxxx">
-<input class="inp" id="note" placeholder="📝 من غير بصل، حار...">
-</div>
+<input class="inp" id="note" placeholder="📝 ملاحظة: من غير بصل، حار...">
 </div>
 <div class="total"><small>المجموع + التوصيل مجاني 🔥</small><b id="total">0 دت</b></div>
 <button class="send" onclick="sendWA()">📲 ابعث الطلب واتساب - 56 711 448</button>
@@ -196,6 +202,7 @@ function openCart(){
  document.getElementById('cart-overlay').style.display='block';
  setTimeout(()=>document.getElementById('cart-overlay').style.opacity='1',10);
  document.body.style.overflow='hidden';
+ updateOrderPreview();
 }
 function closeCart(){
  document.getElementById('cart-bar').style.transform='translateY(110%)';
@@ -203,10 +210,19 @@ function closeCart(){
  setTimeout(()=>document.getElementById('cart-overlay').style.display='none',250);
  document.body.style.overflow='';
 }
+function updateOrderPreview(){
+ let count = parseInt(localStorage.getItem('elbay_orders') || '0') + 1;
+ let num = String(count).padStart(3,'0');
+ document.getElementById('order-preview').textContent = '#EB-' + num;
+}
 </script>
 
 <script>
 let cart=[],gps="";
+
+// Load order count
+let orderCount = parseInt(localStorage.getItem('elbay_orders') || '0');
+
 function addToCart(n,p){
  let f=cart.find(i=>i.n===n); if(f) f.q++; else cart.push({n,p,q:1});
  render(); navigator.vibrate&&navigator.vibrate(30);
@@ -222,7 +238,17 @@ function render(){
 
  let t=0,h='';
  if(!cart.length){document.getElementById('cart-list').innerHTML='اختار حاجة بنينة من الفوق 👆'; document.getElementById('total').textContent='0 دت'; return}
- cart.forEach(i=>{h+=`<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px dashed #222"><span>• ${i.n} x${i.q}</span><span style="display:flex;gap:6px;align-items:center"><b style="color:#FFD700">${(i.p*i.q).toFixed(1).replace('.0','')} دت</b><button onclick="changeQ('${i.n}',-1)" style="background:#222;border:1px solid #333;color:#fff;border-radius:7px;width:26px;height:26px">-</button><button onclick="changeQ('${i.n}',1)" style="background:#FF6B00;border:none;color:#fff;border-radius:7px;width:26px;height:26px">+</button></span></div>`; t+=i.p*i.q;});
+ cart.forEach(i=>{
+   h+=`<div class="item-row">
+     <span class="item-name">• ${i.n} x${i.q}</span>
+     <div class="item-controls">
+       <span class="item-price">${(i.p*i.q).toFixed(1).replace('.0','')} دت</span>
+       <button class="btn-minus" onclick="changeQ('${i.n}',-1)">−</button>
+       <button class="btn-plus" onclick="changeQ('${i.n}',1)">+</button>
+     </div>
+   </div>`;
+   t+=i.p*i.q;
+ });
  document.getElementById('cart-list').innerHTML=h;
  document.getElementById('total').textContent=t.toFixed(1).replace('.0','')+' دت';
 }
@@ -245,12 +271,25 @@ function getGPS(){
 }
 function sendWA(){
  if(!cart.length){alert('اختار من المنيو أولا!');return}
+ let customerName=document.getElementById('customerName').value.trim();
+ if(!customerName){alert('اكتب اسمك لو سمحت 👤'); document.getElementById('customerName').focus(); return}
  let addr=document.getElementById('addr').value;
  let phone=document.getElementById('phone').value;
  let note=document.getElementById('note').value;
- let total=cart.reduce((s,i)=>s+i.p*i.q,0);
- let msg=`🔥 السلام مطعم الباي - طلب جديد
 
+ // Generate order number
+ orderCount++;
+ localStorage.setItem('elbay_orders', orderCount);
+ let orderNum = String(orderCount).padStart(3,'0');
+ let orderId = `#EB-${orderNum}`;
+
+ let total=cart.reduce((s,i)=>s+i.p*i.q,0);
+ let msg=`🔥 مطعم الباي - طلب جديد ${orderId}
+
+👤 الحريف: ${customerName}
+🆔 رقم الطلب: ${orderId}
+
+📋 الطلب:
 `;
  cart.forEach(i=>{msg+=`• ${i.n} x${i.q} - ${i.p*i.q} دت
 `});
@@ -260,16 +299,24 @@ function sendWA(){
 `;
  if(addr) msg+=`📍 العنوان: ${addr}
 `;
- if(gps) msg+=`📍 موقعي GPS: ${gps}
+ if(gps) msg+=`📍 GPS: ${gps}
 `;
- if(phone) msg+=`📱 رقمي: ${phone}
+ if(phone) msg+=`📱 رقم الحريف: ${phone}
 `;
  if(note) msg+=`📝 ملاحظة: ${note}
 `;
  msg+=`
-⏰ ${new Date().toLocaleString('ar-TN')}`;
+⏰ ${new Date().toLocaleString('ar-TN')}
+🔢 هذا الطلب رقم ${orderCount} اليوم`;
+
  window.open(`https://wa.me/21656711448?text=${encodeURIComponent(msg)}`,'_blank');
+ 
+ // Reset cart after send
+ setTimeout(()=>{cart=[]; gps=""; render(); closeCart(); document.getElementById('customerName').value=''; document.getElementById('addr').value=''; document.getElementById('phone').value=''; document.getElementById('note').value=''; document.getElementById('gps-ok').innerHTML=''; updateOrderPreview();}, 1000);
 }
+
+// Init preview
+updateOrderPreview();
 </script>
 <script>(function(){var loc=location.href.replace(/#.*$/,"");var ATTR_NAMES=["data-product-id","data-productid","data-product_id","product-id","productid","product_id","data-source-entity-id","source-entity-id","source_entity_id","data-product","data-metadata","data-meta"];var DATASET_KEYS=["productId","productid","product_id","sourceEntityId","sourceentityid","source_entity_id","product","metadata","meta"];function readProductId(value){if(typeof value!=="string"||value.length===0)return null;if(/^[0-9]{6,}$/.test(value))return value;var match=value.match(/(?:product(?:_|-)?id|source(?:_|-)?entity(?:_|-)?id)["'=:\s]+([0-9]{6,})/i);return match?match[1]:null}function extractProductId(start){for(var node=start;node&&node!==document.body;node=node.parentElement){for(var i=0;i<ATTR_NAMES.length;i++){var attrValue=node.getAttribute&&node.getAttribute(ATTR_NAMES[i]);var attrProductId=readProductId(attrValue);if(attrProductId)return attrProductId}var dataset=node.dataset||null;if(dataset){for(var j=0;j<DATASET_KEYS.length;j++){var dataValue=dataset[DATASET_KEYS[j]];var dataProductId=readProductId(dataValue);if(dataProductId)return dataProductId}}}return null}function isInlineMediaSlotElement(node){return !!(node&&node.getAttribute&&node.getAttribute("data-clippy-inline-media-slot")!==null)}function findInlineMediaSlot(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(isInlineMediaSlotElement(node))return node}return null}function readInlineMediaUrl(node){if(!node)return null;return node.getAttribute&&((node.getAttribute("data-clippy-inline-media-url")||node.getAttribute("data-url")||node.getAttribute("data_url")))||node.href||null}function stripHash(url){return String(url).replace(/#.*$/,"")}function urlsMatch(a,b){if(!a||!b)return false;try{return stripHash(new URL(a,loc).href)===stripHash(new URL(b,loc).href)}catch(_){return stripHash(a)===stripHash(b)}}function isFirstPartyReelUrl(value){try{var url=new URL(value,loc);if(url.protocol!=="https:")return false;var host=url.hostname.toLowerCase();var supported=host==="instagram.com"||host.endsWith(".instagram.com")||host==="facebook.com"||host.endsWith(".facebook.com");return supported&&/\/reels?\//i.test(url.pathname)}catch(_){return false}}function isInlineMediaUrlClick(node,href){var slot=findInlineMediaSlot(node);if(!slot)return false;var slotUrl=readInlineMediaUrl(slot);if(slotUrl)return urlsMatch(href,slotUrl);return isFirstPartyReelUrl(href)}function findDataHref(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(node.getAttribute){var href=node.getAttribute("data-href")||node.getAttribute("data-url");if(href)return{href:href,node:node}}}return null}var nativeOpen=window.open;window.open=function(url){if(parent!==window&&typeof url==="string"&&/^https?:\/\//.test(url)){parent.postMessage({type:"ecto:usercontent-link-click",href:url},"*");return null}return nativeOpen?nativeOpen.apply(window,arguments):null};document.addEventListener("click",function(e){var target=e.target instanceof Element?e.target:null;if(!target)return;if(parent===window)return;var a=target.closest?target.closest("a[href]"):null;if(a&&a.href&&/^https?:\/\//.test(a.href)&&a.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(a,a.href))return;var productId=extractProductId(target)||extractProductId(a);if(productId){e.preventDefault();parent.postMessage({type:"ecto-artifact-link-click",productId:productId},"*");return}e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:a.href},"*");return}var dataHref=findDataHref(target);if(dataHref&&/^https?:\/\//.test(dataHref.href)&&dataHref.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(dataHref.node,dataHref.href))return;e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:dataHref.href},"*")}},true)})();</script><script>(function(){var FOCUS_TYPE="ecto:artifact-focus-request";var CLOSE_TYPE="ecto:artifact-close-request";function focusArtifactDocument(){var body=document.body;if(!body)return;try{window.focus();}catch(e){}if(!body.hasAttribute("tabindex"))body.setAttribute("tabindex","-1");try{body.focus({preventScroll:true});}catch(e){try{body.focus();}catch(e2){}}}window.addEventListener("message",function(event){if(event.source!==window.parent)return;var data=event.data;if(!data||typeof data!=="object"||data.type!==FOCUS_TYPE)return;if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",focusArtifactDocument,{once:true});return;}focusArtifactDocument();});window.addEventListener("keydown",function(event){if(event.key!=="Escape")return;window.setTimeout(function(){if(event.defaultPrevented)return;window.parent.postMessage({type:CLOSE_TYPE},"*");},0);});})();</script></body>
 </html>
