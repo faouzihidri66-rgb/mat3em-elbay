@@ -30,7 +30,7 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Tajawal',sans-serif}
 :root{--gold:#FFD700;--orange:#FF6B00;--green:#00E676;--dark:#0B0B0F;--card:#16161A;--border:#26262E}
 body{background:var(--dark);color:#fff;overflow-x:hidden;-webkit-tap-highlight-color:transparent}
-.header{position:sticky;top:0;z-index:99;background:rgba(11,11,15,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:12px 16px;display:flex;justify-content:space-between;align-items:center}
+.header{position:sticky;top:0;z-index:99;background:rgba(11,11,15,0.92);border-bottom:1px solid var(--border);padding:12px 16px;display:flex;justify-content:space-between;align-items:center}
 .logo{font-weight:900;font-size:20px;display:flex;align-items:center;gap:8px}
 .logo i{width:36px;height:36px;background:linear-gradient(135deg,var(--orange),var(--gold));border-radius:10px;display:grid;place-items:center;font-style:normal}
 .badge-live{display:flex;align-items:center;gap:6px;background:rgba(0,230,118,0.12);border:1px solid rgba(0,230,118,0.3);color:var(--green);padding:6px 12px;border-radius:20px;font-size:11px;font-weight:800}
@@ -44,47 +44,45 @@ body{background:var(--dark);color:#fff;overflow-x:hidden;-webkit-tap-highlight-c
 .hs{flex:1;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:12px;text-align:center}
 .hs b{display:block;font-size:16px}
 .hs small{color:#8B8B93;font-size:10px}
-.cats{display:flex;gap:8px;overflow:auto;padding:12px 16px;scrollbar-width:none;position:sticky;top:56px;z-index:90;background:rgba(11,11,15,0.85);backdrop-filter:blur(20px)}
+.cats{display:flex;gap:8px;overflow:auto;padding:12px 16px;scrollbar-width:none;position:sticky;top:56px;z-index:90;background:rgba(11,11,15,0.92)}
 .cats::-webkit-scrollbar{display:none}
 .chip{white-space:nowrap;padding:10px 16px;border-radius:22px;border:1px solid var(--border);background:var(--card);font-size:13px;font-weight:700;cursor:pointer;transition:0.2s}
 .chip.active{background:linear-gradient(135deg,#fff,#EAEAEA);color:#000;border-color:#fff;box-shadow:0 4px 18px rgba(255,255,255,0.2)}
 .menu{padding:8px 12px 100px;max-width:640px;margin:0 auto}
 .section-title{font-size:18px;font-weight:900;margin:22px 6px 12px;display:flex;align-items:center;gap:8px}
 .card{background:linear-gradient(180deg,#1C1C20 0%,#141418 100%);border:1px solid var(--border);border-radius:20px;padding:12px;display:flex;gap:12px;margin-bottom:12px;position:relative;overflow:hidden;transition:0.25s}
-.card:hover{transform:translateY(-2px);border-color:rgba(255,107,0,0.35);box-shadow:0 12px 32px rgba(0,0,0,0.5)}
 .card-img{width:84px;height:84px;border-radius:16px;background:#222;display:grid;place-items:center;font-size:36px;flex-shrink:0;position:relative;overflow:hidden}
-.card-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,0.45))}
 .card-info{flex:1;min-width:0}
 .card-info h3{font-size:14.5px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .card-info p{color:#8B8B93;font-size:11.5px;margin:3px 0 8px;line-height:1.4;height:32px;overflow:hidden}
 .card-bottom{display:flex;align-items:center;justify-content:space-between}
 .price{font-weight:900;font-size:17px;color:#fff}
 .price small{color:var(--green);font-size:12px}
-.old-price{color:#555;text-decoration:line-through;font-size:11px;margin-right:6px}
-.qty-ctrl{display:flex;align-items:center;gap:0;background:#0B0B0F;border:1px solid var(--border);border-radius:12px;overflow:hidden}
-.qbtn{width:32px;height:32px;background:transparent;border:none;color:#fff;font-size:18px;font-weight:800;cursor:pointer}
-.qbtn:active{background:var(--card)}
-.qnum{min-width:26px;text-align:center;font-weight:800;font-size:13px}
 .btn-add-main{background:linear-gradient(135deg,var(--orange),#FF8C00);color:#fff;border:none;padding:9px 18px;border-radius:12px;font-weight:900;font-size:12.5px;cursor:pointer;box-shadow:0 6px 18px rgba(255,107,0,0.35);transition:0.2s}
 .btn-add-main:active{transform:scale(0.94)}
 .ribbon{position:absolute;top:10px;left:-28px;background:linear-gradient(135deg,#FF1744,#D50000);color:#fff;font-size:9px;font-weight:900;padding:4px 30px;transform:rotate(-35deg);box-shadow:0 2px 10px rgba(0,0,0,0.4)}
-.cart-bar{position:fixed;bottom:0;left:0;right:0;max-width:640px;margin:0 auto;background:rgba(22,22,26,0.96);backdrop-filter:blur(24px);border-top:1px solid rgba(255,255,255,0.08);border-radius:26px 26px 0 0;padding:16px;box-shadow:0 -12px 40px rgba(0,0,0,0.8);z-index:100}
-.cart-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
-.cart-top b{font-size:15px}
-.cart-count{background:var(--orange);color:#fff;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:900}
-.cart-list{max-height:86px;overflow:auto;font-size:12.5px;color:#B8B8C0;line-height:1.9;border-bottom:1px dashed #2A2A32;padding-bottom:8px;margin-bottom:10px}
+
+/* CART - CLEAR NO BLUR VERSION */
+.cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.82);z-index:101;display:none;opacity:0;transition:opacity 0.25s ease}
+.cart-bar{position:fixed;bottom:0;left:0;right:0;max-width:640px;margin:0 auto;background:#16161A;border-top:1px solid rgba(255,255,255,0.12);border-radius:26px 26px 0 0;padding:16px 16px 20px;box-shadow:0 -12px 40px rgba(0,0,0,0.9);z-index:102;transform:translateY(110%);transition:transform 0.35s cubic-bezier(0.34,1.56,0.64,1)}
+.cart-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.cart-top b{font-size:16px}
+.cart-count{background:var(--orange);color:#fff;padding:4px 12px;border-radius:12px;font-size:11px;font-weight:900}
+.cart-list{max-height:38vh;overflow:auto;font-size:13.5px;color:#fff;line-height:2.1;border:1px solid #26262E;background:#0B0B0F;border-radius:14px;padding:12px;margin-bottom:12px}
+.cart-list::-webkit-scrollbar{width:4px}
+.cart-list::-webkit-scrollbar-thumb{background:#333;border-radius:10px}
 .inputs{display:grid;gap:8px}
 .input-row{display:flex;gap:8px}
-.inp{flex:1;background:#0B0B0F;border:1px solid var(--border);color:#fff;padding:12px 13px;border-radius:12px;font-size:12.5px;outline:none;transition:0.2s}
+.inp{flex:1;background:#0B0B0F;border:1px solid var(--border);color:#fff;padding:13px 14px;border-radius:12px;font-size:13px;outline:none;transition:0.2s}
 .inp:focus{border-color:var(--orange);background:#15151A}
-.btn-gps{background:linear-gradient(135deg,#2F80ED,#1E5BBF);color:#fff;border:none;padding:12px;border-radius:12px;font-weight:800;font-size:11.5px;cursor:pointer;flex:1}
-.btn-clear{background:transparent;border:1px solid var(--border);color:#8B8B93;padding:12px;border-radius:12px;font-size:11.5px;flex:1}
-.send{margin-top:10px;width:100%;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;border:none;padding:15px;border-radius:14px;font-weight:900;font-size:14.5px;display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;box-shadow:0 10px 26px rgba(37,211,102,0.35);transition:0.2s}
+.btn-gps{background:linear-gradient(135deg,#2F80ED,#1E5BBF);color:#fff;border:none;padding:13px;border-radius:12px;font-weight:800;font-size:12px;cursor:pointer;flex:1}
+.btn-clear{background:transparent;border:1px solid var(--border);color:#8B8B93;padding:13px;border-radius:12px;font-size:12px;flex:1}
+.send{margin-top:12px;width:100%;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;border:none;padding:16px;border-radius:14px;font-weight:900;font-size:15px;display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;box-shadow:0 10px 26px rgba(37,211,102,0.35);transition:0.2s}
 .send:active{transform:scale(0.98)}
-.total{margin-top:10px;display:flex;justify-content:space-between;align-items:center;font-weight:900}
+.total{margin-top:12px;display:flex;justify-content:space-between;align-items:center;font-weight:900;background:#0B0B0F;border:1px solid var(--border);padding:12px 14px;border-radius:12px}
 .total small{color:#8B8B93;font-weight:600;font-size:11px}
-.total b{font-size:18px;color:var(--gold)}
-.ok{font-size:10.5px;color:var(--green);margin-top:4px}
+.total b{font-size:20px;color:var(--gold)}
+.ok{font-size:11px;color:var(--green);margin-top:4px}
 .hide{display:none}
 </style>
 </head>
@@ -96,65 +94,59 @@ body{background:var(--dark);color:#fff;overflow-x:hidden;-webkit-tap-highlight-c
 </div>
 
 <div class="hero">
-<h1>أبن و أسخن<br><span>أكلة في سوسة 🔥</span></h1>
+<h1>أبن و أسخن <br><span>اكلة في سوسة 🔥</span></h1>
 <p>توصيل سريع 20 دقيقة • دفع عند الاستلام • خزامة - سهلول - القنطاوي - حمام سوسة</p>
 <div class="hero-stats">
-<div class="hs"><b>⭐ 4.9</b><small>342 تقييم</small></div>
+<div class="hs"><b>4.9 ⭐</b><small>342 تقييم</small></div>
 <div class="hs"><b>🚚 20 دق</b><small>توصيل سريع</small></div>
 <div class="hs"><b>🔥 100%</b><small>سخون و بنين</small></div>
 </div>
 </div>
 
-<div class="cats" id="cats">
+<div class="cats">
 <div class="chip active" onclick="filterCat('all',this)">🔥 الكل</div>
 <div class="chip" onclick="filterCat('pizza',this)">🍕 بيتزا</div>
 <div class="chip" onclick="filterCat('makloub',this)">🌯 مقلوب</div>
-<div class="chip" onclick="filterCat('chawarma',this)">🥙 شاورما</div>
+<div class="chip" onclick="filterCat('shawarma',this)">🥙 شاورما</div>
 <div class="chip" onclick="filterCat('extra',this)">🍟 إضافات</div>
 </div>
 
-<div class="menu" id="menu">
-
+<div class="menu">
 <div class="section-title">🍕 بيتزا فاخرة</div>
 
 <div class="card" data-cat="pizza">
 <div class="ribbon">الأكثر مبيعا</div>
 <div class="card-img">🍕</div>
-<div class="card-info"><h3>مارغريتا الأصلية</h3><p>صلصة إيطالية، موزاريلا فاخرة، ريحان طازج، زيت زيتون</p><div class="card-bottom"><div><span class="price">12 <small>دت</small></span><span class="old-price">15 دت</span></div><button class="btn-add-main" onclick="addToCart('بيتزا مارغريتا',12)">+ أضف</button></div></div>
+<div class="card-info"><h3>مارغريتا الأصلية</h3><p>صلصة إيطالية، موزاريلا فاخرة، ريحان طازج، زيت زيتون</p><div class="card-bottom"><div><span class="price">12 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('مارغريتا',12)">+ أضف</button></div></div>
 </div>
 
 <div class="card" data-cat="pizza">
 <div class="card-img">🌶️</div>
-<div class="card-info"><h3>ببروني حارة نار 🔥</h3><p>ببروني مدخن، دبل موزاريلا، صوص حار الباي الخاص</p><div class="card-bottom"><div><span class="price">18 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('بيتزا ببروني حارة',18)">+ أضف</button></div></div>
+<div class="card-info"><h3>بيروني حارة نار 🔥</h3><p>بيروني مدخن، دبل موزاريلا، صوص حار الباي الخاص</p><div class="card-bottom"><div><span class="price">18 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('بيروني حارة',18)">+ أضف</button></div></div>
 </div>
 
 <div class="card" data-cat="pizza">
 <div class="card-img">🍗</div>
-<div class="card-info"><h3>دجاج باربكيو</h3><p>دجاج مشوي، باربكيو، بصل مكرمل، فطر</p><div class="card-bottom"><div><span class="price">20 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('بيتزا دجاج باربكيو',20)">+ أضف</button></div></div>
+<div class="card-info"><h3>دجاج باربكيو</h3><p>دجاج مشوي، صوص باربكيو، بصل مكرمل، موزاريلا</p><div class="card-bottom"><div><span class="price">19 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('دجاج باربكيو',19)">+ أضف</button></div></div>
 </div>
 
-<div class="section-title">🌯 مقلوب الباي الأسطوري</div>
+<div class="section-title">🌯 مقلوب سوسة</div>
 
 <div class="card" data-cat="makloub">
-<div class="card-img">🥙</div>
-<div class="card-info"><h3>مقلوب اسكالوب كريمي</h3><p>اسكالوب طري، بطاطا، سلاطة، صوص كريمي سري</p><div class="card-bottom"><div><span class="price">9 <small>دت</small></span><span class="old-price">11 دت</span></div><button class="btn-add-main" onclick="addToCart('مقلوب اسكالوب',9)">+ أضف</button></div></div>
+<div class="card-img">🌯</div>
+<div class="card-info"><h3>مقلوب شاورما دجاج</h3><p>دجاج، بطاطا، سلطة، هريسة، صوص ثوم</p><div class="card-bottom"><div><span class="price">9.5 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('مقلوب دجاج',9.5)">+ أضف</button></div></div>
 </div>
 
 <div class="card" data-cat="makloub">
 <div class="card-img">🥩</div>
-<div class="card-info"><h3>مقلوب شاورما لحم</h3><p>لحم بقري متبل 24 ساعة، طحينة، خضرة</p><div class="card-bottom"><div><span class="price">10 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('مقلوب شاورما لحم',10)">+ أضف</button></div></div>
+<div class="card-info"><h3>مقلوب شاورما لحم</h3><p>لحم بقري، جبن، خضرة طازجة، صوص الباي</p><div class="card-bottom"><div><span class="price">12 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('مقلوب لحم',12)">+ أضف</button></div></div>
 </div>
 
 <div class="section-title">🥙 شاورما</div>
 
-<div class="card" data-cat="chawarma">
-<div class="card-img">🧄</div>
-<div class="card-info"><h3>شاورما دجاج ثومية</h3><p>دجاج، ثومية لبنانية، بطاطا مقلية، مخلل</p><div class="card-bottom"><div><span class="price">9 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('شاورما دجاج',9)">+ أضف</button></div></div>
-</div>
-
-<div class="card" data-cat="chawarma">
-<div class="card-img">🥩</div>
-<div class="card-info"><h3>شاورما لحم بقر</h3><p>لحم بقري، بصل، طماطم، صوص خاص</p><div class="card-bottom"><div><span class="price">10 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('شاورما لحم',10)">+ أضف</button></div></div>
+<div class="card" data-cat="shawarma">
+<div class="card-img">🥙</div>
+<div class="card-info"><h3>شاورما عربي كبير</h3><p>خبز عربي، دجاج، ثوم، بطاطا، مخلل</p><div class="card-bottom"><div><span class="price">11 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('شاورما عربي',11)">+ أضف</button></div></div>
 </div>
 
 <div class="section-title">🍟 إضافات</div>
@@ -175,11 +167,11 @@ body{background:var(--dark);color:#fff;overflow-x:hidden;-webkit-tap-highlight-c
 🛒<span id="float-count" style="position:absolute;top:-6px;right:-6px;background:#fff;color:#000;min-width:24px;height:24px;border-radius:12px;font-size:12px;display:grid;place-items:center;padding:0 6px;border:2px solid #000;display:none">0</span>
 </button>
 
-<div id="cart-overlay" onclick="closeCart()" style="position:fixed;inset:0;background:rgba(0,0,0,0.65);backdrop-filter:blur(6px);z-index:101;display:none;opacity:0;transition:0.3s"></div>
+<div id="cart-overlay" class="cart-overlay" onclick="closeCart()"></div>
 
-<div class="cart-bar" id="cart-bar" style="transform:translateY(110%);transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1);">
+<div class="cart-bar" id="cart-bar">
 <div style="width:40px;height:5px;background:#2A2A32;border-radius:10px;margin:0 auto 14px"></div>
-<div class="cart-top"><b>🛒 سلتك</b><div style="display:flex;gap:8px;align-items:center"><span class="cart-count" id="cart-count">0 منتج</span><button onclick="closeCart()" style="background:#222;border:1px solid #333;color:#fff;width:32px;height:32px;border-radius:10px;font-size:16px">✕</button></div></div>
+<div class="cart-top"><b>🛒 سلتك</b><div style="display:flex;gap:8px;align-items:center"><span class="cart-count" id="cart-count">0 منتج</span><button onclick="closeCart()" style="background:#222;border:1px solid #333;color:#fff;width:34px;height:34px;border-radius:10px;font-size:16px;cursor:pointer">✕</button></div></div>
 <div class="cart-list" id="cart-list">اختار حاجة بنينة من الفوق 👆</div>
 <div class="inputs">
 <input class="inp" id="addr" placeholder="📍 عنوانك - خزامة، سهلول...">
@@ -195,7 +187,7 @@ body{background:var(--dark);color:#fff;overflow-x:hidden;-webkit-tap-highlight-c
 </div>
 <div class="total"><small>المجموع + التوصيل مجاني 🔥</small><b id="total">0 دت</b></div>
 <button class="send" onclick="sendWA()">📲 ابعث الطلب واتساب - 56 711 448</button>
-<div style="height:12px"></div>
+<div style="height:10px"></div>
 </div>
 
 <script>
@@ -208,11 +200,10 @@ function openCart(){
 function closeCart(){
  document.getElementById('cart-bar').style.transform='translateY(110%)';
  document.getElementById('cart-overlay').style.opacity='0';
- setTimeout(()=>document.getElementById('cart-overlay').style.display='none',300);
+ setTimeout(()=>document.getElementById('cart-overlay').style.display='none',250);
  document.body.style.overflow='';
 }
 </script>
-
 
 <script>
 let cart=[],gps="";
@@ -227,11 +218,11 @@ function render(){
  let fc=document.getElementById('float-count');
  if(c>0){fc.style.display='grid'; fc.textContent=c; document.getElementById('floating-cart').style.display='flex';}
  else{fc.style.display='none';}
- if(firstAdd && c===1){firstAdd=false; /* don't auto open, just show button pulse */ document.getElementById('floating-cart').animate([{transform:'scale(1)'},{transform:'scale(1.2)'},{transform:'scale(1)'}],{duration:400});}
+ if(firstAdd && c===1){firstAdd=false; document.getElementById('floating-cart').animate([{transform:'scale(1)'},{transform:'scale(1.25)'},{transform:'scale(1)'}],{duration:450});}
 
  let t=0,h='';
  if(!cart.length){document.getElementById('cart-list').innerHTML='اختار حاجة بنينة من الفوق 👆'; document.getElementById('total').textContent='0 دت'; return}
- cart.forEach(i=>{h+=`• ${i.n} x${i.q} - ${(i.p*i.q).toFixed(1).replace('.0','')} دت <span style="float:left"><button onclick="changeQ('${i.n}',-1)" style="background:#222;border:1px solid #333;color:#fff;border-radius:6px;width:22px">-</button> <button onclick="changeQ('${i.n}',1)" style="background:#FF6B00;border:none;color:#fff;border-radius:6px;width:22px">+</button></span><br>`; t+=i.p*i.q;});
+ cart.forEach(i=>{h+=`<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px dashed #222"><span>• ${i.n} x${i.q}</span><span style="display:flex;gap:6px;align-items:center"><b style="color:#FFD700">${(i.p*i.q).toFixed(1).replace('.0','')} دت</b><button onclick="changeQ('${i.n}',-1)" style="background:#222;border:1px solid #333;color:#fff;border-radius:7px;width:26px;height:26px">-</button><button onclick="changeQ('${i.n}',1)" style="background:#FF6B00;border:none;color:#fff;border-radius:7px;width:26px;height:26px">+</button></span></div>`; t+=i.p*i.q;});
  document.getElementById('cart-list').innerHTML=h;
  document.getElementById('total').textContent=t.toFixed(1).replace('.0','')+' دت';
 }
