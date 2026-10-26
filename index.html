@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مطعم الباي - سوسة | اطلب الآن 56 711 448</title>
+<meta name="description" content="مطعم الباي سوسة - بيتزا ومقلوب وشاورما - توصيل سريع - اطلب على واتساب 56 711 448">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,-apple-system,Tahoma}
+body{background:#0f0f0f;color:#fff;line-height:1.6}
+.header{background:linear-gradient(135deg,#ff6a00,#ff9500);padding:20px;text-align:center;position:sticky;top:0;z-index:100;box-shadow:0 4px 20px rgba(255,106,0,0.3)}
+.header h1{font-size:28px;margin-bottom:5px}
+.header p{opacity:0.95;font-size:14px}
+.badge{display:inline-block;background:#25D366;color:#fff;padding:8px 20px;border-radius:25px;font-weight:bold;margin-top:10px;text-decoration:none}
+.container{max-width:500px;margin:0 auto;padding:15px}
+.category{margin:25px 0 15px 0}
+.category h2{color:#ff6a00;font-size:20px;border-right:4px solid #ff6a00;padding-right:10px}
+.card{background:#1e1e1e;border-radius:15px;padding:15px;margin:12px 0;display:flex;justify-content:space-between;align-items:center;border:1px solid #333;transition:0.3s}
+.card:hover{border-color:#ff6a00;transform:translateY(-2px)}
+.card-info h3{font-size:16px;margin-bottom:4px}
+.card-info p{font-size:12px;color:#aaa}
+.price{color:#25D366;font-weight:bold;font-size:18px}
+.add-btn{background:#333;color:#fff;border:none;padding:8px 16px;border-radius:20px;cursor:pointer;font-weight:bold;margin-top:8px}
+.add-btn:hover{background:#ff6a00}
+.cart{background:#1e1e1e;border-radius:15px;padding:20px;margin:20px 0;border:2px solid #25D366;position:sticky;bottom:10px}
+.cart h3{color:#25D366;margin-bottom:10px}
+#order-list{min-height:30px;color:#ccc;font-size:14px}
+.total{font-size:20px;font-weight:bold;margin:15px 0;color:#fff}
+.wa-btn{display:block;background:#25D366;color:#fff;text-align:center;padding:16px;border-radius:12px;text-decoration:none;font-weight:bold;font-size:18px;box-shadow:0 4px 15px rgba(37,211,102,0.3)}
+.wa-btn:hover{background:#128C7E}
+.footer{text-align:center;padding:30px;color:#666;font-size:12px}
+.qr-box{text-align:center;background:#fff;border-radius:15px;padding:15px;margin:20px 0}
+.qr-box p{color:#000;font-weight:bold;margin-top:10px}
+</style>
+</head>
+<body>
+<div class="header">
+<h1>🍕 مطعم الباي - سوسة</h1>
+<p>📍 سوسة - توصيل سريع | 🕒 10:00 - 23:00</p>
+<p>📱 56 711 448</p>
+<a class="badge" href="https://wa.me/21656711448">💬 واتساب مباشر</a>
+</div>
+
+<div class="container">
+
+<div class="category"><h2>🍕 بيتزا</h2></div>
+<div class="card"><div class="card-info"><h3>بيتزا مارغريتا</h3><p>صلصة طماطم، موزاريلا طازجة</p><span class="price">12 دت</span><br><button class="add-btn" onclick="addItem('بيتزا مارغريتا - 12دت')">+ أضف</button></div><div style="font-size:40px">🍕</div></div>
+<div class="card"><div class="card-info"><h3>بيتزا حارة تونسية</h3><p>هريسة، مرقاز، فلفل</p><span class="price">15 دت</span><br><button class="add-btn" onclick="addItem('بيتزا حارة - 15دت')">+ أضف</button></div><div style="font-size:40px">🌶️</div></div>
+<div class="card"><div class="card-info"><h3>بيتزا 4 أجبان</h3><p>موزاريلا، شيدر، جودا، بارميزان</p><span class="price">18 دت</span><br><button class="add-btn" onclick="addItem('بيتزا 4 أجبان - 18دت')">+ أضف</button></div><div style="font-size:40px">🧀</div></div>
+
+<div class="category"><h2>🥙 مقلوب</h2></div>
+<div class="card"><div class="card-info"><h3>مقلوب اسكالوب</h3><p>اسكالوب، هريسة، سلاطة</p><span class="price">9 دت</span><br><button class="add-btn" onclick="addItem('مقلوب اسكالوب - 9دت')">+ أضف</button></div><div style="font-size:40px">🥙</div></div>
+<div class="card"><div class="card-info"><h3>مقلوب كفتاجي</h3><p>كفتاجي تونسي بنين</p><span class="price">10 دت</span><br><button class="add-btn" onclick="addItem('مقلوب كفتاجي - 10دت')">+ أضف</button></div><div style="font-size:40px">🍆</div></div>
+<div class="card"><div class="card-info"><h3>مقلوب شاورما</h3><p>شاورما دجاج، ثوم</p><span class="price">11 دت</span><br><button class="add-btn" onclick="addItem('مقلوب شاورما - 11دت')">+ أضف</button></div><div style="font-size:40px">🌯</div></div>
+
+<div class="category"><h2>🍔 شاورما و سندويتش</h2></div>
+<div class="card"><div class="card-info"><h3>شاورما دجاج</h3><p>خبز لبناني، ثوم، بطاطا</p><span class="price">8 دت</span><br><button class="add-btn" onclick="addItem('شاورما دجاج - 8دت')">+ أضف</button></div><div style="font-size:40px">🍗</div></div>
+<div class="card"><div class="card-info"><h3>شاورما لحم</h3><p>لحم بقري، طحينة</p><span class="price">10 دت</span><br><button class="add-btn" onclick="addItem('شاورما لحم - 10دت')">+ أضف</button></div><div style="font-size:40px">🥩</div></div>
+
+<div class="cart">
+<h3>🛒 طلبك</h3>
+<div id="order-list">ما اخترت شي توا - اختار من المنيو فوق</div>
+<div class="total" id="total">المجموع: 0 دت</div>
+<a id="waLink" class="wa-btn" href="https://wa.me/21656711448?text=السلام مطعم الباي نحب نعدي كومند" target="_blank">📱 ابعث الطلب على واتساب<br><small>56 711 448</small></a>
+</div>
+
+<div class="footer">
+<p>مطعم الباي - سوسة<br>التوصيل مجاني داخل سوسة<br>📱 56 711 448<br><br>صمم بواسطة Faouzi Hidri</p>
+</div>
+
+</div>
+
+<script>
+let items = [];
+let total = 0;
+function addItem(name){
+  items.push(name);
+  let price = parseInt(name.match(/(\d+)دت/)[1]);
+  total += price;
+  document.getElementById('order-list').innerHTML = items.join('<br>• ');
+  document.getElementById('total').innerText = 'المجموع: ' + total + ' دت';
+  let text = 'السلام مطعم الباي 🔥%0Aنحب نعدي كومند:%0A%0A• ' + items.join('%0A• ') + '%0A%0Aالمجموع: ' + total + 'دت%0A%0Aالعنوان:%0A';
+  document.getElementById('waLink').href = 'https://wa.me/21656711448?text=' + text;
+  document.querySelector('.cart').scrollIntoView({behavior:'smooth'});
+}
+</script>
+</body>
+</html>
