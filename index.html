@@ -24,7 +24,7 @@
 </style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>مطعم الباي 🔥 - الأفضل في سوسة</title>
+<title>pizza الملك 👑 - ملك البيتزا في سوسة</title>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Tajawal',sans-serif}
@@ -94,7 +94,7 @@ body{background:var(--dark);color:#fff;overflow-x:hidden;-webkit-tap-highlight-c
 <body>
 
 <div class="header">
-<div class="logo"><i>🔥</i> مطعم الباي</div>
+<div class="logo"><i>🔥</i> pizza الملك</div>
 <div class="badge-live"><span class="dot"></span> مفتوح الآن • 10:00-23:00</div>
 </div>
 
@@ -108,62 +108,186 @@ body{background:var(--dark);color:#fff;overflow-x:hidden;-webkit-tap-highlight-c
 </div>
 </div>
 
+
 <div class="cats">
 <div class="chip active" onclick="filterCat('all',this)">🔥 الكل</div>
-<div class="chip" onclick="filterCat('pizza',this)">🍕 بيتزا</div>
+<div class="chip" onclick="filterCat('chapati',this)">🫓 شاباتي</div>
+<div class="chip" onclick="filterCat('sandwich',this)">🥪 سندويتش</div>
 <div class="chip" onclick="filterCat('makloub',this)">🌯 مقلوب</div>
-<div class="chip" onclick="filterCat('shawarma',this)">🥙 شاورما</div>
-<div class="chip" onclick="filterCat('extra',this)">🍟 إضافات</div>
+<div class="chip" onclick="filterCat('mlawi',this)">🫓 ملاوي</div>
+<div class="chip" onclick="filterCat('panini',this)">🥪 بانيني</div>
+<div class="chip" onclick="filterCat('pizza',this)">🍕 بيتزا</div>
 </div>
 
-<div class="menu">
-<div class="section-title">🍕 بيتزا فاخرة</div>
+
+
+<div class="section-title">🫓 شاباتي - Chapati</div>
+
+<div class="card" data-cat="chapati">
+<div class="card-img">🫓</div>
+<div class="card-info"><h3>شاباتي سلامي</h3><p>سلامي، سلطة، مايونيز، هريسة</p><div class="card-bottom"><div><span class="price">3.0 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('شاباتي سلامي',3)">+ أضف</button></div></div>
+</div>
+
+<div class="card" data-cat="chapati">
+<div class="card-img">🐟</div>
+<div class="card-info"><h3>شاباتي تن</h3><p>تن، سلطة، هريسة، زيتون</p><div class="card-bottom"><div><span class="price">3.5 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('شاباتي تن',3.5)">+ أضف</button></div></div>
+</div>
+
+<div class="card" data-cat="chapati">
+<div class="card-img">🌯</div>
+<div class="card-info"><h3>شاباتي شاورما</h3><p>شاورما دجاج، سلطة، صوص ثوم</p><div class="card-bottom"><div><span class="price">5.0 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('شاباتي شاورما',5)">+ أضف</button></div></div>
+</div>
+
+<div class="card" data-cat="chapati">
+<div class="ribbon">الأكثر طلبا</div>
+<div class="card-img">⭐</div>
+<div class="card-info"><h3>شاباتي سبيسيال</h3><p>الكل في واحد - وصفة الشاف الخاصة</p><div class="card-bottom"><div><span class="price">5.0 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('شاباتي سبيسيال',5)">+ أضف</button></div></div>
+</div>
+
+<div class="section-title">🥪 سندويتش - Sandwich</div>
+
+<div class="card" data-cat="sandwich">
+<div class="card-img">🥪</div>
+<div class="card-info"><h3>سندويتش سلامي</h3><p>سلامي، جبن، سلطة</p><div class="card-bottom"><div><span class="price">5.0 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('سندويتش سلامي',5)">+ أضف</button></div></div>
+</div>
+
+<div class="card" data-cat="sandwich">
+<div class="card-img">🍳</div>
+<div class="card-info"><h3>سندويتش كفتاجي</h3><p>كفتاجي سخون، هريسة، سلطة</p><div class="card-bottom"><div><span class="price">3.5 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('سندويتش كفتاجي',3.5)">+ أضف</button></div></div>
+</div>
+
+<div class="card" data-cat="sandwich">
+<div class="card-img">🐟</div>
+<div class="card-info"><h3>سندويتش تن</h3><p>تن، هريسة، سلطة، زيتون</p><div class="card-bottom"><div><span class="price">5.5 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('سندويتش تن',5.5)">+ أضف</button></div></div>
+</div>
+
+<div class="card" data-cat="sandwich">
+<div class="card-img">🍗</div>
+<div class="card-info"><h3>سندويتش شاورما</h3><p>شاورما دجاج، ثوم، بطاطا</p><div class="card-bottom"><div><span class="price">6.0 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('سندويتش شاورما',6)">+ أضف</button></div></div>
+</div>
+
+<div class="card" data-cat="sandwich">
+<div class="card-img">🍗</div>
+<div class="card-info"><h3>سندويتش اسكالوب</h3><p>اسكالوب دجاج، جبن، مايونيز</p><div class="card-bottom"><div><span class="price">6.0 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('سندويتش اسكالوب',6)">+ أضف</button></div></div>
+</div>
+
+<div class="card" data-cat="sandwich">
+<div class="card-img">🔥</div>
+<div class="card-info"><h3>سندويتش سبيسيال</h3><p>الوصفة الخاصة - كل شي فيه</p><div class="card-bottom"><div><span class="price">7.0 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('سندويتش سبيسيال',7)">+ أضف</button></div></div>
+</div>
+
+<div class="section-title">🌯 مقلوب - Makloub</div>
+
+<div class="card" data-cat="makloub">
+<div class="card-img">🌯</div>
+<div class="card-info"><h3>مقلوب سلامي</h3><p>سلامي، جبن، سلطة، مايونيز</p><div class="card-bottom"><div><span class="price">6.0 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('مقلوب سلامي',6)">+ أضف</button></div></div>
+</div>
+
+<div class="card" data-cat="makloub">
+<div class="card-img">🐟</div>
+<div class="card-info"><h3>مقلوب تن</h3><p>تن، سلطة، هريسة</p><div class="card-bottom"><div><span class="price">7.0 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('مقلوب تن',7)">+ أضف</button></div></div>
+</div>
+
+<div class="card" data-cat="makloub">
+<div class="card-img">🥙</div>
+<div class="card-info"><h3>مقلوب شاورما</h3><p>شاورما دجاج، بطاطا، ثوم</p><div class="card-bottom"><div><span class="price">8.0 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('مقلوب شاورما',8)">+ أضف</button></div></div>
+</div>
+
+<div class="card" data-cat="makloub">
+<div class="card-img">🍗</div>
+<div class="card-info"><h3>مقلوب اسكالوب</h3><p>اسكالوب، جبن، سلطة</p><div class="card-bottom"><div><span class="price">8.0 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('مقلوب اسكالوب',8)">+ أضف</button></div></div>
+</div>
+
+<div class="card" data-cat="makloub">
+<div class="card-img">⭐</div>
+<div class="card-info"><h3>مقلوب سبيسيال</h3><p>سبيسيال - وصفة المحل</p><div class="card-bottom"><div><span class="price">8.5 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('مقلوب سبيسيال',8.5)">+ أضف</button></div></div>
+</div>
+
+<div class="card" data-cat="makloub">
+<div class="card-img">🌮</div>
+<div class="card-info"><h3>تاكوس</h3><p>تاكوس دجاج، بطاطا، جبن، صوص</p><div class="card-bottom"><div><span class="price">9.0 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('تاكوس',9)">+ أضف</button></div></div>
+</div>
+
+<div class="card" data-cat="makloub">
+<div class="card-img">🥖</div>
+<div class="card-info"><h3>باقات فارسي و كورنيا</h3><p>باقات محشية، سلطة، صوص</p><div class="card-bottom"><div><span class="price">8.5 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('باقات فارسي كورنيا',8.5)">+ أضف</button></div></div>
+</div>
+
+<div class="section-title">🫓 ملاوي - Mlawi</div>
+
+<div class="card" data-cat="mlawi">
+<div class="card-img">🫓</div>
+<div class="card-info"><h3>ملاوي سلامي</h3><p>سلامي، جبن، سلطة</p><div class="card-bottom"><div><span class="price">5.0 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('ملاوي سلامي',5)">+ أضف</button></div></div>
+</div>
+
+<div class="card" data-cat="mlawi">
+<div class="card-img">🐟</div>
+<div class="card-info"><h3>ملاوي تن</h3><p>تن، هريسة، سلطة</p><div class="card-bottom"><div><span class="price">6.0 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('ملاوي تن',6)">+ أضف</button></div></div>
+</div>
+
+<div class="card" data-cat="mlawi">
+<div class="card-img">🌯</div>
+<div class="card-info"><h3>ملاوي شاورما</h3><p>شاورما، بطاطا، ثوم</p><div class="card-bottom"><div><span class="price">7.0 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('ملاوي شاورما',7)">+ أضف</button></div></div>
+</div>
+
+<div class="card" data-cat="mlawi">
+<div class="card-img">🍗</div>
+<div class="card-info"><h3>ملاوي اسكالوب</h3><p>اسكالوب، جبن</p><div class="card-bottom"><div><span class="price">7.0 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('ملاوي اسكالوب',7)">+ أضف</button></div></div>
+</div>
+
+<div class="card" data-cat="mlawi">
+<div class="card-img">⭐</div>
+<div class="card-info"><h3>ملاوي سبيسيال</h3><p>سبيسيال المحل</p><div class="card-bottom"><div><span class="price">7.5 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('ملاوي سبيسيال',7.5)">+ أضف</button></div></div>
+</div>
+
+<div class="card" data-cat="mlawi">
+<div class="ribbon">الأكثر طلبا</div>
+<div class="card-img">🤩</div>
+<div class="card-info"><h3>ملاوي محبوب</h3><p>محبوب الجماهير - دبل جبن، دبل سلامي</p><div class="card-bottom"><div><span class="price">10.0 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('ملاوي محبوب',10)">+ أضف</button></div></div>
+</div>
+
+<div class="section-title">🥪 بانيني - Panini</div>
+
+<div class="card" data-cat="panini">
+<div class="card-img">🥪</div>
+<div class="card-info"><h3>بانيني تن</h3><p>تن، جبن، هريسة</p><div class="card-bottom"><div><span class="price">2.0 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('بانيني تن',2)">+ أضف</button></div></div>
+</div>
+
+<div class="card" data-cat="panini">
+<div class="card-img">🥪</div>
+<div class="card-info"><h3>بانيني سلامي</h3><p>سلامي، جبن، سلطة</p><div class="card-bottom"><div><span class="price">2.0 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('بانيني سلامي',2)">+ أضف</button></div></div>
+</div>
+
+<div class="section-title">🍕 بيتزا - Pizza</div>
 
 <div class="card" data-cat="pizza">
-<div class="ribbon">الأكثر مبيعا</div>
 <div class="card-img">🍕</div>
-<div class="card-info"><h3>مارغريتا الأصلية</h3><p>صلصة إيطالية، موزاريلا فاخرة، ريحان طازج، زيت زيتون</p><div class="card-bottom"><div><span class="price">12 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('مارغريتا',12)">+ أضف</button></div></div>
+<div class="card-info"><h3>بيتزا مارغريتا</h3><p>صلصة، موزاريلا، ريحان</p><div class="card-bottom"><div><span class="price">10.0 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('بيتزا مارغريتا',10)">+ أضف</button></div></div>
 </div>
 
 <div class="card" data-cat="pizza">
-<div class="card-img">🌶️</div>
-<div class="card-info"><h3>بيروني حارة نار 🔥</h3><p>بيروني مدخن، دبل موزاريلا، صوص حار الباي الخاص</p><div class="card-bottom"><div><span class="price">18 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('بيروني حارة',18)">+ أضف</button></div></div>
+<div class="card-img">🍕</div>
+<div class="card-info"><h3>بيتزا بيبروني</h3><p>بيبروني، موزاريلا، صوص حار</p><div class="card-bottom"><div><span class="price">12.0 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('بيتزا بيبروني',12)">+ أضف</button></div></div>
+</div>
+
+<div class="card" data-cat="pizza">
+<div class="card-img">🐟</div>
+<div class="card-info"><h3>بيتزا تن</h3><p>تن، زيتون، جبن</p><div class="card-bottom"><div><span class="price">12.0 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('بيتزا تن',12)">+ أضف</button></div></div>
 </div>
 
 <div class="card" data-cat="pizza">
 <div class="card-img">🍗</div>
-<div class="card-info"><h3>دجاج باربكيو</h3><p>دجاج مشوي، صوص باربكيو، بصل مكرمل، موزاريلا</p><div class="card-bottom"><div><span class="price">19 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('دجاج باربكيو',19)">+ أضف</button></div></div>
+<div class="card-info"><h3>بيتزا دجاج</h3><p>دجاج، باربكيو، بصل</p><div class="card-bottom"><div><span class="price">13.0 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('بيتزا دجاج',13)">+ أضف</button></div></div>
 </div>
 
-<div class="section-title">🌯 مقلوب سوسة</div>
-
-<div class="card" data-cat="makloub">
-<div class="card-img">🌯</div>
-<div class="card-info"><h3>مقلوب شاورما دجاج</h3><p>دجاج، بطاطا، سلطة، هريسة، صوص ثوم</p><div class="card-bottom"><div><span class="price">9.5 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('مقلوب دجاج',9.5)">+ أضف</button></div></div>
+<div class="card" data-cat="pizza">
+<div class="card-img">🍕</div>
+<div class="card-info"><h3>بيتزا 4 فروماج</h3><p>4 أنواع جبن</p><div class="card-bottom"><div><span class="price">14.0 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('بيتزا 4 فروماج',14)">+ أضف</button></div></div>
 </div>
 
-<div class="card" data-cat="makloub">
-<div class="card-img">🥩</div>
-<div class="card-info"><h3>مقلوب شاورما لحم</h3><p>لحم بقري، جبن، خضرة طازجة، صوص الباي</p><div class="card-bottom"><div><span class="price">12 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('مقلوب لحم',12)">+ أضف</button></div></div>
-</div>
-
-<div class="section-title">🥙 شاورما</div>
-
-<div class="card" data-cat="shawarma">
-<div class="card-img">🥙</div>
-<div class="card-info"><h3>شاورما عربي كبير</h3><p>خبز عربي، دجاج، ثوم، بطاطا، مخلل</p><div class="card-bottom"><div><span class="price">11 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('شاورما عربي',11)">+ أضف</button></div></div>
-</div>
-
-<div class="section-title">🍟 إضافات</div>
-
-<div class="card" data-cat="extra">
-<div class="card-img">🍟</div>
-<div class="card-info"><h3>بطاطا XL مقرمشة</h3><p>ذهبية، مقرمشة، صوص كاتشب</p><div class="card-bottom"><div><span class="price">4 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('بطاطا XL',4)">+ أضف</button></div></div>
-</div>
-
-<div class="card" data-cat="extra">
-<div class="card-img">🥤</div>
-<div class="card-info"><h3>مشروب غازي 33cl</h3><p>كوكا، فانتا، سبرايت بارد</p><div class="card-bottom"><div><span class="price">2.5 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('مشروب غازي',2.5)">+ أضف</button></div></div>
+<div class="card" data-cat="pizza">
+<div class="card-img">🎉</div>
+<div class="card-info"><h3>بيتزا 4 جو</h3><p>4 أذواق مختلفة</p><div class="card-bottom"><div><span class="price">16.0 <small>دت</small></span></div><button class="btn-add-main" onclick="addToCart('بيتزا 4 جو',16)">+ أضف</button></div></div>
 </div>
 
 </div>
@@ -284,7 +408,7 @@ function sendWA(){
  let orderId = `#EB-${orderNum}`;
 
  let total=cart.reduce((s,i)=>s+i.p*i.q,0);
- let msg=`🔥 مطعم الباي - طلب جديد ${orderId}
+ let msg=`🔥 pizza الملك - طلب جديد ${orderId}
 
 👤 الحريف: ${customerName}
 🆔 رقم الطلب: ${orderId}
