@@ -24,7 +24,7 @@
 </style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>pizza الملك 👑 V17 FIXED ADMIN</title>
+<title>pizza الملك 👑 V18 FIXED DELETE ALL</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@700;800;900&display=swap');
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Tajawal',sans-serif}
@@ -33,29 +33,43 @@ body{background:#FFF6EB;color:#222;padding-bottom:120px}
 .header{position:sticky;top:40px;z-index:99;background:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px rgba(0,0,0,.08)}
 .logo{font-size:22px;font-weight:900;display:flex;align-items:center;gap:8px}
 .logo span{background:linear-gradient(135deg,#FF6B00,#FFB800);color:#fff;width:38px;height:38px;border-radius:12px;display:grid;place-items:center}
-.badge-open{font-size:11px;background:#E8F5E9;color:#2E7D32;padding:6px 12px;border-radius:20px;font-weight:800}
-.badge-time{font-size:11px;background:#FFF3E0;color:#E65100;padding:6px 12px;border-radius:20px;font-weight:800;border:1px solid #FFE0B2}
 .cats{display:flex;gap:8px;overflow:auto;padding:12px 16px;background:#fff;position:sticky;top:98px;z-index:90;scrollbar-width:none}
 .chip{white-space:nowrap;padding:10px 18px;border-radius:25px;background:#FFF3E0;border:2px solid #FFE0B2;font-weight:700;cursor:pointer;flex-shrink:0}
 .chip.active{background:#FF6B00;color:#fff;border-color:#FF6B00}
 .menu{max-width:700px;margin:0 auto;padding:10px 12px}
-.sec{font-size:19px;font-weight:900;margin:22px 4px 10px;display:flex;align-items:center;gap:8px}
-.card{background:#fff;border-radius:18px;padding:12px;display:flex;gap:12px;margin-bottom:12px;box-shadow:0 4px 18px rgba(255,107,0,.08);border:1px solid #FFE0B2;position:relative}
+.sec{font-size:19px;font-weight:900;margin:22px 4px 10px}
+.card{background:#fff;border-radius:18px;padding:12px;display:flex;gap:12px;margin-bottom:12px;box-shadow:0 4px 18px rgba(255,107,0,.08);border:1px solid #FFE0B2}
 .img{width:78px;height:78px;border-radius:14px;display:grid;place-items:center;font-size:36px;flex-shrink:0;background:linear-gradient(135deg,#FFF3E0,#FFE0B2);border:1px solid #FFE0B2}
 .info{flex:1}
-.info h3{font-size:15px;font-weight:900}
-.info p{font-size:12px;color:#8A8A8A;margin:2px 0 8px}
 .bottom{display:flex;justify-content:space-between;align-items:center}
 .price{font-weight:900;font-size:18px;color:#00C853}
 .add{background:linear-gradient(135deg,#FF6B00,#FF8C00);color:#fff;border:none;padding:9px 18px;border-radius:22px;font-weight:900;cursor:pointer}
 .reviews{background:#fff;margin:20px 12px;border-radius:18px;padding:16px;border:1px solid #FFE0B2}
 .rev-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;cursor:pointer}
-.rev-list{display:flex;flex-direction:column;gap:10px}
-.rev-card{width:100%;background:#FFFBF5;border:1px solid #FFE0B2;border-radius:14px;padding:12px 44px 12px 12px;position:relative;min-height:70px}
-.rev-card b{font-size:13px;display:block}
+.rev-list{display:flex;flex-direction:column;gap:12px}
+.rev-card{width:100%;background:#FFFBF5;border:2px solid #FFE0B2;border-radius:14px;padding:14px 54px 14px 14px;position:relative;min-height:80px;transition:.2s}
+.rev-card.new{background:#FFF3E0;border-color:#FF6B00}
+.rev-card b{font-size:14px;display:block}
 .rev-card small{color:#8A8A8A;font-size:11px;display:block;margin:4px 0}
 .rev-card p{font-size:13px;margin-top:6px;line-height:1.5}
 .btn-review{width:100%;background:linear-gradient(135deg,#FF6B00,#FFB800);color:#fff;border:none;padding:12px;border-radius:12px;font-weight:900;margin-top:12px;cursor:pointer}
+
+/* زر الحذف الجديد - كبير وواضح */
+.del-btn{
+position:absolute;top:10px;right:10px;
+background:#FF1744;color:#fff;border:2px solid #fff;
+width:38px;height:38px;border-radius:12px;
+font-size:18px;display:none;cursor:pointer;z-index:10;
+box-shadow:0 4px 12px rgba(255,23,68,.4);
+align-items:center;justify-content:center;
+font-weight:900;
+}
+.admin-mode .del-btn{display:flex}
+.del-btn:hover{background:#D50000;transform:scale(1.1)}
+
+.admin-bar{display:none;background:#111;color:#fff;padding:12px;border-radius:12px;margin-bottom:12px;font-size:13px;justify-content:space-between;align-items:center;border:2px solid #FF6B00}
+.admin-mode .admin-bar{display:flex}
+
 .cart-btn{position:fixed;bottom:20px;right:20px;z-index:99;background:linear-gradient(135deg,#FF6B00,#FFD600);color:#000;border:none;width:68px;height:68px;border-radius:20px;font-size:30px;box-shadow:0 8px 24px rgba(255,107,0,.4);display:flex;align-items:center;justify-content:center}
 .cart-num{position:absolute;top:-6px;right:-6px;background:#000;color:#fff;min-width:28px;height:28px;border-radius:14px;font-size:13px;display:grid;place-items:center;border:2px solid #fff;font-weight:900}
 .overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:101;display:none}
@@ -63,11 +77,9 @@ body{background:#FFF6EB;color:#222;padding-bottom:120px}
 .drawer.open{transform:translateY(0)}
 .list{background:#FFF8F0;border:1px solid #FFE0B2;border-radius:14px;padding:12px;margin:12px 0;max-height:28vh;overflow:auto}
 .row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px dashed #FFE0B2}
-.ctrl{display:flex;gap:6px;align-items:center}
 .minus{background:#fff;border:2px solid #FFE0B2;width:32px;height:32px;border-radius:10px;font-weight:900}
 .plus{background:#FF6B00;border:none;color:#fff;width:32px;height:32px;border-radius:10px;font-weight:900}
 .inp{width:100%;padding:13px 14px;border-radius:12px;border:2px solid #FFE0B2;background:#FFFBF5;outline:none;margin-bottom:8px;font-size:14px}
-.inp:focus{border-color:#FF6B00}
 .inp-row{display:flex;gap:8px}
 .gps{background:#1976D2;color:#fff;border:none;padding:12px;border-radius:12px;flex:1;font-weight:800}
 .clear{background:#fff;border:2px solid #FFE0B2;padding:12px;border-radius:12px;flex:1}
@@ -75,22 +87,12 @@ body{background:#FFF6EB;color:#222;padding-bottom:120px}
 .total b{color:#FFD600;font-size:20px}
 .send{width:100%;margin-top:12px;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;border:none;padding:16px;border-radius:14px;font-weight:900;font-size:16px;cursor:pointer}
 .badge-num{background:#FFF3E0;color:#FF6B00;border:1px solid #FFE0B2;padding:4px 10px;border-radius:10px;font-size:11px;font-weight:800}
-.live-dot{width:8px;height:8px;background:#00C853;border-radius:50%;display:inline-block;animation:pulse 1s infinite}
-@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)}}
 .modal{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
 .modal.open{display:flex}
-.modal-box{background:#fff;border-radius:20px;padding:20px;max-width:400px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.modal-box{background:#fff;border-radius:20px;padding:20px;max-width:400px;width:100%}
 .stars{display:flex;gap:8px;justify-content:center;margin:12px 0;font-size:32px;cursor:pointer}
-.star{cursor:pointer;transition:.2s;opacity:.3}
+.star{opacity:.3;cursor:pointer}
 .star.on{opacity:1}
-.del-btn{position:absolute;top:8px;right:8px;background:#FF1744;color:#fff;border:none;width:34px;height:34px;border-radius:10px;font-size:16px;display:none;cursor:pointer;z-index:5;box-shadow:0 2px 8px rgba(255,23,68,.4)}
-.admin-mode .del-btn{display:grid;place-items:center}
-.admin-bar{display:none;background:#111;color:#fff;padding:10px 12px;border-radius:12px;margin-bottom:12px;font-size:13px;justify-content:space-between;align-items:center}
-.admin-mode .admin-bar{display:flex}
-.loyalty{background:linear-gradient(135deg,#1a1a1a,#333);color:#fff;margin:20px 12px;border-radius:18px;padding:16px;display:flex;justify-content:space-between;align-items:center}
-.loyalty b{color:#FFD600}
-.loyalty-bar{width:100%;height:8px;background:rgba(255,255,255,.2);border-radius:10px;margin-top:8px;overflow:hidden}
-.loyalty-fill{height:100%;background:linear-gradient(90deg,#FFD600,#FF6B00);border-radius:10px}
 .wa-success{background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;border-radius:16px;padding:16px;margin-top:12px;text-align:center;display:none}
 .wa-success a{display:block;background:#fff;color:#128C7E;padding:12px;border-radius:12px;text-decoration:none;font-weight:900;margin-top:10px}
 </style>
@@ -98,7 +100,7 @@ body{background:#FFF6EB;color:#222;padding-bottom:120px}
 <body>
 
 <div class="offer-banner">🔥 عرض اليوم: <b style="background:#fff;color:#FF1744;padding:3px 10px;border-radius:20px">بيتزا + شاباتي = 15دت برك!</b> ⏰ حتى 23:00</div>
-<div class="header"><div class="logo"><span>👑</span> pizza الملك</div><div><div class="badge-time"><span class="live-dot"></span> <span id="live-time">يوصل في 22 دقيقة</span></div><div class="badge-open">● مفتوح 10:00-23:00</div></div></div>
+<div class="header"><div class="logo"><span>👑</span> pizza الملك</div><div style="font-size:11px;background:#FFF3E0;color:#E65100;padding:6px 12px;border-radius:20px;border:1px solid #FFE0B2">● مفتوح 10:00-23:00</div></div>
 
 <div class="cats">
 <div class="chip active" onclick="filt('all',this)">🔥 الكل</div>
@@ -111,205 +113,184 @@ body{background:#FFF6EB;color:#222;padding-bottom:120px}
 </div>
 
 <div class="menu">
-
-<div class="loyalty"><div style="flex:1"><div>🎁 <b id="loyalty-points">0</b> نقطة ولاء</div><div style="font-size:12px;opacity:.8;margin-top:4px">كل 1دت = 1 نقطة | 50 نقطة = شاباتي بلاش!</div><div class="loyalty-bar"><div class="loyalty-fill" id="loyalty-fill" style="width:0%"></div></div></div><div style="font-size:32px;margin-right:12px">👑</div></div>
-
 <div class="sec">🫓 شاباتي</div>
-<div class="card" data-cat="chapati"><div class="img">🫓</div><div class="info"><h3>شاباتي سلامي</h3><p>سلامي، سلطة</p><div class="bottom"><span class="price">3.0 <small>دت</small></span><button class="add" onclick="addC('شاباتي سلامي',3)">+ أضف</button></div></div></div>
-<div class="card" data-cat="chapati"><div class="img">🐟</div><div class="info"><h3>شاباتي تن</h3><p>تن، سلطة</p><div class="bottom"><span class="price">3.5 <small>دت</small></span><button class="add" onclick="addC('شاباتي تن',3.5)">+ أضف</button></div></div></div>
-<div class="card" data-cat="chapati"><div class="img">🌯</div><div class="info"><h3>شاباتي شاورما</h3><p>شاورما، سلطة</p><div class="bottom"><span class="price">5.0 <small>دت</small></span><button class="add" onclick="addC('شاباتي شاورما',5)">+ أضف</button></div></div></div>
-<div class="card" data-cat="chapati"><div class="img">⭐</div><div class="info"><h3>شاباتي سبيسيال</h3><p>الكل في واحد</p><div class="bottom"><span class="price">5.0 <small>دت</small></span><button class="add" onclick="addC('شاباتي سبيسيال',5)">+ أضف</button></div></div></div>
+<div class="card" data-cat="chapati"><div class="img">🫓</div><div class="info"><h3>شاباتي سلامي</h3><p>سلامي، سلطة</p><div class="bottom"><span class="price">3.0 دت</span><button class="add" onclick="addC('شاباتي سلامي',3)">+ أضف</button></div></div></div>
+<div class="card" data-cat="chapati"><div class="img">🐟</div><div class="info"><h3>شاباتي تن</h3><p>تن، سلطة</p><div class="bottom"><span class="price">3.5 دت</span><button class="add" onclick="addC('شاباتي تن',3.5)">+ أضف</button></div></div></div>
+<div class="card" data-cat="chapati"><div class="img">🌯</div><div class="info"><h3>شاباتي شاورما</h3><p>شاورما</p><div class="bottom"><span class="price">5.0 دت</span><button class="add" onclick="addC('شاباتي شاورما',5)">+ أضف</button></div></div></div>
+<div class="card" data-cat="chapati"><div class="img">⭐</div><div class="info"><h3>شاباتي سبيسيال</h3><p>الكل في واحد</p><div class="bottom"><span class="price">5.0 دت</span><button class="add" onclick="addC('شاباتي سبيسيال',5)">+ أضف</button></div></div></div>
 
 <div class="sec">🥪 سندويتش</div>
-<div class="card" data-cat="sandwich"><div class="img">🥪</div><div class="info"><h3>سندويتش سلامي</h3><p>سلامي، جبن</p><div class="bottom"><span class="price">5.0 <small>دت</small></span><button class="add" onclick="addC('سندويتش سلامي',5)">+ أضف</button></div></div></div>
-<div class="card" data-cat="sandwich"><div class="img">🍳</div><div class="info"><h3>سندويتش كفتاجي</h3><p>كفتاجي سخون</p><div class="bottom"><span class="price">3.5 <small>دت</small></span><button class="add" onclick="addC('سندويتش كفتاجي',3.5)">+ أضف</button></div></div></div>
-<div class="card" data-cat="sandwich"><div class="img">🐟</div><div class="info"><h3>سندويتش تن</h3><p>تن، هريسة</p><div class="bottom"><span class="price">5.5 <small>دت</small></span><button class="add" onclick="addC('سندويتش تن',5.5)">+ أضف</button></div></div></div>
-<div class="card" data-cat="sandwich"><div class="img">🍗</div><div class="info"><h3>سندويتش شاورما</h3><p>شاورما، بطاطا</p><div class="bottom"><span class="price">6.0 <small>دت</small></span><button class="add" onclick="addC('سندويتش شاورما',6)">+ أضف</button></div></div></div>
-<div class="card" data-cat="sandwich"><div class="img">🍗</div><div class="info"><h3>سندويتش اسكالوب</h3><p>اسكالوب، جبن</p><div class="bottom"><span class="price">6.0 <small>دت</small></span><button class="add" onclick="addC('سندويتش اسكالوب',6)">+ أضف</button></div></div></div>
-<div class="card" data-cat="sandwich"><div class="img">🔥</div><div class="info"><h3>سندويتش سبيسيال</h3><p>وصفة خاصة</p><div class="bottom"><span class="price">7.0 <small>دت</small></span><button class="add" onclick="addC('سندويتش سبيسيال',7)">+ أضف</button></div></div></div>
+<div class="card" data-cat="sandwich"><div class="img">🥪</div><div class="info"><h3>سندويتش سلامي</h3><p>سلامي، جبن</p><div class="bottom"><span class="price">5.0 دت</span><button class="add" onclick="addC('سندويتش سلامي',5)">+ أضف</button></div></div></div>
+<div class="card" data-cat="sandwich"><div class="img">🍳</div><div class="info"><h3>سندويتش كفتاجي</h3><p>كفتاجي</p><div class="bottom"><span class="price">3.5 دت</span><button class="add" onclick="addC('سندويتش كفتاجي',3.5)">+ أضف</button></div></div></div>
+<div class="card" data-cat="sandwich"><div class="img">🐟</div><div class="info"><h3>سندويتش تن</h3><p>تن</p><div class="bottom"><span class="price">5.5 دت</span><button class="add" onclick="addC('سندويتش تن',5.5)">+ أضف</button></div></div></div>
+<div class="card" data-cat="sandwich"><div class="img">🍗</div><div class="info"><h3>سندويتش شاورما</h3><p>شاورما</p><div class="bottom"><span class="price">6.0 دت</span><button class="add" onclick="addC('سندويتش شاورما',6)">+ أضف</button></div></div></div>
+<div class="card" data-cat="sandwich"><div class="img">🍗</div><div class="info"><h3>سندويتش اسكالوب</h3><p>اسكالوب</p><div class="bottom"><span class="price">6.0 دت</span><button class="add" onclick="addC('سندويتش اسكالوب',6)">+ أضف</button></div></div></div>
+<div class="card" data-cat="sandwich"><div class="img">🔥</div><div class="info"><h3>سندويتش سبيسيال</h3><p>وصفة خاصة</p><div class="bottom"><span class="price">7.0 دت</span><button class="add" onclick="addC('سندويتش سبيسيال',7)">+ أضف</button></div></div></div>
 
 <div class="sec">🌯 مقلوب</div>
-<div class="card" data-cat="makloub"><div class="img">🌯</div><div class="info"><h3>مقلوب سلامي</h3><p>سلامي، جبن</p><div class="bottom"><span class="price">6.0 <small>دت</small></span><button class="add" onclick="addC('مقلوب سلامي',6)">+ أضف</button></div></div></div>
-<div class="card" data-cat="makloub"><div class="img">🐟</div><div class="info"><h3>مقلوب تن</h3><p>تن، سلطة</p><div class="bottom"><span class="price">7.0 <small>دت</small></span><button class="add" onclick="addC('مقلوب تن',7)">+ أضف</button></div></div></div>
-<div class="card" data-cat="makloub"><div class="img">🌯</div><div class="info"><h3>مقلوب شاورما</h3><p>شاورما، بطاطا</p><div class="bottom"><span class="price">8.0 <small>دت</small></span><button class="add" onclick="addC('مقلوب شاورما',8)">+ أضف</button></div></div></div>
-<div class="card" data-cat="makloub"><div class="img">🍗</div><div class="info"><h3>مقلوب اسكالوب</h3><p>اسكالوب، جبن</p><div class="bottom"><span class="price">8.0 <small>دت</small></span><button class="add" onclick="addC('مقلوب اسكالوب',8)">+ أضف</button></div></div></div>
-<div class="card" data-cat="makloub"><div class="img">⭐</div><div class="info"><h3>مقلوب سبيسيال</h3><p>سبيسيال</p><div class="bottom"><span class="price">8.5 <small>دت</small></span><button class="add" onclick="addC('مقلوب سبيسيال',8.5)">+ أضف</button></div></div></div>
-<div class="card" data-cat="makloub"><div class="img">🌮</div><div class="info"><h3>تاكوس</h3><p>تاكوس دجاج</p><div class="bottom"><span class="price">9.0 <small>دت</small></span><button class="add" onclick="addC('تاكوس',9)">+ أضف</button></div></div></div>
-<div class="card" data-cat="makloub"><div class="img">🥖</div><div class="info"><h3>باقات فارسي</h3><p>محشية</p><div class="bottom"><span class="price">8.5 <small>دت</small></span><button class="add" onclick="addC('باقات فارسي',8.5)">+ أضف</button></div></div></div>
+<div class="card" data-cat="makloub"><div class="img">🌯</div><div class="info"><h3>مقلوب سلامي</h3><p>سلامي</p><div class="bottom"><span class="price">6.0 دت</span><button class="add" onclick="addC('مقلوب سلامي',6)">+ أضف</button></div></div></div>
+<div class="card" data-cat="makloub"><div class="img">🐟</div><div class="info"><h3>مقلوب تن</h3><p>تن</p><div class="bottom"><span class="price">7.0 دت</span><button class="add" onclick="addC('مقلوب تن',7)">+ أضف</button></div></div></div>
+<div class="card" data-cat="makloub"><div class="img">🌯</div><div class="info"><h3>مقلوب شاورما</h3><p>شاورما</p><div class="bottom"><span class="price">8.0 دت</span><button class="add" onclick="addC('مقلوب شاورما',8)">+ أضف</button></div></div></div>
+<div class="card" data-cat="makloub"><div class="img">🍗</div><div class="info"><h3>مقلوب اسكالوب</h3><p>اسكالوب</p><div class="bottom"><span class="price">8.0 دت</span><button class="add" onclick="addC('مقلوب اسكالوب',8)">+ أضف</button></div></div></div>
+<div class="card" data-cat="makloub"><div class="img">⭐</div><div class="info"><h3>مقلوب سبيسيال</h3><p>سبيسيال</p><div class="bottom"><span class="price">8.5 دت</span><button class="add" onclick="addC('مقلوب سبيسيال',8.5)">+ أضف</button></div></div></div>
+<div class="card" data-cat="makloub"><div class="img">🌮</div><div class="info"><h3>تاكوس</h3><p>تاكوس دجاج</p><div class="bottom"><span class="price">9.0 دت</span><button class="add" onclick="addC('تاكوس',9)">+ أضف</button></div></div></div>
+<div class="card" data-cat="makloub"><div class="img">🥖</div><div class="info"><h3>باقات فارسي</h3><p>محشية</p><div class="bottom"><span class="price">8.5 دت</span><button class="add" onclick="addC('باقات فارسي',8.5)">+ أضف</button></div></div></div>
 
 <div class="sec">🫓 ملاوي</div>
-<div class="card" data-cat="mlawi"><div class="img">🫓</div><div class="info"><h3>ملاوي سلامي</h3><p>سلامي، جبن</p><div class="bottom"><span class="price">5.0 <small>دت</small></span><button class="add" onclick="addC('ملاوي سلامي',5)">+ أضف</button></div></div></div>
-<div class="card" data-cat="mlawi"><div class="img">🐟</div><div class="info"><h3>ملاوي تن</h3><p>تن، هريسة</p><div class="bottom"><span class="price">6.0 <small>دت</small></span><button class="add" onclick="addC('ملاوي تن',6)">+ أضف</button></div></div></div>
-<div class="card" data-cat="mlawi"><div class="img">🌯</div><div class="info"><h3>ملاوي شاورما</h3><p>شاورما، بطاطا</p><div class="bottom"><span class="price">7.0 <small>دت</small></span><button class="add" onclick="addC('ملاوي شاورما',7)">+ أضف</button></div></div></div>
-<div class="card" data-cat="mlawi"><div class="img">🍗</div><div class="info"><h3>ملاوي اسكالوب</h3><p>اسكالوب، جبن</p><div class="bottom"><span class="price">7.0 <small>دت</small></span><button class="add" onclick="addC('ملاوي اسكالوب',7)">+ أضف</button></div></div></div>
-<div class="card" data-cat="mlawi"><div class="img">⭐</div><div class="info"><h3>ملاوي سبيسيال</h3><p>سبيسيال</p><div class="bottom"><span class="price">7.5 <small>دت</small></span><button class="add" onclick="addC('ملاوي سبيسيال',7.5)">+ أضف</button></div></div></div>
-<div class="card" data-cat="mlawi"><div class="img">🤩</div><div class="info"><h3>ملاوي محبوب</h3><p>دبل جبن</p><div class="bottom"><span class="price">10.0 <small>دت</small></span><button class="add" onclick="addC('ملاوي محبوب',10)">+ أضف</button></div></div></div>
+<div class="card" data-cat="mlawi"><div class="img">🫓</div><div class="info"><h3>ملاوي سلامي</h3><p>سلامي</p><div class="bottom"><span class="price">5.0 دت</span><button class="add" onclick="addC('ملاوي سلامي',5)">+ أضف</button></div></div></div>
+<div class="card" data-cat="mlawi"><div class="img">🐟</div><div class="info"><h3>ملاوي تن</h3><p>تن</p><div class="bottom"><span class="price">6.0 دت</span><button class="add" onclick="addC('ملاوي تن',6)">+ أضف</button></div></div></div>
+<div class="card" data-cat="mlawi"><div class="img">🌯</div><div class="info"><h3>ملاوي شاورما</h3><p>شاورما</p><div class="bottom"><span class="price">7.0 دت</span><button class="add" onclick="addC('ملاوي شاورما',7)">+ أضف</button></div></div></div>
+<div class="card" data-cat="mlawi"><div class="img">🍗</div><div class="info"><h3>ملاوي اسكالوب</h3><p>اسكالوب</p><div class="bottom"><span class="price">7.0 دت</span><button class="add" onclick="addC('ملاوي اسكالوب',7)">+ أضف</button></div></div></div>
+<div class="card" data-cat="mlawi"><div class="img">⭐</div><div class="info"><h3>ملاوي سبيسيال</h3><p>سبيسيال</p><div class="bottom"><span class="price">7.5 دت</span><button class="add" onclick="addC('ملاوي سبيسيال',7.5)">+ أضف</button></div></div></div>
+<div class="card" data-cat="mlawi"><div class="img">🤩</div><div class="info"><h3>ملاوي محبوب</h3><p>دبل جبن</p><div class="bottom"><span class="price">10.0 دت</span><button class="add" onclick="addC('ملاوي محبوب',10)">+ أضف</button></div></div></div>
 
 <div class="sec">🥪 بانيني</div>
-<div class="card" data-cat="panini"><div class="img">🥪</div><div class="info"><h3>بانيني تن</h3><p>تن، جبن</p><div class="bottom"><span class="price">2.0 <small>دت</small></span><button class="add" onclick="addC('بانيني تن',2)">+ أضف</button></div></div></div>
-<div class="card" data-cat="panini"><div class="img">🥪</div><div class="info"><h3>بانيني سلامي</h3><p>سلامي، جبن</p><div class="bottom"><span class="price">2.0 <small>دت</small></span><button class="add" onclick="addC('بانيني سلامي',2)">+ أضف</button></div></div></div>
+<div class="card" data-cat="panini"><div class="img">🥪</div><div class="info"><h3>بانيني تن</h3><p>تن</p><div class="bottom"><span class="price">2.0 دت</span><button class="add" onclick="addC('بانيني تن',2)">+ أضف</button></div></div></div>
+<div class="card" data-cat="panini"><div class="img">🥪</div><div class="info"><h3>بانيني سلامي</h3><p>سلامي</p><div class="bottom"><span class="price">2.0 دت</span><button class="add" onclick="addC('بانيني سلامي',2)">+ أضف</button></div></div></div>
 
 <div class="sec">🍕 بيتزا</div>
-<div class="card" data-cat="pizza"><div class="img">🍕</div><div class="info"><h3>بيتزا مارغريتا</h3><p>صلصة، موزاريلا</p><div class="bottom"><span class="price">10.0 <small>دت</small></span><button class="add" onclick="addC('بيتزا مارغريتا',10)">+ أضف</button></div></div></div>
-<div class="card" data-cat="pizza"><div class="img">🌶️</div><div class="info"><h3>بيتزا بيبروني</h3><p>بيبروني</p><div class="bottom"><span class="price">12.0 <small>دت</small></span><button class="add" onclick="addC('بيتزا بيبروني',12)">+ أضف</button></div></div></div>
-<div class="card" data-cat="pizza"><div class="img">🐟</div><div class="info"><h3>بيتزا تن</h3><p>تن، زيتون</p><div class="bottom"><span class="price">12.0 <small>دت</small></span><button class="add" onclick="addC('بيتزا تن',12)">+ أضف</button></div></div></div>
-<div class="card" data-cat="pizza"><div class="img">🍗</div><div class="info"><h3>بيتزا دجاج</h3><p>دجاج، باربكيو</p><div class="bottom"><span class="price">13.0 <small>دت</small></span><button class="add" onclick="addC('بيتزا دجاج',13)">+ أضف</button></div></div></div>
-<div class="card" data-cat="pizza"><div class="img">🧀</div><div class="info"><h3>بيتزا 4 فروماج</h3><p>4 أنواع جبن</p><div class="bottom"><span class="price">14.0 <small>دت</small></span><button class="add" onclick="addC('بيتزا 4 فروماج',14)">+ أضف</button></div></div></div>
-<div class="card" data-cat="pizza"><div class="img">🎉</div><div class="info"><h3>بيتزا 4 جو</h3><p>4 أذواق</p><div class="bottom"><span class="price">16.0 <small>دت</small></span><button class="add" onclick="addC('بيتزا 4 جو',16)">+ أضف</button></div></div></div>
+<div class="card" data-cat="pizza"><div class="img">🍕</div><div class="info"><h3>بيتزا مارغريتا</h3><p>موزاريلا</p><div class="bottom"><span class="price">10.0 دت</span><button class="add" onclick="addC('بيتزا مارغريتا',10)">+ أضف</button></div></div></div>
+<div class="card" data-cat="pizza"><div class="img">🌶️</div><div class="info"><h3>بيتزا بيبروني</h3><p>بيبروني</p><div class="bottom"><span class="price">12.0 دت</span><button class="add" onclick="addC('بيتزا بيبروني',12)">+ أضف</button></div></div></div>
+<div class="card" data-cat="pizza"><div class="img">🐟</div><div class="info"><h3>بيتزا تن</h3><p>تن</p><div class="bottom"><span class="price">12.0 دت</span><button class="add" onclick="addC('بيتزا تن',12)">+ أضف</button></div></div></div>
+<div class="card" data-cat="pizza"><div class="img">🍗</div><div class="info"><h3>بيتزا دجاج</h3><p>دجاج</p><div class="bottom"><span class="price">13.0 دت</span><button class="add" onclick="addC('بيتزا دجاج',13)">+ أضف</button></div></div></div>
+<div class="card" data-cat="pizza"><div class="img">🧀</div><div class="info"><h3>بيتزا 4 فروماج</h3><p>4 جبن</p><div class="bottom"><span class="price">14.0 دت</span><button class="add" onclick="addC('بيتزا 4 فروماج',14)">+ أضف</button></div></div></div>
+<div class="card" data-cat="pizza"><div class="img">🎉</div><div class="info"><h3>بيتزا 4 جو</h3><p>4 أذواق</p><div class="bottom"><span class="price">16.0 دت</span><button class="add" onclick="addC('بيتزا 4 جو',16)">+ أضف</button></div></div></div>
 </div>
 
 <div class="reviews">
-<div class="admin-bar" id="admin-bar"><span>🔓 وضع الإدارة مفعّل - تنجم تفسخ أي كومنتار</span><button onclick="exitAdmin()" style="background:#FF1744;color:#fff;border:none;padding:6px 14px;border-radius:8px;font-weight:800">خروج 🔒</button></div>
-<div class="rev-head" ondblclick="askAdmin()"><b>⭐ آراء الحرفاء (<span id="rev-count">0</span>)</b><span style="background:#FF6B00;color:#fff;padding:4px 10px;border-radius:20px;font-size:11px">دوبل كليك للأدمن 🔑</span></div>
+<div class="admin-bar" id="admin-bar"><span>🔓 وضع الإدارة - اضغط 🗑️ باش تفسخ</span><button onclick="exitAdmin()" style="background:#FF1744;color:#fff;border:none;padding:6px 14px;border-radius:8px;font-weight:800">خروج 🔒</button></div>
+<div class="rev-head" ondblclick="askAdmin()"><b>⭐ آراء الحرفاء (<span id="rev-count">0</span>) - دوبل كليك للأدمن</b></div>
 <div class="rev-list" id="rev-list"></div>
-<button class="btn-review" onclick="openReview()">✍️ خلي رأيك - اكتب كومنتار</button>
+<button class="btn-review" onclick="openReview()">✍️ خلي رأيك</button>
 </div>
 
-<div class="modal" id="rev-modal" onclick="if(event.target===this) closeReview()"><div class="modal-box"><div style="display:flex;justify-content:space-between;align-items:center"><b>✍️ شنو رايك؟</b><button onclick="closeReview()" style="background:#fff;border:2px solid #FFE0B2;width:30px;height:30px;border-radius:8px">✕</button></div><div class="stars" id="stars"><span class="star" onclick="setStar(1)">⭐</span><span class="star" onclick="setStar(2)">⭐</span><span class="star" onclick="setStar(3)">⭐</span><span class="star" onclick="setStar(4)">⭐</span><span class="star" onclick="setStar(5)">⭐</span></div><p style="text-align:center;font-size:12px;color:#888" id="star-label">اختار النجوم</p><input class="inp" id="rname" placeholder="👤 اسمك"><textarea class="inp" id="rtext" placeholder="📝 كومنتارك..." style="height:80px;resize:none"></textarea><button class="send" onclick="submitReview()" style="background:linear-gradient(135deg,#FF6B00,#FFB800);margin-top:8px">📤 نشر</button></div></div>
-
-<div class="modal" id="admin-modal" onclick="if(event.target===this) closeAdminModal()"><div class="modal-box">
-<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px"><b>🔑 دخول الإدارة</b><button onclick="closeAdminModal()" style="background:#fff;border:2px solid #FFE0B2;width:30px;height:30px;border-radius:8px">✕</button></div>
-<input class="inp" id="admin-pass" type="password" placeholder="🔒 كلمة السر" autocomplete="current-password" style="-webkit-text-security: disc;">
-<div style="font-size:11px;color:#999;margin:6px 0">الكلمات: malek123 / admin123 / 1234</div>
-<button class="send" onclick="loginAdmin()" style="background:#111">🔓 دخول</button>
-</div></div>
+<div class="modal" id="rev-modal"><div class="modal-box"><b>✍️ شنو رايك؟</b><div class="stars" id="stars"><span class="star" onclick="setStar(1)">⭐</span><span class="star" onclick="setStar(2)">⭐</span><span class="star" onclick="setStar(3)">⭐</span><span class="star" onclick="setStar(4)">⭐</span><span class="star" onclick="setStar(5)">⭐</span></div><input class="inp" id="rname" placeholder="👤 اسمك"><textarea class="inp" id="rtext" placeholder="📝 كومنتارك..."></textarea><button class="send" onclick="submitReview()" style="background:linear-gradient(135deg,#FF6B00,#FFB800)">📤 نشر</button><button class="btn-review" onclick="closeReview()" style="background:#fff;color:#111;border:2px solid #FFE0B2">إلغاء</button></div></div>
+<div class="modal" id="admin-modal"><div class="modal-box"><b>🔑 دخول الإدارة</b><input class="inp" id="admin-pass" type="password" placeholder="🔒 كلمة السر" autocomplete="current-password"><button class="send" onclick="loginAdmin()" style="background:#111">دخول</button><button class="btn-review" onclick="closeAdminModal()" style="background:#fff;color:#111;border:2px solid #FFE0B2">إلغاء</button></div></div>
 
 <button class="cart-btn" onclick="openCart()">🛒<span class="cart-num" id="fcount" style="display:none">0</span></button>
 <div class="overlay" id="ov" onclick="closeCart()"></div>
 <div class="drawer" id="drawer">
-<div style="width:40px;height:5px;background:#FFE0B2;border-radius:10px;margin:0 auto 12px"></div>
-<div style="display:flex;justify-content:space-between;align-items:center"><b>🛒 سلتك <span class="badge-num" id="oprev">#EB-001</span></b><div><span id="ccount" style="background:#FF6B00;color:#fff;padding:4px 12px;border-radius:12px;font-size:12px;font-weight:800">0 منتج</span> <button onclick="closeCart()" style="background:#fff;border:2px solid #FFE0B2;width:34px;height:34px;border-radius:10px">✕</button></div></div>
+<div style="display:flex;justify-content:space-between;align-items:center"><b>🛒 سلتك <span class="badge-num" id="oprev">#EB-001</span></b><button onclick="closeCart()" style="background:#fff;border:2px solid #FFE0B2;width:34px;height:34px;border-radius:10px">✕</button></div>
 <div class="list" id="clist">اختار حاجة بنينة 👆</div>
-<div>
 <div class="inp-row"><input class="inp" id="cname" placeholder="👤 اسمك" style="flex:1"><input class="inp" id="cphone" placeholder="📱 رقمك" style="flex:1"></div>
 <input class="inp" id="caddr" placeholder="📍 عنوانك">
-<div class="inp-row"><button class="gps" onclick="getG()">📍 موقعي GPS</button><button class="clear" onclick="clearC()">🗑️ إفراغ</button></div>
+<div class="inp-row"><button class="gps" onclick="getG()">📍 GPS</button><button class="clear" onclick="clearC()">🗑️ إفراغ</button></div>
 <div id="gok" style="font-size:12px;color:#2E7D32;margin:6px 0"></div>
 <input class="inp" id="cnote" placeholder="📝 ملاحظة">
-</div>
-<div class="total"><small>المجموع | نقاطك: <b id="points-drawer" style="color:#FFD600">0</b></small><b id="ctotal">0 دت</b></div>
-<button class="send" id="main-send" onclick="sendW()">📲 ابعث الطلب واتساب</button>
-<div class="wa-success" id="wa-success"><div>✅ الطلب تجهز! إذا ما تحلش الواتساب، دوس هنا:</div><a id="wa-link-a" href="#" target="_blank">📲 افتح واتساب - اضغط هنا</a><div style="font-size:11px;margin-top:10px;opacity:.9">رقم المحل: 56 711 448</div><button onclick="copyMsg()" style="background:rgba(255,255,255,.2);border:1px solid #fff;color:#fff;padding:8px 14px;border-radius:8px;margin-top:8px;font-size:12px">📋 انسخ الرسالة</button></div>
+<div class="total"><small>المجموع</small><b id="ctotal">0 دت</b></div>
+<button class="send" onclick="sendW()">📲 ابعث واتساب</button>
+<div class="wa-success" id="wa-success"><div>✅ تجهز!</div><a id="wa-link-a" href="#" target="_blank">📲 افتح واتساب</a></div>
 </div>
 
 <script>
-let cart=[],gps="",orders=parseInt(localStorage.getItem('elmalek_orders')||'0'),points=parseInt(localStorage.getItem('elmalek_points')||'0'),currentStars=0,isAdmin=false,lastMsg="";
-let defaultReviews=[
-{n:"محمد - cité riadh",t:"منذ 2 ساعة",s:5,txt:"بنين برشا! التوصيل في 20 دقيقة، سخون!",def:true},
-{n:"أميرة - Sahloul",t:"منذ 5 ساعات",s:5,txt:"ملاوي محبوب يهبل! ننصحكم بيه 🤩",def:true},
-{n:"حمزة - Khzema",t:"أمس",s:5,txt:"أحسن شاباتي في سوسة! والسعر رخيص",def:true},
-{n:"سيرين - Sousse",t:"أمس",s:5,txt:"البيتزا بنينة والخدمة ممتازة 👑",def:true}
-];
+let cart=[],gps="",orders=parseInt(localStorage.getItem('elmalek_orders')||'0'),currentStars=0,isAdmin=false,lastMsg="";
+
+function getDefaultReviews(){
+ let blocked=JSON.parse(localStorage.getItem('elmalek_blocked')||'[]');
+ let all=[
+ {id:'d1',n:"محمد - cité riadh",t:"منذ 2 ساعة",s:5,txt:"بنين برشا! التوصيل في 20 دقيقة، سخون!"},
+ {id:'d2',n:"أميرة - Sahloul",t:"منذ 5 ساعات",s:5,txt:"ملاوي محبوب يهبل! ننصحكم بيه 🤩"},
+ {id:'d3',n:"حمزة - Khzema",t:"أمس",s:5,txt:"أحسن شاباتي في سوسة! والسعر رخيص"},
+ {id:'d4',n:"سيرين - Sousse",t:"أمس",s:5,txt:"البيتزا بنينة والخدمة ممتازة 👑"}
+ ];
+ return all.filter(r=>!blocked.includes(r.id));
+}
 
 function loadReviews(){
  let saved=JSON.parse(localStorage.getItem('elmalek_reviews')||'[]');
- // saved = [{oldest}, {newest}] - newest is last pushed
- // display newest first: reverse copy
- let savedReversed = [...saved].reverse(); // [newest, ..., oldest]
+ let defaults=getDefaultReviews();
  let html='';
- // user reviews first
- savedReversed.forEach((r,i)=>{
-   let originalIndex = saved.length - 1 - i; // map reversed position to original
+ // user reviews - newest first
+ let savedCopy=[...saved].reverse();
+ savedCopy.forEach((r,displayIndex)=>{
+   let originalIndex=saved.length-1-displayIndex;
    let stars='⭐'.repeat(r.s);
-   let delBtn=`<button class="del-btn" onclick="deleteRev(${originalIndex})" title="فسخ ${r.n}">🗑️</button>`;
-   html+=`<div class="rev-card">${delBtn}<b>${r.n} ${stars}</b><small>${r.t} • كومنتار جديد</small><p>${r.txt}</p></div>`;
+   // ID based delete - super safe
+   html+=`<div class="rev-card new"><button class="del-btn" onclick="deleteUser(${originalIndex})">🗑️</button><b>${r.n} ${stars}</b><small>${r.t} • جديد</small><p>${r.txt}</p></div>`;
  });
- // default reviews (cannot delete)
- defaultReviews.forEach(r=>{
+ defaults.forEach(r=>{
    let stars='⭐'.repeat(r.s);
-   html+=`<div class="rev-card"><b>${r.n} ${stars}</b><small>${r.t}</small><p>${r.txt}</p></div>`;
+   html+=`<div class="rev-card"><button class="del-btn" onclick="deleteDefault('${r.id}')">🗑️</button><b>${r.n} ${stars}</b><small>${r.t}</small><p>${r.txt}</p></div>`;
  });
- document.getElementById('rev-list').innerHTML=html;
- document.getElementById('rev-count').textContent=saved.length + defaultReviews.length;
+ document.getElementById('rev-list').innerHTML=html || '<p style="text-align:center;color:#999;padding:20px">لا يوجد تعليقات بعد</p>';
+ document.getElementById('rev-count').textContent=saved.length + defaults.length;
 }
 
-function deleteRev(originalIndex){
- if(!isAdmin){alert('لازم تدخل كأدمن أولاً - دوبل كليك على "آراء الحرفاء"'); return}
+function deleteUser(originalIndex){
+ if(!isAdmin){alert('لازم تدخل كأدمن'); return}
  let saved=JSON.parse(localStorage.getItem('elmalek_reviews')||'[]');
- if(originalIndex<0 || originalIndex>=saved.length){alert('خطأ في الفهرس'); return}
- let target=saved[originalIndex];
- if(!confirm(`تفسخ كومنتار "${target.n}: ${target.txt.substring(0,30)}..." ؟`)) return;
+ if(originalIndex<0||originalIndex>=saved.length) return;
+ let t=saved[originalIndex];
+ if(!confirm(`تفسخ "${t.n}" ؟\n${t.txt.substring(0,40)}`)) return;
  saved.splice(originalIndex,1);
  localStorage.setItem('elmalek_reviews',JSON.stringify(saved));
+ loadReviews();
+}
+function deleteDefault(id){
+ if(!isAdmin){alert('لازم تدخل كأدمن'); return}
+ if(!confirm('تفسخ هذا التعليق الافتراضي؟')) return;
+ let blocked=JSON.parse(localStorage.getItem('elmalek_blocked')||'[]');
+ blocked.push(id);
+ localStorage.setItem('elmalek_blocked',JSON.stringify(blocked));
  loadReviews();
 }
 
 function askAdmin(){document.getElementById('admin-modal').classList.add('open'); setTimeout(()=>document.getElementById('admin-pass').focus(),200)}
 function closeAdminModal(){document.getElementById('admin-modal').classList.remove('open'); document.getElementById('admin-pass').value=''}
 function loginAdmin(){
- let p=document.getElementById('admin-pass').value;
+ let p=document.getElementById('admin-pass').value.trim();
  if(p==='malek123' || p==='admin123' || p==='1234'){
    isAdmin=true; document.body.classList.add('admin-mode');
    closeAdminModal();
-   alert('✅ دخلت كأدمن! تو تنجم تفسخ أي كومنتار بدوس على 🗑️');
- } else alert('❌ كلمة السر غالطة! جرب: malek123');
+   alert('✅ دخلت كأدمن! تو يبان زر 🗑️ أحمر فوق كل كومنتار - دوس عليه باش تفسخ!');
+ } else alert('❌ غالطة! جرب malek123');
 }
 function exitAdmin(){isAdmin=false; document.body.classList.remove('admin-mode');}
 function openReview(){document.getElementById('rev-modal').classList.add('open')}
 function closeReview(){document.getElementById('rev-modal').classList.remove('open')}
-function setStar(n){currentStars=n; document.querySelectorAll('#stars .star').forEach((el,i)=>{el.classList.toggle('on',i<n)}); let labels=['','سيء 😡','موش خايب 😐','باهي 🙂','بنين 😋','ياسر بنين 🤩🔥']; document.getElementById('star-label').textContent=labels[n];}
+function setStar(n){currentStars=n; document.querySelectorAll('#stars .star').forEach((el,i)=>el.classList.toggle('on',i<n))}
 function submitReview(){
  let name=document.getElementById('rname').value.trim();
  let txt=document.getElementById('rtext').value.trim();
- if(!currentStars){alert('اختار النجوم ⭐');return}
- if(!name){alert('اكتب اسمك');return}
- if(!txt){alert('اكتب كومنتار');return}
- let rev={n:name,t:'الآن',s:currentStars,txt:txt};
+ if(!currentStars){alert('اختار النجوم');return}
+ if(!name||!txt){alert('اكتب الاسم والكومنتار');return}
+ let rev={n:name,t:'الآن',s:currentStars,txt:txt,ts:Date.now()};
  let saved=JSON.parse(localStorage.getItem('elmalek_reviews')||'[]');
  saved.push(rev);
  localStorage.setItem('elmalek_reviews',JSON.stringify(saved));
  loadReviews(); closeReview();
  document.getElementById('rname').value=''; document.getElementById('rtext').value=''; currentStars=0;
  document.querySelectorAll('#stars .star').forEach(el=>el.classList.remove('on'));
- let msg=`⭐ تعليق جديد في pizza الملك 👑\n\n👤 ${name}\n⭐ ${currentStars} نجوم\n📝 ${txt}`;
- let waUrl=`https://wa.me/21656711448?text=${encodeURIComponent(msg)}`;
- window.open(waUrl,'_blank');
 }
 
 function addC(n,p){let f=cart.find(i=>i.n===n); if(f) f.q++; else cart.push({n,p,q:1}); upd();}
-function upd(){let c=cart.reduce((s,i)=>s+i.q,0); document.getElementById('ccount').textContent=c+' منتج'; let fc=document.getElementById('fcount'); if(c>0){fc.style.display='grid'; fc.textContent=c} else fc.style.display='none'; let t=0,h=''; if(!cart.length){document.getElementById('clist').innerHTML='اختار حاجة بنينة 👆'; document.getElementById('ctotal').textContent='0 دت'; return} cart.forEach(i=>{h+=`<div class="row"><span>• ${i.n} x${i.q}</span><div class="ctrl"><span style="color:#00C853;font-weight:800;margin:0 6px">${(i.p*i.q).toFixed(1).replace('.0','')} دت</span><button class="minus" onclick="chg('${i.n}',-1)">−</button><button class="plus" onclick="chg('${i.n}',1)">+</button></div></div>`; t+=i.p*i.q}); document.getElementById('clist').innerHTML=h; document.getElementById('ctotal').textContent=t.toFixed(1).replace('.0','')+' دت'; document.getElementById('points-drawer').textContent=Math.floor(t)+points}
+function upd(){let c=cart.reduce((s,i)=>s+i.q,0); let fc=document.getElementById('fcount'); if(c>0){fc.style.display='grid'; fc.textContent=c} else fc.style.display='none'; let t=0,h=''; if(!cart.length){document.getElementById('clist').innerHTML='اختار حاجة بنينة'; document.getElementById('ctotal').textContent='0 دت'; return} cart.forEach(i=>{h+=`<div class="row"><span>• ${i.n} x${i.q}</span><span style="color:#00C853;font-weight:800">${(i.p*i.q).toFixed(1)} دت <button class="minus" onclick="chg('${i.n}',-1)">−</button><button class="plus" onclick="chg('${i.n}',1)">+</button></span></div>`; t+=i.p*i.q}); document.getElementById('clist').innerHTML=h; document.getElementById('ctotal').textContent=t.toFixed(1)+' دت';}
 function chg(n,d){let f=cart.find(i=>i.n===n); if(!f) return; f.q+=d; if(f.q<=0) cart=cart.filter(i=>i.n!==n); upd()}
-function clearC(){cart=[]; upd(); document.getElementById('wa-success').style.display='none';}
-function filt(cat,el){document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active')); el.classList.add('active'); document.querySelectorAll('.card').forEach(x=>{if(cat==='all'||x.dataset.cat===cat) x.style.display='flex'; else x.style.display='none'}); document.querySelectorAll('.sec').forEach(s=>{if(cat==='all') s.style.display='flex'; else s.style.display='none'})}
-function openCart(){document.getElementById('drawer').classList.add('open'); document.getElementById('ov').style.display='block'; updPrev()}
+function clearC(){cart=[]; upd();}
+function filt(cat,el){document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active')); el.classList.add('active'); document.querySelectorAll('.card').forEach(x=>{x.style.display=(cat==='all'||x.dataset.cat===cat)?'flex':'none'}); document.querySelectorAll('.sec').forEach(s=>s.style.display=cat==='all'?'block':'none')}
+function openCart(){document.getElementById('drawer').classList.add('open'); document.getElementById('ov').style.display='block'; let count=parseInt(localStorage.getItem('elmalek_orders')||'0')+1; document.getElementById('oprev').textContent='#EB-'+String(count).padStart(3,'0')}
 function closeCart(){document.getElementById('drawer').classList.remove('open'); setTimeout(()=>document.getElementById('ov').style.display='none',300)}
-function updPrev(){let count=parseInt(localStorage.getItem('elmalek_orders')||'0')+1; document.getElementById('oprev').textContent='#EB-'+String(count).padStart(3,'0'); document.getElementById('loyalty-points').textContent=points; document.getElementById('loyalty-fill').style.width=Math.min((points/50)*100,100)+'%'}
-function getG(){if(!navigator.geolocation){alert('GPS لا يعمل');return} document.getElementById('gok').textContent='⏳ نحدد موقعك...'; navigator.geolocation.getCurrentPosition(p=>{gps=`https://maps.google.com/?q=${p.coords.latitude},${p.coords.longitude}`; document.getElementById('gok').innerHTML=`✅ تم! <a href="${gps}" target="_blank" style="color:#1976D2">شوف موقعك</a>`},()=>{document.getElementById('gok').textContent='❌ فشل'})}
-function copyMsg(){ if(lastMsg){ navigator.clipboard.writeText(lastMsg).then(()=>alert('✅ نسخت الرسالة!')); } }
+function getG(){if(!navigator.geolocation){alert('GPS لا يعمل');return} document.getElementById('gok').textContent='⏳...'; navigator.geolocation.getCurrentPosition(p=>{gps=`https://maps.google.com/?q=${p.coords.latitude},${p.coords.longitude}`; document.getElementById('gok').innerHTML=`✅ <a href="${gps}" target="_blank">شوف موقعك</a>`},()=>{document.getElementById('gok').textContent='❌ فشل'})}
 function sendW(){
  if(!cart.length){alert('اختار من المنيو!');return}
  let name=document.getElementById('cname').value.trim();
- if(!name){alert('اكتب اسمك 👤'); document.getElementById('cname').focus(); return}
- let addr=document.getElementById('caddr').value;
- let phone=document.getElementById('cphone').value;
- let note=document.getElementById('cnote').value;
- orders++;
+ if(!name){alert('اكتب اسمك');return}
+ orders++; localStorage.setItem('elmalek_orders',orders);
  let total=cart.reduce((s,i)=>s+i.p*i.q,0);
- points+=Math.floor(total);
- localStorage.setItem('elmalek_orders',orders);
- localStorage.setItem('elmalek_points',points);
- let num=String(orders).padStart(3,'0');
- let id='#EB-'+num;
- let msg=`🔥 pizza الملك 👑 - طلب جديد ${id}\n\n👤 الحريف: ${name}\n🆔 رقم الطلب: ${id}\n🎁 نقاطك: ${points} نقطة\n\n📋 الطلب:\n`;
+ let id='#EB-'+String(orders).padStart(3,'0');
+ let msg=`🔥 pizza الملك 👑 - ${id}\n👤 ${name}\n\n`;
  cart.forEach(i=>{msg+=`• ${i.n} x${i.q} - ${i.p*i.q} دت\n`});
- msg+=`\n💰 المجموع: ${total} دت (التوصيل مجاني)\n\n`;
- if(addr) msg+=`📍 العنوان: ${addr}\n`;
+ msg+=`\n💰 ${total} دت\n`;
+ if(document.getElementById('caddr').value) msg+=`📍 ${document.getElementById('caddr').value}\n`;
  if(gps) msg+=`📍 GPS: ${gps}\n`;
- if(phone) msg+=`📱 رقم الحريف: ${phone}\n`;
- if(note) msg+=`📝 ملاحظة: ${note}\n`;
- msg+=`\n⏰ ${new Date().toLocaleString('ar-TN')}`;
+ if(document.getElementById('cphone').value) msg+=`📱 ${document.getElementById('cphone').value}\n`;
  lastMsg=msg;
  let waUrl=`https://wa.me/21656711448?text=${encodeURIComponent(msg)}`;
  document.getElementById('wa-link-a').href=waUrl;
  document.getElementById('wa-success').style.display='block';
- let a=document.createElement('a'); a.href=waUrl; a.target='_blank'; a.rel='noopener'; document.body.appendChild(a); a.click(); setTimeout(()=>document.body.removeChild(a),1000);
- setTimeout(()=>{ try{ window.open(waUrl,'_blank'); }catch(e){} },500);
+ let a=document.createElement('a'); a.href=waUrl; a.target='_blank'; document.body.appendChild(a); a.click(); setTimeout(()=>document.body.removeChild(a),800);
 }
-function updateLive(){let mins=18+Math.floor(Math.random()*12); document.getElementById('live-time').textContent=`يوصل في ${mins} دقيقة`; }
-setInterval(updateLive,15000); updateLive(); loadReviews(); updPrev();
-
-// secret admin via URL ?admin=1
-if(new URLSearchParams(location.search).get('admin')==='1'){ setTimeout(askAdmin,800) }
+loadReviews();
 </script>
 <script>(function(){var loc=location.href.replace(/#.*$/,"");var ATTR_NAMES=["data-product-id","data-productid","data-product_id","product-id","productid","product_id","data-source-entity-id","source-entity-id","source_entity_id","data-product","data-metadata","data-meta"];var DATASET_KEYS=["productId","productid","product_id","sourceEntityId","sourceentityid","source_entity_id","product","metadata","meta"];function readProductId(value){if(typeof value!=="string"||value.length===0)return null;if(/^[0-9]{6,}$/.test(value))return value;var match=value.match(/(?:product(?:_|-)?id|source(?:_|-)?entity(?:_|-)?id)["'=:\s]+([0-9]{6,})/i);return match?match[1]:null}function extractProductId(start){for(var node=start;node&&node!==document.body;node=node.parentElement){for(var i=0;i<ATTR_NAMES.length;i++){var attrValue=node.getAttribute&&node.getAttribute(ATTR_NAMES[i]);var attrProductId=readProductId(attrValue);if(attrProductId)return attrProductId}var dataset=node.dataset||null;if(dataset){for(var j=0;j<DATASET_KEYS.length;j++){var dataValue=dataset[DATASET_KEYS[j]];var dataProductId=readProductId(dataValue);if(dataProductId)return dataProductId}}}return null}function isInlineMediaSlotElement(node){return !!(node&&node.getAttribute&&node.getAttribute("data-clippy-inline-media-slot")!==null)}function findInlineMediaSlot(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(isInlineMediaSlotElement(node))return node}return null}function readInlineMediaUrl(node){if(!node)return null;return node.getAttribute&&((node.getAttribute("data-clippy-inline-media-url")||node.getAttribute("data-url")||node.getAttribute("data_url")))||node.href||null}function stripHash(url){return String(url).replace(/#.*$/,"")}function urlsMatch(a,b){if(!a||!b)return false;try{return stripHash(new URL(a,loc).href)===stripHash(new URL(b,loc).href)}catch(_){return stripHash(a)===stripHash(b)}}function isFirstPartyReelUrl(value){try{var url=new URL(value,loc);if(url.protocol!=="https:")return false;var host=url.hostname.toLowerCase();var supported=host==="instagram.com"||host.endsWith(".instagram.com")||host==="facebook.com"||host.endsWith(".facebook.com");return supported&&/\/reels?\//i.test(url.pathname)}catch(_){return false}}function isInlineMediaUrlClick(node,href){var slot=findInlineMediaSlot(node);if(!slot)return false;var slotUrl=readInlineMediaUrl(slot);if(slotUrl)return urlsMatch(href,slotUrl);return isFirstPartyReelUrl(href)}function findDataHref(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(node.getAttribute){var href=node.getAttribute("data-href")||node.getAttribute("data-url");if(href)return{href:href,node:node}}}return null}var nativeOpen=window.open;window.open=function(url){if(parent!==window&&typeof url==="string"&&/^https?:\/\//.test(url)){parent.postMessage({type:"ecto:usercontent-link-click",href:url},"*");return null}return nativeOpen?nativeOpen.apply(window,arguments):null};document.addEventListener("click",function(e){var target=e.target instanceof Element?e.target:null;if(!target)return;if(parent===window)return;var a=target.closest?target.closest("a[href]"):null;if(a&&a.href&&/^https?:\/\//.test(a.href)&&a.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(a,a.href))return;var productId=extractProductId(target)||extractProductId(a);if(productId){e.preventDefault();parent.postMessage({type:"ecto-artifact-link-click",productId:productId},"*");return}e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:a.href},"*");return}var dataHref=findDataHref(target);if(dataHref&&/^https?:\/\//.test(dataHref.href)&&dataHref.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(dataHref.node,dataHref.href))return;e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:dataHref.href},"*")}},true)})();</script><script>(function(){var FOCUS_TYPE="ecto:artifact-focus-request";var CLOSE_TYPE="ecto:artifact-close-request";function focusArtifactDocument(){var body=document.body;if(!body)return;try{window.focus();}catch(e){}if(!body.hasAttribute("tabindex"))body.setAttribute("tabindex","-1");try{body.focus({preventScroll:true});}catch(e){try{body.focus();}catch(e2){}}}window.addEventListener("message",function(event){if(event.source!==window.parent)return;var data=event.data;if(!data||typeof data!=="object"||data.type!==FOCUS_TYPE)return;if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",focusArtifactDocument,{once:true});return;}focusArtifactDocument();});window.addEventListener("keydown",function(event){if(event.key!=="Escape")return;window.setTimeout(function(){if(event.defaultPrevented)return;window.parent.postMessage({type:CLOSE_TYPE},"*");},0);});})();</script></body>
 </html>
