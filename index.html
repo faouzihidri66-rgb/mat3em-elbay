@@ -28,7 +28,7 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@700;800;900&display=swap');
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Tajawal',sans-serif}
-body{background:#FFF6EB;color:#222;padding-bottom:120px}
+body{background:#FFFBF5;color:#222;padding-bottom:120px}
 .offer-banner{background: linear-gradient(90deg, #111 0%, #2a2a2a 50%, #111 100%); color: #FFD600; border-bottom: 3px solid #FFD600; box-shadow: 0 4px 20px rgba(255,214,0,.3);padding:14px 16px;text-align:center;font-weight:900;font-size:15px;position:sticky;top:0;z-index:200;display:flex;align-items:center;justify-content:center;gap:10px;letter-spacing:.5px;animation: shimmer 3s infinite}
 .offer-banner.hidden{display:none}
 .offer-edit{display:none;background:#111;color:#FFD600;border:none;padding:4px 10px;border-radius:8px;font-size:11px;font-weight:800;cursor:pointer}
@@ -111,6 +111,22 @@ body{background:#FFF6EB;color:#222;padding-bottom:120px}
 .wa-success a{display:block;background:#fff;color:#128C7E;padding:12px;border-radius:12px;text-decoration:none;font-weight:900;margin-top:10px}
 .live-dot{width:8px;height:8px;background:#00C853;border-radius:50%;display:inline-block;animation:pulse 1s infinite}
 @keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}} @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.2)}100%{transform:scale(1)}}
+
+/* DESKTOP ONLY - Mobile stays 100% same */
+@media (min-width: 768px) {
+  .menu { max-width: 900px; }
+  #menu-container { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  #menu-container .sec { grid-column: 1 / -1; }
+  #menu-container .card { margin-bottom: 0; }
+}
+@media (min-width: 1100px) {
+  .menu { max-width: 1200px; }
+  #menu-container { grid-template-columns: 1fr 1fr 1fr; }
+  .cats { justify-content: center; }
+  .reviews { max-width: 900px; margin: 20px auto; }
+  .loyalty { max-width: 900px; }
+}
+
 </style>
 </head>
 <body>
