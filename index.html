@@ -24,12 +24,12 @@
 </style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>pizza الملك V20 FINAL - تحكم كامل + نقاط</title>
+<title>pizza الملك V20.1 - مصلح</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@700;800;900&display=swap');
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Tajawal',sans-serif}
 body{background:#FFF6EB;color:#222;padding-bottom:120px}
-.offer-banner{background:linear-gradient(90deg,#FF1744,#FF6B00,#FFB800);color:#fff;padding:10px 16px;text-align:center;font-weight:900;font-size:14px;position:sticky;top:0;z-index:200;display:flex;align-items:center;justify-content:center;gap:10px}
+.offer-banner{background:linear-gradient(90deg,#FF1744,#FF6B00,#FFB800);color:#fff;padding:12px 16px;text-align:center;font-weight:900;font-size:14px;position:sticky;top:0;z-index:200;display:flex;align-items:center;justify-content:center;gap:10px}
 .offer-banner.hidden{display:none}
 .offer-edit{display:none;background:#111;color:#FFD600;border:none;padding:4px 10px;border-radius:8px;font-size:11px;font-weight:800;cursor:pointer}
 .admin-mode .offer-edit{display:inline-block}
@@ -48,7 +48,7 @@ body{background:#FFF6EB;color:#222;padding-bottom:120px}
 .menu{max-width:700px;margin:0 auto;padding:10px 12px}
 .sec{font-size:19px;font-weight:900;margin:22px 4px 10px;display:flex;justify-content:space-between;align-items:center}
 .sec-count{font-size:12px;background:#FFF3E0;color:#FF6B00;padding:4px 10px;border-radius:10px;border:1px solid #FFE0B2}
-.card{background:#fff;border-radius:18px;padding:12px;display:flex;gap:12px;margin-bottom:12px;box-shadow:0 4px 18px rgba(255,107,0,.08);border:1px solid #FFE0B2;position:relative;transition:.3s}
+.card{background:#fff;border-radius:18px;padding:12px;display:flex;gap:12px;margin-bottom:12px;box-shadow:0 4px 18px rgba(255,107,0,.08);border:1px solid #FFE0B2;position:relative}
 .card .admin-actions{position:absolute;top:8px;left:8px;display:none;gap:6px;z-index:5}
 .admin-mode .card .admin-actions{display:flex}
 .btn-admin{width:34px;height:34px;border-radius:10px;border:2px solid #fff;font-size:16px;cursor:pointer;display:grid;place-items:center;font-weight:900;box-shadow:0 2px 8px rgba(0,0,0,.2)}
@@ -61,7 +61,6 @@ body{background:#FFF6EB;color:#222;padding-bottom:120px}
 .admin-mode .price{border:2px dashed #FF6B00;padding:2px 8px;border-radius:8px;background:#FFF3E0}
 .admin-mode .price::after{content:' ✏️';font-size:12px}
 .add{background:linear-gradient(135deg,#FF6B00,#FF8C00);color:#fff;border:none;padding:9px 18px;border-radius:22px;font-weight:900;cursor:pointer}
-/* Loyalty */
 .loyalty{max-width:700px;margin:12px auto;background:linear-gradient(135deg,#1a1a1a,#333);color:#fff;border-radius:18px;padding:16px;display:flex;justify-content:space-between;align-items:center;position:relative;border:2px solid #FFD600}
 .loyalty.hidden-loyal{display:none}
 .loyalty b{color:#FFD600}
@@ -78,7 +77,6 @@ body{background:#FFF6EB;color:#222;padding-bottom:120px}
 .tool-offer{background:#FFD600;color:#111}
 .tool-loyal{background:#00C853;color:#fff}
 .tool-restore{background:#fff;color:#111;border:1px solid #ddd}
-.tool-exit{background:#FF1744;color:#fff}
 .rev-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;cursor:pointer}
 .rev-list{display:flex;flex-direction:column;gap:12px}
 .rev-card{width:100%;background:#FFFBF5;border:2px solid #FFE0B2;border-radius:14px;padding:14px 54px 14px 14px;position:relative;min-height:80px}
@@ -118,7 +116,7 @@ body{background:#FFF6EB;color:#222;padding-bottom:120px}
 <body>
 
 <div class="offer-banner" id="offer-banner">
-<span id="offer-text">🔥 عرض اليوم: <b style="background:#fff;color:#FF1744;padding:3px 10px;border-radius:20px">بيتزا + شاباتي = 15دت برك!</b> ⏰ حتى 23:00</span>
+<span id="offer-text">🔥 عرض اليوم: بيتزا + شاباتي = 15دت برك! ⏰ حتى 23:00</span>
 <button class="offer-edit" onclick="editOffer()">✏️</button>
 <button class="offer-edit" onclick="hideOffer()" style="background:#FF1744;color:#fff">✕</button>
 </div>
@@ -132,7 +130,7 @@ body{background:#FFF6EB;color:#222;padding-bottom:120px}
 </div>
 
 <div class="loyalty" id="loyalty-box">
-<div class="loyalty-edit"><button class="btn-admin btn-edit-price" onclick="editLoyalty()" title="بدل النقاط">✏️</button><button class="btn-admin btn-del" onclick="hideLoyalty()" title="فسخ">✕</button></div>
+<div class="loyalty-edit"><button class="btn-admin btn-edit-price" onclick="editLoyalty()">✏️</button><button class="btn-admin btn-del" onclick="hideLoyalty()">✕</button></div>
 <div style="flex:1"><div>🎁 <b id="loyalty-points">0</b> نقطة ولاء</div><div style="font-size:12px;opacity:.8;margin-top:4px" id="loyalty-desc">كل 1دت = 1 نقطة | 50 نقطة = شاباتي بلاش!</div><div class="loyalty-bar"><div class="loyalty-fill" id="loyalty-fill" style="width:0%"></div></div></div><div style="font-size:32px;margin-right:12px">👑</div>
 </div>
 
@@ -150,11 +148,11 @@ body{background:#FFF6EB;color:#222;padding-bottom:120px}
 
 <div class="reviews">
 <div class="admin-bar" id="admin-bar">
-<div style="display:flex;justify-content:space-between;align-items:center;width:100%"><span>🔓 V20 FINAL - تحكم كامل 👑</span><button onclick="exitAdmin()" style="background:#FF1744;color:#fff;border:none;padding:6px 14px;border-radius:8px;font-weight:800">خروج 🔒</button></div>
+<div style="display:flex;justify-content:space-between;align-items:center;width:100%"><span>🔓 V20.1 - مصلح 👑</span><button onclick="exitAdmin()" style="background:#FF1744;color:#fff;border:none;padding:6px 14px;border-radius:8px;font-weight:800">🔒 خروج</button></div>
 <div class="admin-tools">
-<button class="admin-tool tool-edit" onclick="alert('💰 دوس على أي سوم أخضر باش تبدلو\n🗑️ دوس على أي منتج باش تفسخو\n🔥 الفوق: بدل عرض اليوم\n🎁 نقاط الولاء: دوس ✏️ بجنب النقاط')">💡 كيفاش؟</button>
+<button class="admin-tool tool-edit" onclick="alert('💰 دوس على السوم\n🗑️ دوس على المنتج\n🔥 عرض اليوم الفوق\n🎁 نقاط الولاء')">💡 كيفاش؟</button>
 <button class="admin-tool tool-offer" onclick="editOffer()">🔥 عرض اليوم</button>
-<button class="admin-tool tool-loyal" onclick="editLoyalty()">🎁 نقاط الولاء</button>
+<button class="admin-tool tool-loyal" onclick="editLoyalty()">🎁 نقاط</button>
 <button class="admin-tool tool-restore" onclick="restoreAll()">♻️ رجع الكل</button>
 </div>
 </div>
@@ -164,22 +162,19 @@ body{background:#FFF6EB;color:#222;padding-bottom:120px}
 </div>
 
 <div class="modal" id="rev-modal"><div class="modal-box"><b>✍️ شنو رايك؟</b><div class="stars" id="stars"><span class="star" onclick="setStar(1)">⭐</span><span class="star" onclick="setStar(2)">⭐</span><span class="star" onclick="setStar(3)">⭐</span><span class="star" onclick="setStar(4)">⭐</span><span class="star" onclick="setStar(5)">⭐</span></div><input class="inp" id="rname" placeholder="👤 اسمك"><textarea class="inp" id="rtext" placeholder="📝 كومنتارك..."></textarea><button class="send" onclick="submitReview()" style="background:linear-gradient(135deg,#FF6B00,#FFB800)">📤 نشر</button><button class="btn-review" onclick="closeReview()" style="background:#fff;color:#111;border:2px solid #FFE0B2">إلغاء</button></div></div>
-<div class="modal" id="admin-modal"><div class="modal-box"><b>🔑 دخول الإدارة</b><input class="inp" id="admin-pass" type="password" placeholder="🔒 كلمة السر (malek123)"><button class="send" onclick="loginAdmin()" style="background:#111">دخول</button><button class="btn-review" onclick="closeAdminModal()" style="background:#fff;color:#111;border:2px solid #FFE0B2">إلغاء</button></div></div>
-<div class="modal" id="price-modal"><div class="modal-box"><b>💰 بدل السوم</b><p id="price-prod-name" style="font-size:14px;color:#666;margin:10px 0"></p><input class="inp" id="new-price" type="number" step="0.5" placeholder="مثلا 5.5"><button class="send" onclick="savePrice()" style="background:#00C853">✅ حفظ السوم</button><button class="btn-review" onclick="closePriceModal()" style="background:#fff;color:#111;border:2px solid #FFE0B2">إلغاء</button></div></div>
+
+<!-- FIXED: Password now hidden with •••• -->
+<div class="modal" id="admin-modal"><div class="modal-box"><b>🔑 دخول الإدارة</b><input class="inp" id="admin-pass" type="password" placeholder="••••••••" style="letter-spacing:4px;text-align:center;font-size:20px"><p style="font-size:11px;color:#999;text-align:center;margin:8px 0">أدخل كلمة السر</p><button class="send" onclick="loginAdmin()" style="background:#111">دخول</button><button class="btn-review" onclick="closeAdminModal()" style="background:#fff;color:#111;border:2px solid #FFE0B2">إلغاء</button></div></div>
+
+<div class="modal" id="price-modal"><div class="modal-box"><b>💰 بدل السوم</b><p id="price-prod-name" style="font-size:14px;color:#666;margin:10px 0"></p><input class="inp" id="new-price" type="number" step="0.5"><button class="send" onclick="savePrice()" style="background:#00C853">✅ حفظ</button><button class="btn-review" onclick="closePriceModal()" style="background:#fff;color:#111;border:2px solid #FFE0B2">إلغاء</button></div></div>
 <div class="modal" id="offer-modal"><div class="modal-box"><b>🔥 عرض اليوم</b><input class="inp" id="offer-input" placeholder="مثلا: بيتزا + شاباتي = 15دت"><div style="display:flex;gap:8px"><button class="send" onclick="saveOffer()" style="background:#FF6B00;flex:1">✅ حفظ</button><button class="send" onclick="hideOffer();closeOfferModal()" style="background:#FF1744;flex:1">🗑️ فسخ</button></div><button class="btn-review" onclick="closeOfferModal()" style="background:#fff;color:#111;border:2px solid #FFE0B2">إلغاء</button><button class="btn-review" onclick="showOffer();closeOfferModal()" style="background:#E8F5E9;color:#2E7D32">♻️ رجع العرض</button></div></div>
-<div class="modal" id="loyalty-modal"><div class="modal-box"><b>🎁 نقاط الولاء</b><p style="font-size:12px;color:#888;margin:10px 0">تحكم في نظام النقاط</p>
-<label style="font-size:13px;font-weight:800">قداش نقطة لكل 1 دت؟</label><input class="inp" id="loyalty-per" type="number" step="1" placeholder="مثلا 1">
-<label style="font-size:13px;font-weight:800">قداش نقطة باش يربح هدية؟</label><input class="inp" id="loyalty-reward-at" type="number" step="1" placeholder="مثلا 50">
-<label style="font-size:13px;font-weight:800">شنو الهدية؟</label><input class="inp" id="loyalty-reward-name" placeholder="مثلا شاباتي بلاش">
-<div style="display:flex;gap:8px"><button class="send" onclick="saveLoyalty()" style="background:#00C853;flex:1">✅ حفظ</button><button class="send" onclick="hideLoyalty();closeLoyaltyModal()" style="background:#FF1744;flex:1">🗑️ فسخ النقاط</button></div>
-<button class="btn-review" onclick="closeLoyaltyModal()" style="background:#fff;color:#111;border:2px solid #FFE0B2">إلغاء</button><button class="btn-review" onclick="showLoyalty();closeLoyaltyModal()" style="background:#E8F5E9;color:#2E7D32">♻️ رجع النقاط</button>
-</div></div>
+<div class="modal" id="loyalty-modal"><div class="modal-box"><b>🎁 نقاط الولاء</b><label style="font-size:13px;font-weight:800">قداش نقطة لكل 1 دت؟</label><input class="inp" id="loyalty-per" type="number"><label style="font-size:13px;font-weight:800">قداش نقطة للهدية؟</label><input class="inp" id="loyalty-reward-at" type="number"><label style="font-size:13px;font-weight:800">شنو الهدية؟</label><input class="inp" id="loyalty-reward-name" placeholder="مثلا شاباتي بلاش"><div style="display:flex;gap:8px"><button class="send" onclick="saveLoyalty()" style="background:#00C853;flex:1">✅ حفظ</button><button class="send" onclick="hideLoyalty();closeLoyaltyModal()" style="background:#FF1744;flex:1">🗑️ فسخ</button></div><button class="btn-review" onclick="closeLoyaltyModal()" style="background:#fff;color:#111;border:2px solid #FFE0B2">إلغاء</button><button class="btn-review" onclick="showLoyalty();closeLoyaltyModal()" style="background:#E8F5E9;color:#2E7D32">♻️ رجع النقاط</button></div></div>
 
 <button class="cart-btn" onclick="openCart()">🛒<span class="cart-num" id="fcount" style="display:none">0</span></button>
 <div class="overlay" id="ov" onclick="closeCart()"></div>
 <div class="drawer" id="drawer">
 <div style="display:flex;justify-content:space-between;align-items:center"><b>🛒 سلتك <span class="badge-num" id="oprev">#EB-001</span></b><button onclick="closeCart()" style="background:#fff;border:2px solid #FFE0B2;width:34px;height:34px;border-radius:10px">✕</button></div>
-<div class="list" id="clist">اختار حاجة بنينة 👆</div>
+<div class="list" id="clist">اختار حاجة بنينة</div>
 <div class="inp-row"><input class="inp" id="cname" placeholder="👤 اسمك" style="flex:1"><input class="inp" id="cphone" placeholder="📱 رقمك" style="flex:1"></div>
 <input class="inp" id="caddr" placeholder="📍 عنوانك">
 <div class="inp-row"><button class="gps" onclick="getG()">📍 GPS</button><button class="clear" onclick="clearC()">🗑️ إفراغ</button></div>
@@ -192,7 +187,6 @@ body{background:#FFF6EB;color:#222;padding-bottom:120px}
 
 <script>
 let cart=[],gps="",orders=parseInt(localStorage.getItem('elmalek_orders')||'0'),currentStars=0,isAdmin=false,editingProduct=null,points=parseInt(localStorage.getItem('elmalek_points')||'0');
-
 const defaultMenu=[
 {id:1,cat:'chapati',name:'شاباتي سلامي',desc:'سلامي، سلطة',price:3,emoji:'🫓'},
 {id:2,cat:'chapati',name:'شاباتي تن',desc:'تن، سلطة',price:3.5,emoji:'🐟'},
@@ -226,14 +220,12 @@ const defaultMenu=[
 {id:30,cat:'pizza',name:'بيتزا 4 فروماج',desc:'4 جبن',price:14,emoji:'🧀'},
 {id:31,cat:'pizza',name:'بيتزا 4 جو',desc:'4 أذواق',price:16,emoji:'🎉'},
 ];
-
 function getMenuEdits(){return JSON.parse(localStorage.getItem('elmalek_menu_edits')||'{}')}
 function saveMenuEdits(e){localStorage.setItem('elmalek_menu_edits',JSON.stringify(e))}
-function getOffer(){return JSON.parse(localStorage.getItem('elmalek_offer')||'{"text":"🔥 عرض اليوم: <b style=\\"background:#fff;color:#FF1744;padding:3px 10px;border-radius:20px\\">بيتزا + شاباتي = 15دت برك!</b> ⏰ حتى 23:00","hidden":false}')}
+function getOffer(){return JSON.parse(localStorage.getItem('elmalek_offer')||'{"text":"🔥 عرض اليوم: بيتزا + شاباتي = 15دت برك! ⏰ حتى 23:00","hidden":false}')}
 function saveOfferData(o){localStorage.setItem('elmalek_offer',JSON.stringify(o))}
 function getLoyalty(){return JSON.parse(localStorage.getItem('elmalek_loyalty')||'{"perDt":1,"rewardAt":50,"rewardName":"شاباتي بلاش","hidden":false}')}
 function saveLoyaltyData(l){localStorage.setItem('elmalek_loyalty',JSON.stringify(l))}
-
 function renderMenu(){
  let edits=getMenuEdits();
  let cats={chapati:'🫓 شاباتي',sandwich:'🥪 سندويتش',makloub:'🌯 مقلوب',mlawi:'🫓 ملاوي',panini:'🥪 بانيني',pizza:'🍕 بيتزا'};
@@ -244,141 +236,42 @@ function renderMenu(){
    html+=`<div class="sec" data-sec="${catKey}">${cats[catKey]} <span class="sec-count">${items.length}</span></div>`;
    items.forEach(item=>{
      let price=edits[item.id]?.price ?? item.price;
-     html+=`<div class="card" data-cat="${item.cat}" data-id="${item.id}">
-       <div class="admin-actions"><button class="btn-admin btn-del" onclick="deleteProduct(${item.id})">🗑️</button><button class="btn-admin btn-edit-price" onclick="openPriceEdit(${item.id})">✏️</button></div>
-       <div class="img">${item.emoji}</div>
-       <div class="info"><h3>${item.name}</h3><p>${item.desc}</p><div class="bottom"><span class="price" onclick="openPriceEdit(${item.id})">${price.toFixed(1)} دت</span><button class="add" onclick="addC('${item.name}',${price})">+ أضف</button></div></div>
-     </div>`;
+     html+=`<div class="card" data-cat="${item.cat}" data-id="${item.id}"><div class="admin-actions"><button class="btn-admin btn-del" onclick="deleteProduct(${item.id})">🗑️</button><button class="btn-admin btn-edit-price" onclick="openPriceEdit(${item.id})">✏️</button></div><div class="img">${item.emoji}</div><div class="info"><h3>${item.name}</h3><p>${item.desc}</p><div class="bottom"><span class="price" onclick="openPriceEdit(${item.id})">${price.toFixed(1)} دت</span><button class="add" onclick="addC('${item.name}',${price})">+ أضف</button></div></div></div>`;
    });
  }
- document.getElementById('menu-container').innerHTML=html||'<p style="text-align:center;padding:40px;color:#999">لا يوجد منتجات - دوس ♻️ رجع الكل</p>';
+ document.getElementById('menu-container').innerHTML=html||'<p style="text-align:center;padding:40px;color:#999">لا يوجد - دوس ♻️ رجع الكل</p>';
  let offer=getOffer();
  let banner=document.getElementById('offer-banner');
- if(offer.hidden){banner.classList.add('hidden')} else {banner.classList.remove('hidden'); document.getElementById('offer-text').innerHTML=offer.text}
+ if(offer.hidden){banner.classList.add('hidden')} else {banner.classList.remove('hidden'); document.getElementById('offer-text').textContent=offer.text}
  renderLoyalty();
 }
-
 function renderLoyalty(){
  let l=getLoyalty();
  let box=document.getElementById('loyalty-box');
- if(l.hidden){box.classList.add('hidden-loyal')}
- else {
-   box.classList.remove('hidden-loyal');
-   document.getElementById('loyalty-points').textContent=points;
-   document.getElementById('loyalty-desc').textContent=`كل ${l.perDt}دت = 1 نقطة | ${l.rewardAt} نقطة = ${l.rewardName}!`;
-   let pct=Math.min((points/l.rewardAt)*100,100);
-   document.getElementById('loyalty-fill').style.width=pct+'%';
-   document.getElementById('points-drawer').textContent=points;
- }
+ if(l.hidden){box.classList.add('hidden-loyal')} else {box.classList.remove('hidden-loyal'); document.getElementById('loyalty-points').textContent=points; document.getElementById('loyalty-desc').textContent=`كل ${l.perDt}دت = 1 نقطة | ${l.rewardAt} نقطة = ${l.rewardName}!`; let pct=Math.min((points/l.rewardAt)*100,100); document.getElementById('loyalty-fill').style.width=pct+'%'; document.getElementById('points-drawer').textContent=points}
 }
-
-function openPriceEdit(id){
- if(!isAdmin){alert('🔒 لازم أدمن');return}
- let item=defaultMenu.find(m=>m.id===id);
- let edits=getMenuEdits();
- let cur=edits[id]?.price ?? item.price;
- editingProduct=id;
- document.getElementById('price-prod-name').textContent=`${item.name} - الحالي: ${cur} دت`;
- document.getElementById('new-price').value=cur;
- document.getElementById('price-modal').classList.add('open');
-}
+function openPriceEdit(id){if(!isAdmin){alert('🔒 لازم أدمن');return} let item=defaultMenu.find(m=>m.id===id); let edits=getMenuEdits(); let cur=edits[id]?.price ?? item.price; editingProduct=id; document.getElementById('price-prod-name').textContent=`${item.name} - الحالي: ${cur} دت`; document.getElementById('new-price').value=cur; document.getElementById('price-modal').classList.add('open');}
 function closePriceModal(){document.getElementById('price-modal').classList.remove('open'); editingProduct=null}
-function savePrice(){
- let val=parseFloat(document.getElementById('new-price').value);
- if(isNaN(val)||val<=0){alert('سوم غالط');return}
- let edits=getMenuEdits();
- if(!edits[editingProduct]) edits[editingProduct]={};
- edits[editingProduct].price=val;
- saveMenuEdits(edits);
- closePriceModal();
- renderMenu(); upd();
- alert(`✅ تبدل السوم لـ ${val} دت!`);
-}
-function deleteProduct(id){
- if(!isAdmin) return;
- let item=defaultMenu.find(m=>m.id===id);
- if(!confirm(`تفسخ "${item.name}" ؟`)) return;
- let edits=getMenuEdits();
- if(!edits[id]) edits[id]={};
- edits[id].hidden=true;
- saveMenuEdits(edits);
- renderMenu();
-}
-function restoreAll(){
- if(!confirm('ترجع كل المنتجات والعروض والنقاط؟')) return;
- localStorage.removeItem('elmalek_menu_edits');
- localStorage.removeItem('elmalek_offer');
- localStorage.removeItem('elmalek_loyalty');
- localStorage.removeItem('elmalek_blocked');
- renderMenu(); loadReviews();
- alert('✅ رجعنا كل شي!');
-}
-function editOffer(){
- if(!isAdmin){alert('لازم أدمن');return}
- let offer=getOffer();
- let plain=offer.text.replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
- document.getElementById('offer-input').value=plain;
- document.getElementById('offer-modal').classList.add('open');
-}
+function savePrice(){let val=parseFloat(document.getElementById('new-price').value); if(isNaN(val)||val<=0){alert('سوم غالط');return} let edits=getMenuEdits(); if(!edits[editingProduct]) edits[editingProduct]={}; edits[editingProduct].price=val; saveMenuEdits(edits); closePriceModal(); renderMenu(); upd();}
+function deleteProduct(id){if(!isAdmin) return; let item=defaultMenu.find(m=>m.id===id); if(!confirm(`تفسخ "${item.name}" ؟`)) return; let edits=getMenuEdits(); if(!edits[id]) edits[id]={}; edits[id].hidden=true; saveMenuEdits(edits); renderMenu();}
+function restoreAll(){if(!confirm('ترجع كل شي؟')) return; localStorage.removeItem('elmalek_menu_edits'); localStorage.removeItem('elmalek_offer'); localStorage.removeItem('elmalek_loyalty'); localStorage.removeItem('elmalek_blocked'); renderMenu(); loadReviews();}
+function editOffer(){if(!isAdmin){alert('لازم أدمن');return} let offer=getOffer(); document.getElementById('offer-input').value=offer.text; document.getElementById('offer-modal').classList.add('open');}
 function closeOfferModal(){document.getElementById('offer-modal').classList.remove('open')}
-function saveOffer(){
- let val=document.getElementById('offer-input').value.trim();
- if(!val){alert('اكتب عرض');return}
- let formatted=val.includes('=')?`🔥 عرض اليوم: <b style="background:#fff;color:#FF1744;padding:3px 10px;border-radius:20px">${val}</b> ⏰ حتى 23:00`:`🔥 ${val}`;
- saveOfferData({text:formatted,hidden:false});
- closeOfferModal(); renderMenu();
-}
+function saveOffer(){let val=document.getElementById('offer-input').value.trim(); if(!val){alert('اكتب عرض');return} saveOfferData({text:val,hidden:false}); closeOfferModal(); renderMenu();}
 function hideOffer(){let o=getOffer(); o.hidden=true; saveOfferData(o); closeOfferModal(); renderMenu();}
 function showOffer(){let o=getOffer(); o.hidden=false; saveOfferData(o); renderMenu();}
-
-function editLoyalty(){
- if(!isAdmin){alert('لازم أدمن');return}
- let l=getLoyalty();
- document.getElementById('loyalty-per').value=l.perDt;
- document.getElementById('loyalty-reward-at').value=l.rewardAt;
- document.getElementById('loyalty-reward-name').value=l.rewardName;
- document.getElementById('loyalty-modal').classList.add('open');
-}
+function editLoyalty(){if(!isAdmin){alert('لازم أدمن');return} let l=getLoyalty(); document.getElementById('loyalty-per').value=l.perDt; document.getElementById('loyalty-reward-at').value=l.rewardAt; document.getElementById('loyalty-reward-name').value=l.rewardName; document.getElementById('loyalty-modal').classList.add('open');}
 function closeLoyaltyModal(){document.getElementById('loyalty-modal').classList.remove('open')}
-function saveLoyalty(){
- let per=parseInt(document.getElementById('loyalty-per').value)||1;
- let at=parseInt(document.getElementById('loyalty-reward-at').value)||50;
- let name=document.getElementById('loyalty-reward-name').value.trim()||"شاباتي بلاش";
- saveLoyaltyData({perDt:per,rewardAt:at,rewardName:name,hidden:false});
- closeLoyaltyModal(); renderLoyalty();
- alert(`✅ نقاط الولاء: كل ${per}دت = نقطة | ${at} نقطة = ${name}`);
-}
+function saveLoyalty(){let per=parseInt(document.getElementById('loyalty-per').value)||1; let at=parseInt(document.getElementById('loyalty-reward-at').value)||50; let name=document.getElementById('loyalty-reward-name').value.trim()||"شاباتي بلاش"; saveLoyaltyData({perDt:per,rewardAt:at,rewardName:name,hidden:false}); closeLoyaltyModal(); renderLoyalty();}
 function hideLoyalty(){let l=getLoyalty(); l.hidden=true; saveLoyaltyData(l); closeLoyaltyModal(); renderLoyalty();}
 function showLoyalty(){let l=getLoyalty(); l.hidden=false; saveLoyaltyData(l); renderLoyalty();}
-
-function getDefaultReviews(){
- let blocked=JSON.parse(localStorage.getItem('elmalek_blocked')||'[]');
- let all=[
- {id:'d1',n:"محمد - cité riadh",t:"منذ 2 ساعة",s:5,txt:"بنين برشا!"},
- {id:'d2',n:"أميرة - Sahloul",t:"منذ 5 ساعات",s:5,txt:"ملاوي محبوب يهبل!"},
- {id:'d3',n:"حمزة - Khzema",t:"أمس",s:5,txt:"أحسن شاباتي في سوسة!"},
- {id:'d4',n:"سيرين - Sousse",t:"أمس",s:5,txt:"البيتزا بنينة 👑"}
- ];
- return all.filter(r=>!blocked.includes(r.id));
-}
-function loadReviews(){
- let saved=JSON.parse(localStorage.getItem('elmalek_reviews')||'[]');
- let defaults=getDefaultReviews();
- let html='';
- let savedCopy=[...saved].reverse();
- savedCopy.forEach((r,di)=>{
-   let oi=saved.length-1-di;
-   html+=`<div class="rev-card new"><button class="del-btn" onclick="deleteUser(${oi})">🗑️</button><b>${r.n} ${'⭐'.repeat(r.s)}</b><small>${r.t}</small><p>${r.txt}</p></div>`;
- });
- defaults.forEach(r=>{html+=`<div class="rev-card"><button class="del-btn" onclick="deleteDefault('${r.id}')">🗑️</button><b>${r.n} ${'⭐'.repeat(r.s)}</b><small>${r.t}</small><p>${r.txt}</p></div>`});
- document.getElementById('rev-list').innerHTML=html||'<p style="text-align:center;color:#999">لا يوجد</p>';
- document.getElementById('rev-count').textContent=saved.length + defaults.length;
-}
+function getDefaultReviews(){let blocked=JSON.parse(localStorage.getItem('elmalek_blocked')||'[]'); let all=[{id:'d1',n:"محمد - cité riadh",t:"منذ 2 ساعة",s:5,txt:"بنين برشا!"},{id:'d2',n:"أميرة - Sahloul",t:"منذ 5 ساعات",s:5,txt:"ملاوي محبوب يهبل!"},{id:'d3',n:"حمزة - Khzema",t:"أمس",s:5,txt:"أحسن شاباتي في سوسة!"},{id:'d4',n:"سيرين - Sousse",t:"أمس",s:5,txt:"البيتزا بنينة 👑"}]; return all.filter(r=>!blocked.includes(r.id));}
+function loadReviews(){let saved=JSON.parse(localStorage.getItem('elmalek_reviews')||'[]'); let defaults=getDefaultReviews(); let html=''; let savedCopy=[...saved].reverse(); savedCopy.forEach((r,di)=>{let oi=saved.length-1-di; html+=`<div class="rev-card new"><button class="del-btn" onclick="deleteUser(${oi})">🗑️</button><b>${r.n} ${'⭐'.repeat(r.s)}</b><small>${r.t}</small><p>${r.txt}</p></div>`}); defaults.forEach(r=>{html+=`<div class="rev-card"><button class="del-btn" onclick="deleteDefault('${r.id}')">🗑️</button><b>${r.n} ${'⭐'.repeat(r.s)}</b><small>${r.t}</small><p>${r.txt}</p></div>`}); document.getElementById('rev-list').innerHTML=html||'<p style="text-align:center;color:#999">لا يوجد</p>'; document.getElementById('rev-count').textContent=saved.length + defaults.length;}
 function deleteUser(i){if(!isAdmin){alert('لازم أدمن');return} let s=JSON.parse(localStorage.getItem('elmalek_reviews')||'[]'); if(!confirm(`تفسخ "${s[i].n}" ؟`)) return; s.splice(i,1); localStorage.setItem('elmalek_reviews',JSON.stringify(s)); loadReviews();}
 function deleteDefault(id){if(!isAdmin){alert('لازم أدمن');return} if(!confirm('تفسخ؟')) return; let b=JSON.parse(localStorage.getItem('elmalek_blocked')||'[]'); b.push(id); localStorage.setItem('elmalek_blocked',JSON.stringify(b)); loadReviews();}
 function askAdmin(){document.getElementById('admin-modal').classList.add('open')}
 function closeAdminModal(){document.getElementById('admin-modal').classList.remove('open'); document.getElementById('admin-pass').value=''}
-function loginAdmin(){let p=document.getElementById('admin-pass').value.trim(); if(p==='malek123'||p==='admin123'||p==='1234'){isAdmin=true;document.body.classList.add('admin-mode');closeAdminModal();alert('✅ V20 FINAL!\n\n💰 دوس على السوم باش تبدلو\n🗑️ دوس على المنتج باش تفسخو\n🔥 بدل عرض اليوم الفوق\n🎁 بدل نقاط الولاء');} else alert('❌ غالطة! malek123');}
+function loginAdmin(){let p=document.getElementById('admin-pass').value.trim(); if(p==='malek123'||p==='admin123'||p==='1234'){isAdmin=true;document.body.classList.add('admin-mode');closeAdminModal();} else alert('❌ غالطة!');}
 function exitAdmin(){isAdmin=false;document.body.classList.remove('admin-mode');}
 function openReview(){document.getElementById('rev-modal').classList.add('open')}
 function closeReview(){document.getElementById('rev-modal').classList.remove('open')}
